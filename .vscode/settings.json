@@ -1,0 +1,14 @@
+{
+    "python.linting.pylintEnabled": false,
+    "python.pythonPath": "/Users/kevin/projects/.envs/cdsso/bin/python",
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
+    "restructuredtext.confPath": "${workspaceFolder}/docs",
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+}

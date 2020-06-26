@@ -1,0 +1,114 @@
+{% extends '_index/base.html' %}
+{% load static %}
+{% load cas_server %}
+{% block header %}{% endblock header %}
+{% block content %}
+		<div class="container-fluid">
+			<div class="row align-items-center">
+				<div class="col-md-6 col-lg-7 fullscreen-md d-flex justify-content-center align-items-center overlay gradient gradient-53 alpha-8 image-background cover" style="background-image:url({% static 'img/bg/code-grid.png' %})">
+					<div class="content">
+						<h2 class="display-4 display-md-3 color-1 mt-4 mt-md-0">Welcome to
+							<span class="bold d-block">CodeDevils</span>
+						</h2>
+						<p class="lead color-1 alpha-5">Login to your account</p>
+						<hr class="mt-md-6 w-25">
+						<div class="d-flex flex-column">
+                            <p class="small bold color-1">Are you a student? Login through ASU:</p>
+							<nav class="nav mb-4">
+                                <a href="#"><img class="btn btn-rounded btn-outline-2 mr-2" src="{% static 'img/integration/asu.svg' %}" alt="ASU" height="40px"></a>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5 col-lg-4 mx-auto">
+					<div class="login-form mt-5 mt-md-0">
+						<img src="{% static 'home/img/logo.png' %}" class="logo img-responsive mb-4 mb-md-6" alt="">
+						{% if auto_submit %}<noscript>{% endif %}
+                        <h1 class="color-5 bold mt-md-0 mb-0">Login</h1>
+						{% if auto_submit %}</noscript>{% endif %}
+                        <p class="color-2 mt-4 md-6">Don't have an account yet?
+							<a href="#" class="accent bold">Create it here</a>
+						</p>
+						<form class="cozy" id="login-form" method="post"{% if post_url %} action="{{post_url}}"{% endif %} data-validate-on="submit" novalidate>
+							{% for error in form.non_field_errors %}
+								<div class="alert alert-danger alert-dismissable">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&#215;</button>
+								{{error}}
+								</div>
+							{% endfor %}                     
+							{% csrf_token %}
+							<label class="control-label bold small text-uppercase color-2">Username</label>
+                            {% if username_error %}
+                                <div class="text-danger font-sm">This field is required</div>
+                            {% endif %}
+							<div class="form-group has-icon">
+								<input type="text" id="id_username" name="username" class="form-control form-control-rounded" placeholder="Username" required>
+								<i class="icon fas fa-user"></i>
+							</div>
+							<label class="control-label bold small text-uppercase color-2">Password</label>
+                            {% if password_error %}
+                                <div class="text-danger font-sm">This field is required</div>
+                            {% endif %}
+							<div class="form-group has-icon">
+								<input type="password" id="id_password" name="password" class="form-control form-control-rounded" placeholder="Password" required>
+								<i class="icon fas fa-lock"></i>
+							</div>
+                            {% if form.errors %}
+                                <p class="text-danger font-sm">
+                                    Your username and password didn't match.
+                                    Please try again.
+                                </p>
+                            {% endif %}
+							{% for field in form %}{% if not field|is_hidden %}
+								<div class="form-group
+								{% if not form.non_field_errors %}
+									{% if field.errors %} has-error
+									{% elif form.cleaned_data %} has-success
+									{% endif %}
+								{% endif %}"
+								>{% spaceless %}
+								{% if field|is_checkbox %}
+									<div class="checkbox"><label for="{{field.auto_id}}">{{field}}{{field.label}}</label></div>
+								{% endif %}
+								{% for error in field.errors %}
+									<span class="help-block">{{error}}</span>
+								{% endfor %}
+								{% endspaceless %}</div>
+							{% else %}{{field}}{% endif %}{% endfor %}
+							<div class="form-group d-flex align-items-center justify-content-between">
+								<a href="#" class="text-warning small">Forgot your password?</a>
+								<div class="ajax-button">
+									<div class="fas fa-check btn-status text-success success"></div>
+									<div class="fas fa-times btn-status text-danger failed"></div>
+									{% if auto_submit %}<noscript>{% endif %}
+									<button type="submit" value="login" class="btn btn-accent btn-rounded">Login
+										<i class="fas fa-long-arrow-alt-right ml-2"></i>
+									</button>
+									{% if auto_submit %}</noscript>{% endif %}
+								</div>
+							</div>
+                            {% if next %}
+                                <input type="hidden" name="next" value="{{ next }}" />
+                            {% endif %}
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock content %}
+{% block bottom_content %}
+<script>
+jQuery(function( $ ){
+    $("#id_warn").click(function(e){
+        if($("#id_warn").is(':checked')){
+            createCookie("warn", "on", 10 * 365);
+        } else {
+            eraseCookie("warn");
+        }
+    });
+});
+{% if auto_submit %}
+document.getElementById('login_form').submit(); // SUBMIT FORM
+{% endif %}
+</script>
+{% endblock %}

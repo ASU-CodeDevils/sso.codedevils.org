@@ -1,0 +1,29 @@
+requests==2.24.0  # https://requests.readthedocs.io/en/master/
+pytz==2020.1  # https://github.com/stub42/pytz
+python-slugify==4.0.0  # https://github.com/un33k/python-slugify
+Pillow==7.1.2  # https://github.com/python-pillow/Pillow
+argon2-cffi==19.2.0  # https://github.com/hynek/argon2_cffi
+whitenoise==5.0.1  # https://github.com/evansd/whitenoise
+redis==3.5.0  # https://github.com/andymccurdy/redis-py
+hiredis==1.0.1  # https://github.com/redis/hiredis-py
+django-timezone-field==3.1  # https://github.com/mfogel/django-timezone-field
+celery==4.4.2  # pyup: < 5.0  # https://github.com/celery/celery
+django-celery-beat==1.4.0  # https://github.com/celery/django-celery-beat
+mysqlclient==1.4.6  # https://pypi.org/project/mysqlclient/
+
+# Django
+# ------------------------------------------------------------------------------
+django==2.0.1  # pyup: < 3.1  # https://www.djangoproject.com/
+django-environ==0.4.5  # https://github.com/joke2k/django-environ
+django-model-utils==3.2.0  # https://github.com/jazzband/django-model-utils
+django-allauth==0.42.0  # https://github.com/pennersr/django-allauth
+django-crispy-forms==1.8.1  # https://github.com/django-crispy-forms/django-crispy-forms
+django-redis==4.11.0  # https://github.com/jazzband/django-redis
+
+# Django rest framework
+djangorestframework==3.11.0  # https://github.com/encode/django-rest-framework
+
+# Custom
+# ------------------------------------------------------------------------------
+django-cas-server==1.1.0  # https://github.com/nitmir/django-cas-server
+django-localflavor==2.2  # https://django-localflavor.readthedocs.io/en/latest/
