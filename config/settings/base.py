@@ -82,6 +82,7 @@ THIRD_PARTY_APPS = [
     "allauth.socialaccount.providers.keycloak",
     "cas_server",
     "django_celery_beat",
+    "drf_yasg",
     "rest_framework",
     "rest_framework.authtoken",
 ]
@@ -330,3 +331,14 @@ CAS_LOGIN_TEMPLATE = "account/cas/login.html"
 CAS_WARN_TEMPLATE = "account/cas/warn.html"
 CAS_LOGOUT_TEMPLATE = "account/cas/logout.html"
 CAS_LOGGED_TEMPLATE = "account/cas/logged.html"
+
+# drf-yasg
+# https://drf-yasg.readthedocs.io/en/stable/readme.html#usage
+# -------------------------------------------------------------------------------
+DRF_YASG_TITLE = "CodeDevils SSO API"
+DRF_YASG_LOGO = STATIC_URL + "img/logo-light.png"
+DRF_YASG_DEFAULT_VERSION = "v1"
+DRF_YASG_DESCRIPTION = "CodeDevils identity and user management sytem"
+DRF_YASG_TERMS_OF_SERVICE = "https://www.asu.edu/aad/manuals/acd/acd125.html"
+DRF_YASG_CONTACT_EMAIL = "webmaster@codedevils.org"
+DRF_YASG_LICENSE = "BSD License"
