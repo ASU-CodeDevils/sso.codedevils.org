@@ -34,6 +34,7 @@ sys.path.insert(0, VENV + "lib/python3.7/site-packages")
 # mod_wsgi daemon mode with each site in its own daemon process, or use
 # os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings.production"
 os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings.production"
+os.environ["DJANGO_READ_DOT_ENV_FILE"] = True
 
 application = get_wsgi_application()
 # Apply WSGI middleware here.
