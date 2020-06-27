@@ -20,7 +20,7 @@
                         <h1 class="color-5 bold mt-md-0 mb-0">Login</h1>
 						{% if auto_submit %}</noscript>{% endif %}
                         <p class="color-2 mt-4 md-6">Don't have an account yet?
-							<a href="#" class="accent bold">Create it here</a>
+							<a href="{% url 'account_signup' %}" class="accent bold">Create it here</a>
 						</p>
 						<form class="cozy" id="login-form" method="post"{% if post_url %} action="{{post_url}}"{% endif %} data-validate-on="submit" novalidate>
 							{% for error in form.non_field_errors %}

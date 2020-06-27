@@ -9,7 +9,9 @@ urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # django-simple-sso
-    path('cas/', include('cas_server.urls', namespace="cas_server"))
+    path('cas/', include('cas_server.urls', namespace="cas_server")),
+    # user management
+    path("accounts/", include("allauth.urls"))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
