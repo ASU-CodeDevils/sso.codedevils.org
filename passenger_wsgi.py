@@ -4,17 +4,17 @@ This file is the WSGI module for Phusion Passenger (currently used on DreamHost)
 
 import os
 import sys
-from pathlib2 import Path
 
-from django.core.wsgi import get_wsgi_application
-
-VENV = "/home/codedevils_admin/.envs/weblogin_codedevils.org/"
+VENV = "/home/codedevils_admin/.envs/sso.codevils.org/"
 INTERP = VENV + "bin/python3"
 
 # INTERP is present twice so that the new python interpreter
 # knows the actual executable path
 if sys.executable != INTERP:
     os.execl(INTERP, INTERP, *sys.argv)
+
+from pathlib2 import Path
+from django.core.wsgi import get_wsgi_application
 
 # This allows easy placement of apps within the interior
 # cdsso directory.
@@ -24,7 +24,7 @@ sys.path.append(str(ROOT_DIR / "cdsso"))
 # add the project and virtual environment to the system path
 cwd = os.getcwd()
 sys.path.append(cwd)
-sys.path.append(cwd + "/weblogin.codedevils.org")
+sys.path.append(cwd + "/cdsso")
 sys.path.insert(0, VENV + "bin")
 sys.path.insert(0, VENV + "lib/python3.7/site-packages")
 
