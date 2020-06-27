@@ -327,10 +327,10 @@ CAS_LOGO_URL = False
 CAS_FAVICON_URL = False
 CAS_SHOW_POWERED = False
 CAS_SHOW_SERVICE_MESSAGES = False
-CAS_LOGIN_TEMPLATE = "account/cas/login.html"
-CAS_WARN_TEMPLATE = "account/cas/warn.html"
-CAS_LOGOUT_TEMPLATE = "account/cas/logout.html"
-CAS_LOGGED_TEMPLATE = "account/cas/logged.html"
+CAS_LOGIN_TEMPLATE = "cas/login.html"
+CAS_WARN_TEMPLATE = "cas/warn.html"
+CAS_LOGOUT_TEMPLATE = "cas/logout.html"
+CAS_LOGGED_TEMPLATE = "cas/logged.html"
 
 # drf-yasg
 # https://drf-yasg.readthedocs.io/en/stable/readme.html#usage
