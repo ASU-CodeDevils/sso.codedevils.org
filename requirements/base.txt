@@ -1,3 +1,4 @@
+pathlib2==2.3.5  # https://github.com/mcmtroffaes/pathlib2
 requests==2.24.0  # https://requests.readthedocs.io/en/master/
 pytz==2020.1  # https://github.com/stub42/pytz
 python-slugify==4.0.0  # https://github.com/un33k/python-slugify

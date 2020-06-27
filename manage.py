@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
-from pathlib import Path
+from pathlib2 import Path
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")

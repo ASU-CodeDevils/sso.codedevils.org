@@ -2,7 +2,7 @@
 Base settings to build other settings files upon.
 """
 from django.utils.translation import ugettext_lazy as _
-from pathlib import Path
+from pathlib2 import Path
 
 import environ
 

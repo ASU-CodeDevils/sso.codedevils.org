@@ -15,7 +15,7 @@ framework.
 """
 import os
 import sys
-from pathlib import Path
+from pathlib2 import Path
 
 from django.core.wsgi import get_wsgi_application
 
