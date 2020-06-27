@@ -283,3 +283,4 @@ pip-selfcheck.json
 cdsso/media/
 cdsso/files/dh/
 .pytest_cache/
+tmp/venv.txt

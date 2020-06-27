@@ -5,7 +5,13 @@ This file is the WSGI module for Phusion Passenger (currently used on DreamHost)
 import os
 import sys
 
-VENV = "/home/codedevils_admin/.envs/sso.codevils.org/"
+# attempt to read the virtual environment from the tmp/venv.txt file
+# if the file does not exist, a default is given
+# this is used for dev environments, and is not required for prod
+try:
+    VENV = open("tmp/venv.txt", "r").read().strip()
+except FileNotFoundError:
+    VENV = "/home/codedevils_admin/.envs/sso.codedevils.org/"
 INTERP = VENV + "bin/python3"
 
 # INTERP is present twice so that the new python interpreter
@@ -34,7 +40,6 @@ sys.path.insert(0, VENV + "lib/python3.7/site-packages")
 # mod_wsgi daemon mode with each site in its own daemon process, or use
 # os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings.production"
 os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings.production"
-os.environ["DJANGO_READ_DOT_ENV_FILE"] = True
 
 application = get_wsgi_application()
 # Apply WSGI middleware here.
