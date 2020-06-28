@@ -1,0 +1,19 @@
+{% load cas_server %}
+{% for field in form %}{% if not field|is_hidden %}
+    <div class="form-group
+	    {% if not form.non_field_errors %}
+		{% if field.errors %} has-error
+        {% elif form.cleaned_data %} has-success
+        {% endif %}
+        {% endif %}"
+    >{% spaceless %}
+    <!--
+    {% if field|is_checkbox %}
+        <div class="checkbox small"><label for="{{field.auto_id}}">{{field}}{{field.label}}</label></div>
+    {% endif %}
+    -->
+    {% for error in field.errors %}
+        <span class="text-danger font-sm">{{error}}</span>
+    {% endfor %}
+    {% endspaceless %}</div>
+{% else %}{{field}}{% endif %}{% endfor %}
