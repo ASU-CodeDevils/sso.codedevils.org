@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 from django.urls import path, re_path
 from rest_framework.routers import DefaultRouter, SimpleRouter
 
@@ -18,7 +19,7 @@ app_name = "api"
 # DRF YASG
 urlpatterns = [
     re_path(r"^swagger(?P<format>\.json|\.yaml)$", schema_view.without_ui(cache_timeout=0), name="schema-json"),
-    path("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc")
+    path("docs/", login_required(schema_view.with_ui("redoc", cache_timeout=0)), name="schema-redoc")
 ]
 
 urlpatterns += router.urls
