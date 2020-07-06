@@ -89,7 +89,8 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "cdsso.users.apps.UsersConfig",
-    "cdsso.contrib.countries.apps.CountriesConfig"
+    "cdsso.contrib.countries.apps.CountriesConfig",
+    "cdsso.contrib.register.apps.RegisterConfig"
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -348,3 +349,18 @@ DRF_YASG_DESCRIPTION = "CodeDevils identity and user management sytem"
 DRF_YASG_TERMS_OF_SERVICE = "https://www.asu.edu/aad/manuals/acd/acd125.html"
 DRF_YASG_CONTACT_EMAIL = "webmaster@codedevils.org"
 DRF_YASG_LICENSE = "BSD License"
+
+# CD SSO-specific settings
+# -------------------------------------------------------------------------------
+REGISTER_SLACK_USERS_WITH_FLAMEBOI = env.bool(
+    "CDSSO_REGISTER_SLACK_USERS_WITH_FLAMEBOI", default=True
+)
+NOTIFY_MANAGERS_SDS_REGISTRATION = env.bool(
+    "CDSSO_NOTIFY_MANAGERS_SDS_REGISTRATION", default=True
+)
+SEND_COMPLETED_REGISTRATION_NOTIFICATION = env.bool(
+    "CDSSO_SEND_COMPLETED_REGISTRATION_NOTIFICATION", default=True
+)
+RUN_REGISTRATION_POST_SAVE_SIGNAL = env.bool(
+    "CDSSO_RUN_REGISTRATION_POST_SAVE_SIGNAL", default=True
+)

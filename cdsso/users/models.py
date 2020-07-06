@@ -5,6 +5,22 @@ from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
 
+class StudentManager(models.Manager):
+    """Manager for the user model that selects only active students."""
+    def get_queryset(self):
+        queryset = super(StudentManager, self).get_queryset()
+        queryset = queryset.filter(is_alumni=False, is_active=True)
+        return queryset
+
+
+class AlumniManager(models.Manager):
+    """Manager for the user models that selects only alumni (active or not)."""
+    def get_queryset(self):
+        queryset = super(AlumniManager, self).get_queryset()
+        queryset = queryset.filter(is_alumni=True)
+        return queryset
+
+
 class User(AbstractUser):
     # First Name and Last Name do not cover name patterns
     # around the globe.
@@ -14,6 +30,14 @@ class User(AbstractUser):
                                     help_text=_("You have the option of keeping your account anonymous with CD. "
                                                 "Selecting this will ensure your account stays private and supported "
                                                 "applications don't have access to your data"))
+    is_alumni = models.BooleanField(db_column="IsStudent", null=False, default=False,
+                                    verbose_name=_("Is an alumni"),
+                                    help_text=_("Is an alumni of ASU. If False, the user is by default a student."))
+
+    # managers
+    objects = models.Manager()
+    students = StudentManager()
+    alumni = AlumniManager()
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
