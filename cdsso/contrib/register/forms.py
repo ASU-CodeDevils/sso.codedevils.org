@@ -21,7 +21,7 @@ class StudentRegistrationForm(forms.UserCreationForm):
 
     class Meta(forms.UserCreationForm.Meta):
         model = User
-        fields = ["username", "email", "anonymous", "receive_notifications", "is_alumni"]
+        fields = ["username", "password1", "password2", "email", "anonymous", "receive_notifications", "is_alumni"]
         labels = {"is_alumni": "Alumni"}
         help_texts = {
             "receive_notifications": "We will send you emails about events, exciting new projects and opportunities, "
@@ -35,7 +35,7 @@ class StudentRegistrationForm(forms.UserCreationForm):
     def clean_email(self):
         """Determines if the email is valid based on if the user is a student or alumni."""
         email = self.cleaned_data["email"]
-        is_alumni = self.cleaned_data["is_alumni"]
+        is_alumni = self.cleaned_data.get("is_alumni", False)
 
         # check that the email is valid
         try:
@@ -44,15 +44,17 @@ class StudentRegistrationForm(forms.UserCreationForm):
             raise ValidationError(self.error_messages["invalid_email"])
 
         # if a student, their email must end in asu.edu and be their asurite
-        email = email.split("@")  # split email by username and domain
+        split_email = email.split("@")  # split email by username and domain
         if not is_alumni:
-            if email[1] == "asu.edu":
+            # email must end in asu.edu
+            if split_email[1] != "asu.edu":
                 raise ValidationError(self.error_messages["student_email_required"])
 
-            if len(email[0]) > 8:
+            # ASURITE is 5-8 characters long
+            if len(split_email[0]) < 5 or len(split_email[0]) > 8:
                 raise ValidationError(self.error_messages["student_email_asurite"])
         else:
-            if email[1] == "asu.edu":
+            if split_email[1] == "asu.edu":
                 raise ValidationError(self.error_messages["alumni_email_required"])
 
         # check that the email is not already assigned to an account

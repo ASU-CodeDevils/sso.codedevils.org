@@ -29,11 +29,11 @@ TIME_ZONE = "UTC"
 LANGUAGE_CODE = env("DJANGO_LANGUAGE_CODE", default="en-us")
 
 LANGUAGES = [
-  ('es', _('Spanish')),
-  ('en-us', _('English')),
-  ('fr', _('French')),
-  ('ar', _('Arabic')),
-  ('nl', _('Dutch'))
+  ("es", _("Spanish")),
+  ("en-us", _("English")),
+  ("fr", _("French")),
+  ("ar", _("Arabic")),
+  ("nl", _("Dutch"))
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
@@ -314,6 +314,10 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 ACCOUNT_EMAIL_REQUIRED = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = "cdsso.users.adapters.SocialAccountAdapter"
+# https://django-allauth.readthedocs.io/en/latest/forms.html#account-forms
+ACCOUNT_FORMS = {
+    "signup": "cdsso.contrib.register.forms.StudentRegistrationForm"
+}
 
 # django-rest-framework
 # -------------------------------------------------------------------------------
@@ -352,6 +356,13 @@ DRF_YASG_LICENSE = "BSD License"
 
 # CD SSO-specific settings
 # -------------------------------------------------------------------------------
+CODEDEVILS_WEBSITE_GRAPHQL_URL = env(
+    "CDSSO_CODEDEVILS_WEBSITE_URL", default="https://codedevils.org/api/graphql/"
+)
+CODEDEVILS_WEBSITE_API_KEY = env("CDSSO_CODEDEVILS_WEBSITE_API_KEY")
+FLAMEBOI_API_URL = env(
+    "CDSSO_FLAMEBOI_API_URL", default="https://flameboi.codedevils.org/"
+)
 REGISTER_SLACK_USERS_WITH_FLAMEBOI = env.bool(
     "CDSSO_REGISTER_SLACK_USERS_WITH_FLAMEBOI", default=True
 )
@@ -363,4 +374,10 @@ SEND_COMPLETED_REGISTRATION_NOTIFICATION = env.bool(
 )
 RUN_REGISTRATION_POST_SAVE_SIGNAL = env.bool(
     "CDSSO_RUN_REGISTRATION_POST_SAVE_SIGNAL", default=True
+)
+CODEDEVILS_WEBSITE_UPDATE_FIELDS = env.list(
+    "CDSSO_CODEDEVILS_WEBSITE_UPDATE_FIELDS", default="email,name,anonymous"
+)
+CODEDEVILS_WEBSITE_SKIP_FIELDS = env.list(
+    "CDSSO_CODEDEVILS_WEBSITE_SKIP_FIELDS", default="last_login"
 )
