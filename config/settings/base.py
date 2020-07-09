@@ -29,11 +29,11 @@ TIME_ZONE = "UTC"
 LANGUAGE_CODE = env("DJANGO_LANGUAGE_CODE", default="en-us")
 
 LANGUAGES = [
-  ('es', _('Spanish')),
-  ('en-us', _('English')),
-  ('fr', _('French')),
-  ('ar', _('Arabic')),
-  ('nl', _('Dutch'))
+  ("es", _("Spanish")),
+  ("en-us", _("English")),
+  ("fr", _("French")),
+  ("ar", _("Arabic")),
+  ("nl", _("Dutch"))
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
@@ -82,13 +82,15 @@ THIRD_PARTY_APPS = [
     "allauth.socialaccount.providers.keycloak",
     "cas_server",
     "django_celery_beat",
+    "drf_yasg",
     "rest_framework",
     "rest_framework.authtoken",
 ]
 
 LOCAL_APPS = [
     "cdsso.users.apps.UsersConfig",
-    "cdsso.contrib.countries.apps.CountriesConfig"
+    "cdsso.contrib.countries.apps.CountriesConfig",
+    "cdsso.contrib.register.apps.RegisterConfig"
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -110,7 +112,9 @@ AUTH_USER_MODEL = "users.User"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-redirect-url
 LOGIN_REDIRECT_URL = "users:redirect"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-url
-LOGIN_URL = "account_login"
+LOGIN_URL = "cas_server:login"
+# https://docs.djangoproject.com/en/3.0/ref/settings/#logout-redirect-url
+LOGOUT_REDIRECT_URL = LOGIN_URL
 
 # PASSWORDS
 # ------------------------------------------------------------------------------
@@ -146,6 +150,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.common.BrokenLinkEmailsMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "cdsso.contrib.register.middleware.UserRegistrationConfirmationMiddleware"
 ]
 
 # STATIC
@@ -297,7 +302,7 @@ CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 # ------------------------------------------------------------------------------
 ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION", True)
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_AUTHENTICATION_METHOD = "username"
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_REQUIRED = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
@@ -305,7 +310,15 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_ADAPTER = "cdsso.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_EMAIL_REQUIRED = True
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = "cdsso.users.adapters.SocialAccountAdapter"
+# https://django-allauth.readthedocs.io/en/latest/forms.html#account-forms
+ACCOUNT_FORMS = {
+    "signup": "cdsso.contrib.register.forms.StudentRegistrationForm"
+}
 
 # django-rest-framework
 # -------------------------------------------------------------------------------
@@ -326,7 +339,46 @@ CAS_LOGO_URL = False
 CAS_FAVICON_URL = False
 CAS_SHOW_POWERED = False
 CAS_SHOW_SERVICE_MESSAGES = False
-CAS_LOGIN_TEMPLATE = "account/cas/login.html"
-CAS_WARN_TEMPLATE = "account/cas/warn.html"
-CAS_LOGOUT_TEMPLATE = "account/cas/logout.html"
-CAS_LOGGED_TEMPLATE = "account/cas/logged.html"
+CAS_LOGIN_TEMPLATE = "cas/login.html"
+CAS_WARN_TEMPLATE = "cas/warn.html"
+CAS_LOGOUT_TEMPLATE = "cas/logout.html"
+CAS_LOGGED_TEMPLATE = "cas/logged.html"
+
+# drf-yasg
+# https://drf-yasg.readthedocs.io/en/stable/readme.html#usage
+# -------------------------------------------------------------------------------
+DRF_YASG_TITLE = "CodeDevils SSO API"
+DRF_YASG_LOGO = STATIC_URL + "img/logo-light.png"
+DRF_YASG_DEFAULT_VERSION = "v1"
+DRF_YASG_DESCRIPTION = "CodeDevils identity and user management sytem"
+DRF_YASG_TERMS_OF_SERVICE = "https://www.asu.edu/aad/manuals/acd/acd125.html"
+DRF_YASG_CONTACT_EMAIL = "webmaster@codedevils.org"
+DRF_YASG_LICENSE = "BSD License"
+
+# CD SSO-specific settings
+# -------------------------------------------------------------------------------
+CODEDEVILS_WEBSITE_GRAPHQL_URL = env(
+    "CDSSO_CODEDEVILS_WEBSITE_URL", default="https://codedevils.org/api/graphql/"
+)
+CODEDEVILS_WEBSITE_API_KEY = env("CDSSO_CODEDEVILS_WEBSITE_API_KEY")
+FLAMEBOI_API_URL = env(
+    "CDSSO_FLAMEBOI_API_URL", default="https://flameboi.codedevils.org/"
+)
+REGISTER_SLACK_USERS_WITH_FLAMEBOI = env.bool(
+    "CDSSO_REGISTER_SLACK_USERS_WITH_FLAMEBOI", default=True
+)
+NOTIFY_MANAGERS_SDS_REGISTRATION = env.bool(
+    "CDSSO_NOTIFY_MANAGERS_SDS_REGISTRATION", default=True
+)
+SEND_COMPLETED_REGISTRATION_NOTIFICATION = env.bool(
+    "CDSSO_SEND_COMPLETED_REGISTRATION_NOTIFICATION", default=True
+)
+RUN_REGISTRATION_POST_SAVE_SIGNAL = env.bool(
+    "CDSSO_RUN_REGISTRATION_POST_SAVE_SIGNAL", default=True
+)
+CODEDEVILS_WEBSITE_UPDATE_FIELDS = env.list(
+    "CDSSO_CODEDEVILS_WEBSITE_UPDATE_FIELDS", default="email,name,anonymous"
+)
+CODEDEVILS_WEBSITE_SKIP_FIELDS = env.list(
+    "CDSSO_CODEDEVILS_WEBSITE_SKIP_FIELDS", default="last_login"
+)

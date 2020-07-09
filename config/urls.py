@@ -1,16 +1,29 @@
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from django.views import defaults as default_views
-from django.views.generic import TemplateView
+from rest_framework.authtoken.views import obtain_auth_token
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # django-simple-sso
-    path('cas/', include('cas_server.urls', namespace="cas_server"))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path("cas/", include("cas_server.urls", namespace="cas_server")),
+    # user management
+    path("users/", include("cdsso.users.urls", namespace="users")),
+    path("accounts/", include("allauth.urls")),
+    path("join/", include("cdsso.contrib.register.urls", namespace="register"))
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# API URLS
+urlpatterns += [
+    # API base url
+    path("api/", include("config.api_router")),
+    # DRF auth token
+    path("auth-token/", obtain_auth_token)
+]
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit

@@ -1,6 +1,5 @@
 {% extends '_index/base.html' %}
 {% load static %}
-{% load cas_server %}
 {% block header %}{% endblock header %}
 {% block content %}
 		<div class="container-fluid">
@@ -15,14 +14,14 @@
 				</div>
 				<div class="col-md-5 col-lg-4 mx-auto">
 					<div class="login-form mt-5 mt-md-0">
-						<img src="{% static 'home/img/logo.png' %}" class="logo img-responsive mb-4 mb-md-6" alt="">
+						<img src="{% static 'img/logo.png' %}" class="logo img-responsive mb-4 mt-2 mb-md-6" alt="">
 						{% if auto_submit %}<noscript>{% endif %}
                         <h1 class="color-5 bold mt-md-0 mb-0">Login</h1>
 						{% if auto_submit %}</noscript>{% endif %}
                         <p class="color-2 mt-4 md-6">Don't have an account yet?
-							<a href="#" class="accent bold">Create it here</a>
+							<a href="{% url 'account_signup' %}" class="accent bold">Create it here</a>
 						</p>
-						<form class="cozy" id="login-form" method="post"{% if post_url %} action="{{post_url}}"{% endif %} data-validate-on="submit" novalidate>
+						<form class="cozy" id="login-form" method="post" data-validate-on="submit" novalidate>
 							{% for error in form.non_field_errors %}
 								<div class="alert alert-danger alert-dismissable">
 								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&#215;</button>
@@ -31,58 +30,26 @@
 							{% endfor %}                     
 							{% csrf_token %}
 							<label class="control-label bold small text-uppercase color-2">Username</label>
-                            {% if username_error %}
-                                <div class="text-danger font-sm">This field is required</div>
-                            {% endif %}
 							<div class="form-group has-icon">
 								<input type="text" id="id_username" name="username" class="form-control form-control-rounded" placeholder="Username" required>
 								<i class="icon fas fa-user"></i>
 							</div>
 							<label class="control-label bold small text-uppercase color-2">Password</label>
-                            {% if password_error %}
-                                <div class="text-danger font-sm">This field is required</div>
-                            {% endif %}
 							<div class="form-group has-icon">
 								<input type="password" id="id_password" name="password" class="form-control form-control-rounded" placeholder="Password" required>
 								<i class="icon fas fa-lock"></i>
 							</div>
-                            {% if form.errors %}
-                                <p class="text-danger font-sm">
-                                    Your username and password didn't match.
-                                    Please try again.
-                                </p>
-                            {% endif %}
-							{% for field in form %}{% if not field|is_hidden %}
-								<div class="form-group
-								{% if not form.non_field_errors %}
-									{% if field.errors %} has-error
-									{% elif form.cleaned_data %} has-success
-									{% endif %}
-								{% endif %}"
-								>{% spaceless %}
-								{% if field|is_checkbox %}
-									<div class="checkbox"><label for="{{field.auto_id}}">{{field}}{{field.label}}</label></div>
-								{% endif %}
-								{% for error in field.errors %}
-									<span class="help-block">{{error}}</span>
-								{% endfor %}
-								{% endspaceless %}</div>
-							{% else %}{{field}}{% endif %}{% endfor %}
+							{% include 'cas/form.html' %}
 							<div class="form-group d-flex align-items-center justify-content-between">
-								<a href="#" class="text-warning small">Forgot your password?</a>
+								<a href="{% url 'account_reset_password' %}" class="text-warning small">Forgot your password?</a>
 								<div class="ajax-button">
 									<div class="fas fa-check btn-status text-success success"></div>
 									<div class="fas fa-times btn-status text-danger failed"></div>
-									{% if auto_submit %}<noscript>{% endif %}
 									<button type="submit" value="login" class="btn btn-accent btn-rounded">Login
 										<i class="fas fa-long-arrow-alt-right ml-2"></i>
 									</button>
-									{% if auto_submit %}</noscript>{% endif %}
 								</div>
 							</div>
-                            {% if next %}
-                                <input type="hidden" name="next" value="{{ next }}" />
-                            {% endif %}
 						</form>
 					</div>
 				</div>

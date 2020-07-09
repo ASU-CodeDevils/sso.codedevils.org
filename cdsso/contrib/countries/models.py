@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+
 class Country(models.Model):
     """
     Defines a country and its locale information. All country information is pulled from
@@ -13,7 +14,7 @@ class Country(models.Model):
                                    verbose_name=_("Alpha2 Code"))
     alpha3_code = models.CharField(db_column="Alpha3Code", max_length=3, blank=True, null=True,
                                    verbose_name=_("Alpha3 Code"))
-    numeric_code = models.PositiveSmallIntegerField(db_column="NumericCode", blank=True, null=True, 
+    numeric_code = models.PositiveSmallIntegerField(db_column="NumericCode", blank=True, null=True,
                                                     verbose_name=_("Numeric code"))
     flag = models.URLField(db_column="Flag", blank=True, null=True, verbose_name=_("Flag"))
 

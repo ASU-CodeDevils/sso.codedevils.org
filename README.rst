@@ -4,13 +4,9 @@ weblogin.codedevils.org
 Identity Access Manager (IAM) user weblogin for CodeDevils, offering CAS 3.0 protocol to log
 users into CodeDevils applications.
 
-.. image:: https://travis-ci.com/ASU-CodeDevils/codedevils_org.svg?token=FhsGC7ZUMb7rskmp3jDy&branch=master
-    :target: https://travis-ci.com/ASU-CodeDevils/codedevils_org
+.. image:: https://travis-ci.com/ASU-CodeDevils/cdsso.svg?token=FhsGC7ZUMb7rskmp3jDy&branch=master
+    :target: https://travis-ci.com/ASU-CodeDevils/cdsso
     :alt: Build
-.. image:: https://codecov.io/gh/ASU-CodeDevils/codedevils_org/branch/master/graph/badge.svg?token=FF94MF9N4M
-    :target: https://codecov.io/gh/ASU-CodeDevils/codedevils_org
-    :alt: Codecov
-    :alt: Black code style
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :target: https://opensource.org/licenses/MIT
     :alt: License
@@ -25,7 +21,7 @@ Production
 ^^^^^^^^^^
 
 .. image:: https://img.shields.io/uptimerobot/status/m784417521-1b9dcabb76b05ae6fdc099b3
-    :target: https://weblogin.codedevils.org
+    :target: https://sso.codedevils.org
     :alt: Status (prod)
 .. image:: https://img.shields.io/uptimerobot/ratio/m784417521-1b9dcabb76b05ae6fdc099b3
     :target: https://status.codedevils.org/784417521
@@ -35,7 +31,7 @@ QA
 ^^
 
 .. image:: https://img.shields.io/uptimerobot/status/m784417527-57e543ec1e2e0752a9ba2228
-    :target: https://qa-weblogin.codedevils.org
+    :target: https://qa-sso.codedevils.org
     :alt: Status (QA)
 .. image:: https://img.shields.io/uptimerobot/ratio/m784417527-57e543ec1e2e0752a9ba2228
     :target: https://status.codedevils.org/784417527

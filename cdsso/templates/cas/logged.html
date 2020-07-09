@@ -1,0 +1,73 @@
+<!--TODO include links to various CD resources here-->
+{% extends "_index/base.html" %}
+{% load i18n %}
+{% load static %}
+{% block head_title %}{% trans 'Welcome to CodeDevils!' %}{% endblock head_title %}
+{% block content %}
+<section class="section mt-7n">
+  <div class="container bring-to-front pt-0">
+		<div class="row align-items-center gap-y">
+			<div class="shadow bg-1 p-4 rounded">
+        <div class="alert alert-success" role="alert">
+          {% blocktrans %}<h3>Log In Successful</h3>You now have access to all CodeDevils services that support logging
+          in! Check out some of the ones below to see what being a member offers you!{% endblocktrans %}
+        </div>
+        <!--CodeDevils website-->
+        <hr class="m-2"/>
+		    <section class="section">
+          <a class="text-secondary" href="https://codedevils.org" style="text-decoration: none">
+				  <div class="row align-items-center gap-y">
+					  <div class="col-sm-8 ml-md-auto">
+							<h2>{% trans 'CodeDevils Website' %}</h2>
+              {% blocktrans %}
+              The CodeDevils website is the home page of the organization! Check it out to learn about
+              the history of the organization, its leadership, and other resources to all things CodeDevils.
+              {% endblocktrans %}
+					  </div>
+					  <div class="col-sm-4 text-center">
+              <img class="w-75" src="{% static 'img/logo-light.png' %}" alt="CodeDevils">
+					  </div>
+				  </div>
+          </a>
+		    </section>
+        <!--IONS website-->
+        <hr class="m-2"/>
+		    <section class="section">
+          <a class="text-secondary" href="https://ions.codedevils.org" style="text-decoration: none">
+				  <div class="row align-items-center gap-y">
+					  <div class="col-sm-8 ml-md-auto">
+              <h2>{% trans 'IONS' %}</h2>
+              {% blocktrans %}
+              Imagery of Natural Systems (IONS) is a collaborative project between ASU SESE and CodeDevils. It
+              partners with Planet to process satellite images and analyze them for ash coverage and its effect
+              on the surrounding vegetation.
+              {% endblocktrans %}
+					  </div>
+					  <div class="col-sm-4 text-center">
+						  <img class="w-40" src="{% static 'img/ions.png' %}" alt="IONS">
+					  </div>
+				  </div>
+          </a>
+		    </section>
+        <!--Log out modal-->
+        <hr class="m-2"/>
+        <form class="form-signin mt-4" method="get" action="logout">
+          <div class="checkbox mb-2 small">
+            <label>
+              <input type="checkbox" name="all" value="1">{% trans "Log me out from all my sessions" %}
+            </label>
+          </div>
+          {% if settings.CAS_FEDERATE and request.COOKIES.remember_provider %}
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="forget_provider" value="1">{% trans "Forget the identity provider" %}
+            </label>
+          </div>
+          {% endif %}
+          <button class="btn btn-danger btn-lg" type="submit">{% trans "Logout" %}</button>
+        </form>
+			</div>
+		</div>
+  </div>
+</section>
+{% endblock %}
