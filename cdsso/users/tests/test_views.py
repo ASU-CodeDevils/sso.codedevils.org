@@ -29,7 +29,7 @@ class TestUserUpdateView:
 
         view.request = request
 
-        assert view.get_success_url() == f"/users/{user.username}/"
+        assert view.get_success_url() == f"/en-us/users/{user.username}/"
 
     def test_get_object(self, user: User, rf: RequestFactory):
         view = UserUpdateView()
