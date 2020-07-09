@@ -35,13 +35,14 @@ class StudentRegistrationForm(forms.UserCreationForm):
     def clean_email(self):
         """Determines if the email is valid based on if the user is a student or alumni."""
         email = self.cleaned_data["email"]
-        is_alumni = self.cleaned_data.get("is_alumni", False)
+        is_alumni = self.data["is_alumni"]
 
         # check that the email is valid
         try:
             validate_email(email)
         except ValidationError:
             raise ValidationError(self.error_messages["invalid_email"])
+        print(f"{is_alumni}")
 
         # if a student, their email must end in asu.edu and be their asurite
         split_email = email.split("@")  # split email by username and domain

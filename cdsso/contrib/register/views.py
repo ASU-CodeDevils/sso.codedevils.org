@@ -1,7 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import FormView, TemplateView
-
-from .forms import StudentRegistrationForm
+from django.views.generic import RedirectView, TemplateView
 
 
 class RegistrationStatusView(LoginRequiredMixin, TemplateView):
@@ -11,13 +9,10 @@ class RegistrationStatusView(LoginRequiredMixin, TemplateView):
 registration_status_view = RegistrationStatusView.as_view()
 
 
-class UserRegistrationFormView(FormView):
-    template_name = "register/student_registration.html"
-    form_class = StudentRegistrationForm
-    success_url = "/join/status/"
-
-    def form_valid(self, form):
-        return super().form_valid(form)
+class UserRegistrationRedirectView(RedirectView):
+    permanent = False
+    query_string = True
+    pattern_name = "account_signup"
 
 
-student_registration_view = UserRegistrationFormView.as_view()
+student_registration_redirect_view = UserRegistrationRedirectView.as_view()

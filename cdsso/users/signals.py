@@ -5,10 +5,20 @@ from django.contrib.auth import get_user_model
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+from cdsso.contrib.register.models import StudentRegistration
+
 from .utils import update_user_on_codedevils_website
 
 User = get_user_model()
 logger = logging.getLogger()
+
+
+def start_registration_workflow(instance: User):
+    """
+    Starts the registration workflow by creating a corresponding StudentRegistration entry for this user. Creating
+    the model will automatically start the workflow for when the StudentRegistration saves.
+    """
+    StudentRegistration.objects.get_or_create(user=instance)
 
 
 @receiver(post_save, sender=User)

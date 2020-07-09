@@ -113,6 +113,8 @@ AUTH_USER_MODEL = "users.User"
 LOGIN_REDIRECT_URL = "users:redirect"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-url
 LOGIN_URL = "cas_server:login"
+# https://docs.djangoproject.com/en/3.0/ref/settings/#logout-redirect-url
+LOGOUT_REDIRECT_URL = LOGIN_URL
 
 # PASSWORDS
 # ------------------------------------------------------------------------------
@@ -148,6 +150,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.common.BrokenLinkEmailsMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "cdsso.contrib.register.middleware.UserRegistrationConfirmationMiddleware"
 ]
 
 # STATIC
@@ -306,8 +309,6 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_ADAPTER = "cdsso.users.adapters.AccountAdapter"
-# https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = "https://codedevils.org/accounts/signup"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
