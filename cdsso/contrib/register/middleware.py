@@ -19,7 +19,7 @@ class UserRegistrationConfirmationMiddleware:
         response = self.get_response(request)
 
         # this will stop any static pages (i.e. css or js files) from being redirected
-        reg_path_regex = re.compile('.+\.\w+', re.IGNORECASE)
+        reg_path_regex = re.compile('.+\.\w+', re.IGNORECASE)  # noqa W605
 
         # only run through middleware if the user is authenticated, is not already going to the
         # student registration page, and a file is not being loaded
