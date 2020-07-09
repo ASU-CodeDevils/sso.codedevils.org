@@ -1,5 +1,6 @@
 import pytest
 from datetime import datetime
+
 from django.test import RequestFactory
 
 from cdsso.users.api.views import UserViewSet
@@ -7,6 +8,7 @@ from cdsso.users.models import User
 
 pytestmark = pytest.mark.django_db
 DATE_FORMAT = "%Y-%m-%dT%H:%M:%S.%fZ"
+
 
 class TestUserViewSet:
     def test_get_queryset(self, user: User, rf: RequestFactory):
