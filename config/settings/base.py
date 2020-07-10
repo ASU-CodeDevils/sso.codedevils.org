@@ -354,6 +354,16 @@ DRF_YASG_DESCRIPTION = "CodeDevils identity and user management sytem"
 DRF_YASG_TERMS_OF_SERVICE = "https://www.asu.edu/aad/manuals/acd/acd125.html"
 DRF_YASG_CONTACT_EMAIL = "webmaster@codedevils.org"
 DRF_YASG_LICENSE = "BSD License"
+# https://drf-yasg.readthedocs.io/en/stable/security.html#describing-authentication-schemes
+SWAGGER_SETTINGS = {
+    "SECURITY_DEFINITIONS": {
+        "Token": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}
 
 # CD SSO-specific settings
 # -------------------------------------------------------------------------------
