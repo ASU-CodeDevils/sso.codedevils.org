@@ -5,7 +5,7 @@ from rest_framework.mixins import (
     CreateModelMixin,
     ListModelMixin,
     RetrieveModelMixin,
-    UpdateModelMixin
+    UpdateModelMixin,
 )
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet

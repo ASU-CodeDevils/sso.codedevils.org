@@ -15,9 +15,9 @@ framework.
 """
 import os
 import sys
-from pathlib2 import Path
 
 from django.core.wsgi import get_wsgi_application
+from pathlib2 import Path
 
 # This allows easy placement of apps within the interior
 # cdsso directory.

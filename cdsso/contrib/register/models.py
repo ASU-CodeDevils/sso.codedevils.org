@@ -47,7 +47,7 @@ class StudentRegistration(models.Model):
         verbose_name_plural = _("Student Registration")
 
     def __str__(self):
-        return f"{self.user.name} [done: {self.is_registered()}]"
+        return f"{self.user.name} [done: {self.completed_registration()}]"
 
     def completed_registration(self):
         return self.slack_registered and self.sds_registered

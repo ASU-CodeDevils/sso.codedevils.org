@@ -1,5 +1,5 @@
-weblogin.codedevils.org
-==============
+cdsso.codedevils.org
+====================
 
 Identity Access Manager (IAM) user weblogin for CodeDevils, offering CAS 3.0 protocol to log
 users into CodeDevils applications.
@@ -20,6 +20,9 @@ Website Status
 Production
 ^^^^^^^^^^
 
+.. image:: https://travis-ci.com/ASU-CodeDevils/cdsso.svg?token=FhsGC7ZUMb7rskmp3jDy&branch=master
+    :target: https://travis-ci.com/github/ASU-CodeDevils/cdsso
+    :alt: Build
 .. image:: https://img.shields.io/uptimerobot/status/m784417521-1b9dcabb76b05ae6fdc099b3
     :target: https://sso.codedevils.org
     :alt: Status (prod)
@@ -30,6 +33,9 @@ Production
 QA
 ^^
 
+.. image:: https://travis-ci.com/ASU-CodeDevils/cdsso.svg?token=FhsGC7ZUMb7rskmp3jDy&branch=dev
+    :target: https://travis-ci.com/github/ASU-CodeDevils/cdsso
+    :alt: Build
 .. image:: https://img.shields.io/uptimerobot/status/m784417527-57e543ec1e2e0752a9ba2228
     :target: https://qa-sso.codedevils.org
     :alt: Status (QA)
@@ -101,7 +107,7 @@ To run a celery worker:
 
 .. code-block:: bash
 
-    cd codedevils_org
+    cd cdsso
     celery -A config.celery_app worker -l info
 
 Please note: For Celery's import magic to work, it is important *where* the celery commands are run. If you are in the same folder with *manage.py*, you should be right.

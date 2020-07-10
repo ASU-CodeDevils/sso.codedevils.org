@@ -1,5 +1,6 @@
 """General utility to grab information from restcountries."""
 import logging
+
 import requests
 
 log = logging.getLogger("")

@@ -4,11 +4,7 @@ from django.test import RequestFactory
 
 from cdsso.users.models import User
 from cdsso.users.tests.factories import UserFactory
-from cdsso.users.views import (
-    UserRedirectView,
-    UserUpdateView,
-    user_detail_view,
-)
+from cdsso.users.views import UserRedirectView, UserUpdateView, user_detail_view
 
 pytestmark = pytest.mark.django_db
 

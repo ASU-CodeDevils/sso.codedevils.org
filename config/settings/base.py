@@ -1,10 +1,9 @@
 """
 Base settings to build other settings files upon.
 """
+import environ
 from django.utils.translation import ugettext_lazy as _
 from pathlib2 import Path
-
-import environ
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # cdsso/
@@ -83,6 +82,7 @@ THIRD_PARTY_APPS = [
     "cas_server",
     "django_celery_beat",
     "drf_yasg",
+    "graphene_django",
     "rest_framework",
     "rest_framework.authtoken",
 ]
@@ -354,6 +354,23 @@ DRF_YASG_DESCRIPTION = "CodeDevils identity and user management sytem"
 DRF_YASG_TERMS_OF_SERVICE = "https://www.asu.edu/aad/manuals/acd/acd125.html"
 DRF_YASG_CONTACT_EMAIL = "webmaster@codedevils.org"
 DRF_YASG_LICENSE = "BSD License"
+# https://drf-yasg.readthedocs.io/en/stable/security.html#describing-authentication-schemes
+SWAGGER_SETTINGS = {
+    "SECURITY_DEFINITIONS": {
+        "Token": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}
+
+# graphene
+# https://docs.graphene-python.org/projects/django/en/latest/
+# -------------------------------------------------------------------------------
+GRAPHENE = {
+    "SCHEMA": "config.graphene.schema.schema"
+}
 
 # CD SSO-specific settings
 # -------------------------------------------------------------------------------
