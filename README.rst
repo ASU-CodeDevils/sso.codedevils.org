@@ -1,5 +1,5 @@
-cdsso.codedevils.org
-====================
+sso.codedevils.org
+==================
 
 Identity Access Manager (IAM) user weblogin for CodeDevils, offering CAS 3.0 protocol to log
 users into CodeDevils applications.
@@ -7,7 +7,7 @@ users into CodeDevils applications.
 .. image:: https://travis-ci.com/ASU-CodeDevils/cdsso.svg?token=FhsGC7ZUMb7rskmp3jDy&branch=master
     :target: https://travis-ci.com/ASU-CodeDevils/cdsso
     :alt: Build
-.. image:: https://codecov.io/gh/ASU-CodeDevils/codedevils_org/branch/master/graph/badge.svg?token=THP1UWQI9G
+.. image:: https://codecov.io/gh/ASU-CodeDevils/cdsso/branch/master/graph/badge.svg?token=THP1UWQI9G
     :target: https://codecov.io/gh/ASU-CodeDevils/cdsso
     :alt: Codecov
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
