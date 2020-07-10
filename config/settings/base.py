@@ -83,6 +83,7 @@ THIRD_PARTY_APPS = [
     "cas_server",
     "django_celery_beat",
     "drf_yasg",
+    "graphene_django",
     "rest_framework",
     "rest_framework.authtoken",
 ]
@@ -363,6 +364,13 @@ SWAGGER_SETTINGS = {
             "in": "header"
         }
     }
+}
+
+# graphene
+# https://docs.graphene-python.org/projects/django/en/latest/
+# -------------------------------------------------------------------------------
+GRAPHENE = {
+    "SCHEMA": "config.graphene.schema.schema"
 }
 
 # CD SSO-specific settings
