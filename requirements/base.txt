@@ -23,6 +23,7 @@ django-redis==4.11.0  # https://github.com/jazzband/django-redis
 
 # Django rest framework
 djangorestframework==3.11.0  # https://github.com/encode/django-rest-framework
+graphene-django==2.11.0  # https://github.com/graphql-python/graphene-django
 
 # Custom
 # ------------------------------------------------------------------------------
