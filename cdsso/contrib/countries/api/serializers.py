@@ -10,7 +10,7 @@ class CountrySerializer(serializers.ModelSerializer):
         model = Country
         fields = "__all__"
         description = "Countries and their identifiers"
-    
+
     def get_numeric_code(self, obj: Country):
         """Returns the 3-digit numeric code."""
         return obj.get_numeric_code()

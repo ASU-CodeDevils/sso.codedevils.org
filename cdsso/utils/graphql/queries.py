@@ -1,8 +1,8 @@
 import json
 import logging
-import requests
 from typing import Dict, Tuple
 
+import requests
 from django.conf import settings
 
 logger = logging.getLogger()

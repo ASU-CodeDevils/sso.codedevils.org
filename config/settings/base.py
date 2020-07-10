@@ -1,10 +1,9 @@
 """
 Base settings to build other settings files upon.
 """
+import environ
 from django.utils.translation import ugettext_lazy as _
 from pathlib2 import Path
-
-import environ
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # cdsso/

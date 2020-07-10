@@ -1,13 +1,11 @@
 """Defines the GraphQL schema for custom URLs."""
-
 import graphene
-
 from graphene import Node
 from graphene_django.filter import DjangoFilterConnectionField
 from graphene_django.rest_framework.mutation import SerializerMutation
 from graphene_django.types import DjangoObjectType
 
-from cdsso.users.api.serializers import UserSerializer, USER_EXCLUDE_FIELDS
+from cdsso.users.api.serializers import USER_EXCLUDE_FIELDS, UserSerializer
 from cdsso.users.models import User
 
 

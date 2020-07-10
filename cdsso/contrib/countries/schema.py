@@ -1,7 +1,5 @@
 """Defines the GraphQL schema for custom URLs."""
-
 import graphene
-
 from graphene import Node
 from graphene_django.filter import DjangoFilterConnectionField
 from graphene_django.types import DjangoObjectType
