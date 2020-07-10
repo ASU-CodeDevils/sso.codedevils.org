@@ -7,6 +7,9 @@ users into CodeDevils applications.
 .. image:: https://travis-ci.com/ASU-CodeDevils/cdsso.svg?token=FhsGC7ZUMb7rskmp3jDy&branch=master
     :target: https://travis-ci.com/ASU-CodeDevils/cdsso
     :alt: Build
+.. image:: https://codecov.io/gh/ASU-CodeDevils/codedevils_org/branch/master/graph/badge.svg?token=THP1UWQI9G
+    :target: https://codecov.io/gh/ASU-CodeDevils/cdsso
+    :alt: Codecov
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :target: https://opensource.org/licenses/MIT
     :alt: License
