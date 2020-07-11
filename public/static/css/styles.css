@@ -8266,7 +8266,9 @@ section, .section {
     @media (min-width: 768px) {
       section [class^='container'], .section [class^='container'] {
         padding-top: 90px;
-        padding-bottom: 90px; } }
+        padding-bottom: 90px; 
+      } 
+      }
   section .container-wide, .section .container-wide {
     overflow-x: hidden; }
     section .container-wide .row, .section .container-wide .row {

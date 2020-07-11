@@ -1,25 +1,25 @@
 {% extends '_index/base.html' %}
-{% load static %}
+{% load i18n static %}
 {% block header %}{% endblock header %}
 {% block content %}
 		<div class="container-fluid">
 			<div class="row align-items-center">
 				<div class="col-md-6 col-lg-7 fullscreen-md d-flex justify-content-center align-items-center overlay gradient gradient-53 alpha-8 image-background cover" style="background-image:url({% static 'img/bg/code-grid.png' %})">
 					<div class="content">
-						<h2 class="display-4 display-md-3 color-1 mt-4 mt-md-0">Welcome to
+						<h2 class="display-4 display-md-3 color-1 mt-4 mt-md-0">{% trans 'Welcome to' %}
 							<span class="bold d-block">CodeDevils</span>
 						</h2>
-						<p class="lead color-1 alpha-5">Login to your account</p>
+						<p class="lead color-1 alpha-5">{% trans 'Login to your account' %}</p>
 					</div>
 				</div>
 				<div class="col-md-5 col-lg-4 mx-auto">
 					<div class="login-form mt-5 mt-md-0">
-						<img src="{% static 'img/logo.png' %}" class="logo img-responsive mb-4 mt-2 mb-md-6" alt="">
+						<img src="{% static 'img/logo.png' %}" class="logo img-responsive mb-4 mt-2 mb-md-6" alt="CodeDevils">
 						{% if auto_submit %}<noscript>{% endif %}
-                        <h1 class="color-5 bold mt-md-0 mb-0">Login</h1>
+                        <h1 class="color-5 bold mt-md-0 mb-0">{% trans 'Login' %}</h1>
 						{% if auto_submit %}</noscript>{% endif %}
-                        <p class="color-2 mt-4 md-6">Don't have an account yet?
-							<a href="{% url 'account_signup' %}" class="accent bold">Create it here</a>
+                        <p class="color-2 mt-4 md-6">{% trans "Don't have an account yet?" %}
+							<a href="{% url 'account_signup' %}" class="accent bold">{% trans 'Create it here' %}</a>
 						</p>
 						<form class="cozy" id="login-form" method="post" data-validate-on="submit" novalidate>
 							{% for error in form.non_field_errors %}
@@ -29,23 +29,23 @@
 								</div>
 							{% endfor %}                     
 							{% csrf_token %}
-							<label class="control-label bold small text-uppercase color-2">Username</label>
+							<label class="control-label bold small text-uppercase color-2">{% trans 'Username' %}</label>
 							<div class="form-group has-icon">
-								<input type="text" id="id_username" name="username" class="form-control form-control-rounded" placeholder="Username" required>
+								<input type="text" id="id_username" name="username" class="form-control form-control-rounded" placeholder="{% trans 'Username' %}" required>
 								<i class="icon fas fa-user"></i>
 							</div>
-							<label class="control-label bold small text-uppercase color-2">Password</label>
+							<label class="control-label bold small text-uppercase color-2">{% trans 'Password' %}</label>
 							<div class="form-group has-icon">
-								<input type="password" id="id_password" name="password" class="form-control form-control-rounded" placeholder="Password" required>
+								<input type="password" id="id_password" name="password" class="form-control form-control-rounded" placeholder="{% trans 'Password' %}" required>
 								<i class="icon fas fa-lock"></i>
 							</div>
 							{% include 'cas/form.html' %}
 							<div class="form-group d-flex align-items-center justify-content-between">
-								<a href="{% url 'account_reset_password' %}" class="text-warning small">Forgot your password?</a>
+								<a href="{% url 'account_reset_password' %}" class="text-warning small">{% trans 'Forgot your password?' %}</a>
 								<div class="ajax-button">
 									<div class="fas fa-check btn-status text-success success"></div>
 									<div class="fas fa-times btn-status text-danger failed"></div>
-									<button type="submit" value="login" class="btn btn-accent btn-rounded">Login
+									<button type="submit" value="login" class="btn btn-accent btn-rounded">{% trans 'Login' %}
 										<i class="fas fa-long-arrow-alt-right ml-2"></i>
 									</button>
 								</div>

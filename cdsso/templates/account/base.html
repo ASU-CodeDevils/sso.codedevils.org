@@ -1,4 +1,15 @@
-{% extends "_index/base.html" %}
+{% extends "_index/base.html" %} 
+{% block extrahead %}
+    <style>
+        @media (max-width: 767px) {
+            .thebox {
+                display: block !important;
+                margin-top: 40px !important;
+            }
+        }
+        @media (max-width: )
+    </style>
+{% endblock extrahead %}
 {% load static %}
 
 {% block header %}
@@ -15,11 +26,15 @@
 {% endblock header %}
 
 {% block content %}
-<div class="row">
-  <div class="col-md-6 offset-md-3">
-    {% block inner %}{% endblock %}
-  </div>
-</div>
+<section class="section mt-7n">
+    <div class="container bring-to-front pt-0">
+		<div class="row align-items-center gap-y thebox">
+			<div class="shadow bg-1 p-4 rounded">
+                {% block inner %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block create_account_footer %}{% endblock create_account_footer %}
