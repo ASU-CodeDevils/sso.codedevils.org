@@ -85,6 +85,7 @@ THIRD_PARTY_APPS = [
     "graphene_django",
     "rest_framework",
     "rest_framework.authtoken",
+    "rosetta"
 ]
 
 LOCAL_APPS = [

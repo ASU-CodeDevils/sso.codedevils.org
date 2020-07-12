@@ -32,3 +32,4 @@ graphene-django==2.11.0  # https://github.com/graphql-python/graphene-django
 django-cas-server==1.1.0  # https://github.com/nitmir/django-cas-server
 django-localflavor==2.2  # https://django-localflavor.readthedocs.io/en/latest/
 drf-yasg==1.17.1  # https://drf-yasg.readthedocs.io/en/stable/index.html
+django-rosetta==0.9.4  # https://django-rosetta.readthedocs.io/index.html
