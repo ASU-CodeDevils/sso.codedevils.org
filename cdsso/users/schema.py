@@ -1,11 +1,13 @@
 """Defines the GraphQL schema for custom URLs."""
 import graphene
+from django.contrib.auth.models import Group
 from graphene import Node
 from graphene_django.filter import DjangoFilterConnectionField
 from graphene_django.rest_framework.mutation import SerializerMutation
 from graphene_django.types import DjangoObjectType
+from graphene_django_subscriptions.subscription import Subscription
 
-from cdsso.users.api.serializers import USER_EXCLUDE_FIELDS, UserSerializer
+from cdsso.users.api.serializers import GroupSerializer, UserSerializer, USER_EXCLUDE_FIELDS
 from cdsso.users.models import User
 
 
@@ -40,6 +42,30 @@ class UserSerializerMutation(SerializerMutation):
         description = "Change/update user information"
 
 
+class UserSubscription(Subscription):
+    class Meta:
+        serializer_class = UserSerializer
+        stream = "users"
+        description = "User subscription"
+
+
+class GroupNode(DjangoObjectType):
+    """
+    User groups.
+    """
+    class Meta:
+        model = Group
+        interfaces = (Node,)
+        description = "User group nodes"
+
+
+class GroupSubscription(Subscription):
+    class Meta:
+        serializer_class = GroupSerializer
+        stream = "groups"
+        description = "Group Subscription"
+
+
 class Query(graphene.ObjectType):
     user = Node.Field(UserNode)
     users = DjangoFilterConnectionField(UserNode)
@@ -47,3 +73,8 @@ class Query(graphene.ObjectType):
 
 class Mutation(graphene.ObjectType):
     update_user = UserSerializerMutation.Field()
+
+
+class Subscriptions(graphene.ObjectType):
+    user_subscription = UserSubscription.Field()
+    group_subscription = GroupSubscription.Field()

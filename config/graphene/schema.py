@@ -10,9 +10,9 @@ from config.graphene import auth as auth_schema
 
 class Query(
         auth_schema.Query,
-        user_schema.Query,
         countries_schema.Query,
         register_schema.Query,
+        user_schema.Query,
         graphene.ObjectType
 ):
     debug = graphene.Field(DjangoDebug, name="_debug")
@@ -25,4 +25,14 @@ class Mutation(
     debug = graphene.Field(DjangoDebug, name="_debug")
 
 
-schema = graphene.Schema(query=Query, mutation=Mutation)
+class Subscription(
+        user_schema.Subscriptions,
+        graphene.ObjectType,
+):
+    debug = graphene.Field(DjangoDebug, name="_debug")
+
+    class Meta:
+        description = "User and group subscriptions"
+
+
+schema = graphene.Schema(query=Query, mutation=Mutation, subscription=Subscription)

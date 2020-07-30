@@ -80,6 +80,8 @@ THIRD_PARTY_APPS = [
     "allauth.socialaccount",
     "allauth.socialaccount.providers.keycloak",
     "cas_server",
+    "channels",
+    "channels_api",
     "django_celery_beat",
     "drf_yasg",
     "graphene_django",
@@ -370,7 +372,19 @@ SWAGGER_SETTINGS = {
 # https://docs.graphene-python.org/projects/django/en/latest/
 # -------------------------------------------------------------------------------
 GRAPHENE = {
-    "SCHEMA": "config.graphene.schema.schema"
+    "SCHEMA": "config.graphene.schema.schema",
+    "SCHEMA_INDENT": 4,
+    "MIDDLEWARE": [
+        "graphene_django_subscriptions.SubscriptionMiddleware",
+        "graphene_django_subscriptions.depromise_subscription"
+    ]
+}
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgiref.inmemory.ChannelLayer",
+        "ROUTING": "config.urls.project_routing",  # Our project routing
+    },
 }
 
 # CD SSO-specific settings
