@@ -13,12 +13,15 @@ User = get_user_model()
 logger = logging.getLogger()
 
 
+@receiver(post_save, sender=User)
 def start_registration_workflow(instance: User):
     """
     Starts the registration workflow by creating a corresponding StudentRegistration entry for this user. Creating
     the model will automatically start the workflow for when the StudentRegistration saves.
     """
-    StudentRegistration.objects.get_or_create(user=instance)
+    _, created = StudentRegistration.objects.get_or_create(user=instance)
+    if created:
+        logger.info(f"User registration workflow initiated for {instance.name} [{instance.id}]")
 
 
 @receiver(post_save, sender=User)
