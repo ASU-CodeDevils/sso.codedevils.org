@@ -9,6 +9,7 @@ from cdsso.contrib.register.models import StudentRegistration
 
 class StudentRegistrationNode(DjangoObjectType):
     """Provides links to all CodeDevils custom URLs."""
+
     class Meta:
         model = StudentRegistration
         interfaces = (Node,)
@@ -16,7 +17,7 @@ class StudentRegistrationNode(DjangoObjectType):
         filter_fields = {
             "slack_registered": ["exact"],
             "sds_registered": ["exact"],
-            "user__username": ["exact"]
+            "user__username": ["exact"],
         }
 
 

@@ -24,7 +24,11 @@ def cas_clean_sessions():
 def cas_clean_tickets():
     """Cleans CAS service, proxy, and proxy granting tickets."""
     models.User.clean_old_entries()
-    for ticket_class in [models.ServiceTicket, models.ProxyTicket, models.ProxyGrantingTicket]:
+    for ticket_class in [
+        models.ServiceTicket,
+        models.ProxyTicket,
+        models.ProxyGrantingTicket,
+    ]:
         ticket_class.clean_old_entries()
 
 

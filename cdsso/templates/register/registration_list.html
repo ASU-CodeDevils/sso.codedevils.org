@@ -1,0 +1,173 @@
+<!--TODO include links to various CD resources here-->
+{% extends "account/base.html" %}
+{% load crispy_forms_tags i18n static %}
+{% block 
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}"/>
+{% endblock extrahead %}
+{% block head_title %}{% trans "Registrations" %}{% endblock head_title %}
+{% block content %}
+<section class="p-4">
+<div class="row">
+    <div class="col-md-2">
+        <input type="text" id="nameInput" onkeyup="filterByColumn(1, 'nameInput')" placeholder="Search for names..">
+        <input type="text" id="emailInput" onkeyup="filterByColumn(2, 'emailInput')" placeholder="Search for emails..">
+        <button id="slackBtn" type="button" class="btn btn-primary border-0 bg-3 mb-2 w-100 text-center">Copy Slack Emails</button>
+        <button id="sdsBtn" type="button" class="btn btn-primary border-0 bg-3 mb-2 w-100 text-center">Copy SDS Emails</button>
+    </div>
+    <div class="col-md-10">
+        <table id="registerTable" class="table table-hover table-responsive-lg">
+        <thead>
+            <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col" class="text-center">Slack</th>
+            <th scope="col" class="text-center">SunDevilSync</th>
+            <th scope="col">Date Registered</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for registration in student_registrations %}
+                    <tr class="record">
+                        <td>{{ registration.user.id }}</td>
+                        <td>{{ registration.user.name }}</td>
+                        <td>{{ registration.user.email }}</td>
+                        <td class="text-center" value="{{ registration.slack_registered }}">
+                            <i class="fa {% if registration.slack_registered %}fa-check-circle text-success{% else %}fa-times-circle text-danger{% endif %}" aria-hidden="true"></i>
+                        </td>
+                        <td class="text-center" value="{{ registration.sds_registered }}">
+                            <i class="fa {% if registration.sds_registered %}fa-check-circle text-success{% else %}fa-times-circle text-danger{% endif %}" aria-hidden="true"></i>
+                        </td>
+                        <td>{{ registration.date_registered }}</td>
+                    </tr>
+                {% endfor %}
+        </tbody>
+        </table>
+        {% if page_obj and page_obj.has_next or page_obj.has_previous %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+        {% endif %}
+        <!-- Slack modal -->
+        <div id="slackModal" class="modal">
+            <div class="modal-content">
+                <span id="slackClose" class="close">&times;</span>
+                <span id="slackInstructionsLink" class="small instructionsLink">Show instructions</span>
+                <div id="slackInstructions" class="instructions">
+                    <p>Follow the below instructions to add new members to Slack:</p>
+                    <hr>
+                    <!-- 1. Open slack -->
+                    <div class="row mb-2">
+                        <div class="col-1">
+                            <strong>1</strong>
+                        </div>
+                        <div class="col-11">
+                            Open Slack using the app or the <a href="https://codedevils.slack.com" target="_blank">website</a>
+                        </div>
+                    </div>
+                    <!-- 2. Navigate to the add section -->
+                    <div class="row mb-2">
+                        <div class="col-md-1">
+                            <strong>2</strong>
+                        </div>
+                        <div class="col-md-11">
+                            Go to the top-left, select <strong>CodeDevils</strong> and from the drop-down select
+                            <em>Invite People to CodeDevils</em>:
+                            <br>
+                            <img class="w-50" alt="Invite people to Slack" src="{% static 'img/register/slack/1.png' %}">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-1">
+                            <strong>3</strong>
+                        </div>
+                        <div class="col-md-11">
+                            From there select either <em>Members</em> for students with an ASU email, or <em>Multi-channel
+                            Guests</em> for alumni.
+                            <br>
+                            <img class="w-50" alt="Add members" src="{% static 'img/register/slack/2.png' %}">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-1">
+                            <strong>4</strong>
+                        </div>
+                        <div class="col-md-11">
+                            Select <em>add many at once</em>:
+                            <br>
+                            <img class="w-50" alt="Select multiple users" src="{% static 'img/register/slack/3.png' %}">
+                            <br>
+                            And enter the emails separated by commas:
+                            <br>
+                            <img class="w-50" alt="Enter emails" src="{% static 'img/register/slack/4.png' %}">
+                            <br>
+                            You can copy the emails below to this text field.
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+
+                <!-- Text fields -->
+                <p>Copy each of these fields into the corresponding area on Slack (see instructions above for details):</p>
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <label for="textSlack"><strong>Student</strong></label>
+                        <textarea class="p-3 w-100" id="textSlack" name="textSlack" rows="8" cols="50">{{ slack_student_emails }}</textarea> 
+                        <div class="row">
+                            <div class="col-4 pr-0">
+                                <button id="slackCopyStudent" type="button" class="btn btn-secondary w-100 border-0 modalButton">Copy</button>
+                            </div>
+                            <div class="col-8">
+                                <button id="slackConfirmStudent" type="button" class="btn btn-secondary w-100 border-0 modalButton">Confirm Students</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col-md-6">
+                        <label for="textSlackAlumni"><strong>Alumni</strong></label>
+                        <textarea class="p-3 w-100" id="textSlackAlumni" name="textSlackAlumni" rows="8" cols="50">{{ slack_alumni_emails }}</textarea> 
+                        <div class="row">
+                            <div class="col-4 pr-0">
+                                <button id="slackCopyAlumni" type="button" class="btn btn-secondary modalButton">Copy</button>
+                            </div>
+                            <div class="col-8">
+                                <button id="slackConfirmAlumni" type="button" class="btn btn-secondary modalButton">Confirm Alumni</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- buttons -->
+                <button id="slackCancel" type="button" class="btn btn-secondary border-0 mt-4">Cancel</button>
+
+            </div>
+        </div>
+        <!-- SunDevilSync modal -->
+        <div id="sdsModal" class="modal">
+            <div class="modal-content">
+                <span id="sdsClose" class="close">&times;</span>
+                <p>This is the SDS modal</p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock %}
+{% block bottom_content %}
+    <script src="{% static 'js/register.js' %}"></script>
+{% endblock bottom_content %}

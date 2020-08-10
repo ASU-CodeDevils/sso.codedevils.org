@@ -7,16 +7,37 @@ class Country(models.Model):
     Defines a country and its locale information. All country information is pulled from
     the restcountries.eu API and is periodically updated. See more info at https://restcountries.eu/
     """
-    name = models.CharField(db_column="Name", max_length=80, blank=False, null=False, verbose_name=_("Name"))
-    native_name = models.CharField(db_column="NativeName", max_length=80, blank=False, null=False,
-                                   verbose_name=_("Native Name"))
-    alpha2_code = models.CharField(db_column="Alpha2Code", max_length=2, blank=True, null=True,
-                                   verbose_name=_("Alpha2 Code"))
-    alpha3_code = models.CharField(db_column="Alpha3Code", max_length=3, blank=True, null=True,
-                                   verbose_name=_("Alpha3 Code"))
-    numeric_code = models.PositiveSmallIntegerField(db_column="NumericCode", blank=True, null=True,
-                                                    verbose_name=_("Numeric code"))
-    flag = models.URLField(db_column="Flag", blank=True, null=True, verbose_name=_("Flag"))
+
+    name = models.CharField(
+        db_column="Name", max_length=80, blank=False, null=False, verbose_name=_("Name")
+    )
+    native_name = models.CharField(
+        db_column="NativeName",
+        max_length=80,
+        blank=False,
+        null=False,
+        verbose_name=_("Native Name"),
+    )
+    alpha2_code = models.CharField(
+        db_column="Alpha2Code",
+        max_length=2,
+        blank=True,
+        null=True,
+        verbose_name=_("Alpha2 Code"),
+    )
+    alpha3_code = models.CharField(
+        db_column="Alpha3Code",
+        max_length=3,
+        blank=True,
+        null=True,
+        verbose_name=_("Alpha3 Code"),
+    )
+    numeric_code = models.PositiveSmallIntegerField(
+        db_column="NumericCode", blank=True, null=True, verbose_name=_("Numeric code")
+    )
+    flag = models.URLField(
+        db_column="Flag", blank=True, null=True, verbose_name=_("Flag")
+    )
 
     def get_numeric_code(self):
         """Returns the 3-digit numeric code."""

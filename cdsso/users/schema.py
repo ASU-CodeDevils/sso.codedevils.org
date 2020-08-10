@@ -14,6 +14,7 @@ class UserNode(DjangoObjectType):
     User information who are not marked anonymous. The actualCount will have the total number of members,
     and the resulting data will be non-anonymous users.
     """
+
     class Meta:
         model = User
         interfaces = (Node,)

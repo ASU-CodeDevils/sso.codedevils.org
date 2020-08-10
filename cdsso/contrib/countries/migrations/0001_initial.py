@@ -7,25 +7,75 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Country',
+            name="Country",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(db_column='Name', max_length=80, verbose_name='Name')),
-                ('native_name', models.CharField(db_column='NativeName', max_length=80, verbose_name='Native Name')),
-                ('alpha2_code', models.CharField(blank=True, db_column='Alpha2Code', max_length=2, null=True, verbose_name='Alpha2 Code')),
-                ('alpha3_code', models.CharField(blank=True, db_column='Alpha3Code', max_length=3, null=True, verbose_name='Alpha3 Code')),
-                ('numeric_code', models.PositiveSmallIntegerField(blank=True, db_column='NumericCode', null=True, verbose_name='Numeric code')),
-                ('flag', models.URLField(blank=True, db_column='Flag', null=True, verbose_name='Flag')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(
+                        db_column="Name", max_length=80, verbose_name="Name"
+                    ),
+                ),
+                (
+                    "native_name",
+                    models.CharField(
+                        db_column="NativeName",
+                        max_length=80,
+                        verbose_name="Native Name",
+                    ),
+                ),
+                (
+                    "alpha2_code",
+                    models.CharField(
+                        blank=True,
+                        db_column="Alpha2Code",
+                        max_length=2,
+                        null=True,
+                        verbose_name="Alpha2 Code",
+                    ),
+                ),
+                (
+                    "alpha3_code",
+                    models.CharField(
+                        blank=True,
+                        db_column="Alpha3Code",
+                        max_length=3,
+                        null=True,
+                        verbose_name="Alpha3 Code",
+                    ),
+                ),
+                (
+                    "numeric_code",
+                    models.PositiveSmallIntegerField(
+                        blank=True,
+                        db_column="NumericCode",
+                        null=True,
+                        verbose_name="Numeric code",
+                    ),
+                ),
+                (
+                    "flag",
+                    models.URLField(
+                        blank=True, db_column="Flag", null=True, verbose_name="Flag"
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Country',
-                'verbose_name_plural': 'Countries',
-                'ordering': ['name'],
+                "verbose_name": "Country",
+                "verbose_name_plural": "Countries",
+                "ordering": ["name"],
             },
         ),
     ]

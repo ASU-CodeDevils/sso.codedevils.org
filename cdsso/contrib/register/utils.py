@@ -7,7 +7,9 @@ def email_user_complete_registration(email: str) -> None:
     send_mail(
         subject="Welcome to CodeDevils",
         message="You've successfully signed up with CodeDevils! Login to https://codedevils.org to find out how "
-                "being a member benefits you!",
-        from_email=getattr(settings, "DEFAULT_FROM_EMAIL", "CodeDevils <donotreply@codedevils.org>"),
-        recipient_list=[email]
+        "being a member benefits you!",
+        from_email=getattr(
+            settings, "DEFAULT_FROM_EMAIL", "CodeDevils <donotreply@codedevils.org>"
+        ),
+        recipient_list=[email],
     )

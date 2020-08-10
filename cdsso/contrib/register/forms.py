@@ -14,22 +14,34 @@ class StudentRegistrationForm(forms.UserCreationForm):
             "invalid_email": _("Please enter a valid email address"),
             "duplicate_email": _("This email has already been taken."),
             "student_email_required": _("Please enter your ASU email."),
-            "alumni_email_required": _("You are applying as an alumni and cannot use your student email"),
-            "student_email_asurite": _("Please enter your ASURITE email (<ASURITE>@asu.edu)")
+            "alumni_email_required": _(
+                "You are applying as an alumni and cannot use your student email"
+            ),
+            "student_email_asurite": _(
+                "Please enter your ASURITE email (<ASURITE>@asu.edu)"
+            ),
         }
     )
 
     class Meta(forms.UserCreationForm.Meta):
         model = User
-        fields = ["username", "password1", "password2", "email", "anonymous", "receive_notifications", "is_alumni"]
+        fields = [
+            "username",
+            "password1",
+            "password2",
+            "email",
+            "anonymous",
+            "receive_notifications",
+            "is_alumni",
+        ]
         labels = {"is_alumni": "Alumni"}
         help_texts = {
             "receive_notifications": "We will send you emails about events, exciting new projects and opportunities, "
-                                     "and different ways to get involved in CodeDevils",
+            "and different ways to get involved in CodeDevils",
             "is_alumni": "Check here if you are an alumni. We will get you in contact with an Officer to help set "
-                         "you up",
+            "you up",
             "anonymous": "You can opt to be anonymous, which means we will block your information publicly and "
-                         "limit it between different CodeDevils products."
+            "limit it between different CodeDevils products.",
         }
 
     def clean_email(self):
