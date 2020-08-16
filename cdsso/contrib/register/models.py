@@ -24,18 +24,7 @@ class NotCompletedRegistrationManager(models.Manager):
         return queryset
 
 
-class StudentRegistration(models.Model):
-    """Defines the steps required for registering a student."""
-
-    user = models.OneToOneField(
-        User,
-        db_column="UserId",
-        on_delete=models.CASCADE,
-        blank=False,
-        verbose_name=_("User"),
-        help_text=_("This user's progress in the registration process."),
-    )
-
+class RegistrationModelAbstract(models.Model):
     # individual steps required to fully register
     slack_registered = models.BooleanField(
         db_column="SlackRegistered",
@@ -53,6 +42,22 @@ class StudentRegistration(models.Model):
             "The user has been registered on SunDevilSync. This is True by "
             "default for alumni."
         ),
+    )
+
+    class Meta:
+        abstract = True
+
+
+class StudentRegistration(RegistrationModelAbstract):
+    """Defines the steps required for registering a student."""
+
+    user = models.OneToOneField(
+        User,
+        db_column="UserId",
+        on_delete=models.CASCADE,
+        blank=False,
+        verbose_name=_("User"),
+        help_text=_("This user's progress in the registration process."),
     )
     date_registered = models.DateTimeField(
         db_column="DateRegistered",
@@ -72,6 +77,14 @@ class StudentRegistration(models.Model):
         ordering = ("slack_registered", "sds_registered", "-date_registered")
         get_latest_by = "-date_registered"
 
+    def __init__(self, *args, **kwargs):
+        """
+        Overriden to check if any of the fields have immediately changed. These are useful for making sure multiple
+        notifications aren't sent for the same step of the registration process.
+        """
+        self._sds_notified = self.sds_notified
+        super(StudentRegistration, self).__init__(*args, **kwargs)
+
     def __str__(self):
         return f"{self.user.name} [done: {self.completed_registration()}]"
 
@@ -84,3 +97,19 @@ class StudentRegistration(models.Model):
             self.sds_registered = True
         self._admin_view_change = admin_view_change
         super().save(*args, **kwargs)
+
+
+class KnownMember(RegistrationModelAbstract):
+    """
+    Separate listing of known members who exist either in SunDevilSync or Slack but have not created accounts
+    with CodeDevils yet.
+    """
+
+    email = models.EmailField(
+        db_colum="Email", blank=False, null=False, verbose_name=_("Email")
+    )
+
+    class Meta:
+        verbose_name = _("Known Member")
+        verbose_name_plural = _("Known Members")
+        ordering = ("slack_registered", "sds_registered", "email")
