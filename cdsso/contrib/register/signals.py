@@ -20,6 +20,8 @@ def check_known_members(instance: StudentRegistration, **kwargs):
         known_member = KnownMember.objects.get(email__exact=instance.user.email)
         instance.slack_registered = known_member.slack_registered
         instance.sds_registered = known_member.sds_registered
+        instance.user.name = known_member.name
+        instance.user.save()
         known_member.delete()  # delete the known member to save space in the database
     except KnownMember.DoesNotExist:
         pass

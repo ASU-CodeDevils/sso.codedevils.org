@@ -108,6 +108,9 @@ class KnownMember(RegistrationModelAbstract):
     email = models.EmailField(
         db_colum="Email", blank=False, null=False, verbose_name=_("Email")
     )
+    name = models.CharField(
+        db_column="Name", blank=True, max_length=255, verbose_name=_("Name of member")
+    )
 
     class Meta:
         verbose_name = _("Known Member")
