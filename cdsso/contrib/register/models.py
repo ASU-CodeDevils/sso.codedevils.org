@@ -82,8 +82,8 @@ class StudentRegistration(RegistrationModelAbstract):
         Overriden to check if any of the fields have immediately changed. These are useful for making sure multiple
         notifications aren't sent for the same step of the registration process.
         """
-        self._sds_notified = self.sds_notified
-        super(StudentRegistration, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
+        self._sds_notified = self.sds_registered
 
     def __str__(self):
         return f"{self.user.name} [done: {self.completed_registration()}]"
@@ -95,6 +95,7 @@ class StudentRegistration(RegistrationModelAbstract):
         """Sets SDS registration to True if the user is registering as alumni."""
         if self.user.is_alumni and not admin_view_change:
             self.sds_registered = True
+            self._sds_notified = True
         self._admin_view_change = admin_view_change
         super().save(*args, **kwargs)
 
@@ -106,7 +107,7 @@ class KnownMember(RegistrationModelAbstract):
     """
 
     email = models.EmailField(
-        db_colum="Email", blank=False, null=False, verbose_name=_("Email")
+        db_column="Email", blank=False, null=False, verbose_name=_("Email")
     )
     name = models.CharField(
         db_column="Name", blank=True, max_length=255, verbose_name=_("Name of member")

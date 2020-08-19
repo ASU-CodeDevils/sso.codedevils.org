@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from cdsso.contrib.register.models import StudentRegistration
+from cdsso.contrib.register.models import KnownMember, StudentRegistration
 
 
 class StudentRegistrationSerializer(serializers.ModelSerializer):
@@ -14,3 +14,10 @@ class StudentRegistrationSerializer(serializers.ModelSerializer):
     def get_completed(self, obj: StudentRegistration):
         """Whether or not this user has completed the registration process."""
         return obj.completed_registration()
+
+
+class KnownMemberSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = KnownMember
+        fields = "__all__"
+        description = "All known members that have not completed the online registration."

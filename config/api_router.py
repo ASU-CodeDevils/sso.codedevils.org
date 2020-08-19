@@ -7,7 +7,7 @@ from rest_framework.routers import DefaultRouter, SimpleRouter
 from rest_framework.views import APIView
 
 from cdsso.contrib.countries.api.views import CountryViewSet
-from cdsso.contrib.register.api.views import StudentRegistrationViewSet
+from cdsso.contrib.register.api.views import KnownMemberViewSet, StudentRegistrationViewSet
 from cdsso.users.api.views import UserViewSet
 from config.drf import schema_view
 from config.graphene.graphene import private_graphql_view
@@ -18,6 +18,7 @@ else:
     router = SimpleRouter()
 
 router.register("countries", CountryViewSet)
+router.register("known-members", KnownMemberViewSet)
 router.register("registration", StudentRegistrationViewSet)
 router.register("users", UserViewSet)
 

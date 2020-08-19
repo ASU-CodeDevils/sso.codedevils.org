@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-11 17:46+0000\n"
+"POT-Creation-Date: 2020-08-19 04:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,39 +18,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cdsso/contrib/countries/apps.py:7 cdsso/contrib/countries/models.py:33
+#: cdsso/contrib/countries/apps.py:7 cdsso/contrib/countries/models.py:54
 msgid "Countries"
 msgstr ""
 
-#: cdsso/contrib/countries/models.py:10
+#: cdsso/contrib/countries/models.py:12
 msgid "Name"
 msgstr ""
 
-#: cdsso/contrib/countries/models.py:12
+#: cdsso/contrib/countries/models.py:19
 msgid "Native Name"
 msgstr ""
 
-#: cdsso/contrib/countries/models.py:14
+#: cdsso/contrib/countries/models.py:26
 msgid "Alpha2 Code"
 msgstr ""
 
-#: cdsso/contrib/countries/models.py:16
+#: cdsso/contrib/countries/models.py:33
 msgid "Alpha3 Code"
 msgstr ""
 
-#: cdsso/contrib/countries/models.py:18
+#: cdsso/contrib/countries/models.py:36
 msgid "Numeric code"
 msgstr ""
 
-#: cdsso/contrib/countries/models.py:19
+#: cdsso/contrib/countries/models.py:39
 msgid "Flag"
 msgstr ""
 
-#: cdsso/contrib/countries/models.py:32
+#: cdsso/contrib/countries/models.py:53
 msgid "Country"
 msgstr ""
 
-#: cdsso/contrib/register/admin.py:14
+#: cdsso/contrib/register/admin.py:20
 msgid "Completed Registration"
 msgstr ""
 
@@ -74,20 +74,12 @@ msgstr ""
 msgid "Please enter your ASU email."
 msgstr ""
 
-#: cdsso/contrib/register/forms.py:17
+#: cdsso/contrib/register/forms.py:18
 msgid "You are applying as an alumni and cannot use your student email"
 msgstr ""
 
-#: cdsso/contrib/register/forms.py:18
+#: cdsso/contrib/register/forms.py:21
 msgid "Please enter your ASURITE email (<ASURITE>@asu.edu)"
-msgstr ""
-
-#: cdsso/contrib/register/models.py:28
-msgid "User"
-msgstr ""
-
-#: cdsso/contrib/register/models.py:29
-msgid "This user's progress in the registration process."
 msgstr ""
 
 #: cdsso/contrib/register/models.py:33
@@ -98,18 +90,50 @@ msgstr ""
 msgid "The user has been registered on Slack"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:36
+#: cdsso/contrib/register/models.py:40
 msgid "Registered on SunDevilSync"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:37
+#: cdsso/contrib/register/models.py:42
 msgid ""
 "The user has been registered on SunDevilSync. This is True by default for "
 "alumni."
 msgstr ""
 
-#: cdsso/contrib/register/models.py:46 cdsso/contrib/register/models.py:47
+#: cdsso/contrib/register/models.py:59
+msgid "User"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:60
+msgid "This user's progress in the registration process."
+msgstr ""
+
+#: cdsso/contrib/register/models.py:65
+msgid "Date Registered"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:66
+msgid "The date/time the student submitted their registration form"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:75 cdsso/contrib/register/models.py:76
 msgid "Student Registration"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:109
+msgid "Email"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:112
+msgid "Name of member"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:116
+msgid "Known Member"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:117
+msgid "Known Members"
 msgstr ""
 
 #: cdsso/templates/_index/base.html:50 cdsso/templates/base.html:67
@@ -270,28 +294,91 @@ msgstr ""
 msgid "Set Password"
 msgstr ""
 
-#: cdsso/templates/account/signup.html:4 cdsso/templates/cas/logged.html:5
+#: cdsso/templates/account/signup.html:3 cdsso/templates/cas/logged.html:5
 msgid "Welcome to CodeDevils!"
 msgstr ""
 
-#: cdsso/templates/account/signup.html:16
+#: cdsso/templates/account/signup.html:4
+msgid ""
+"\n"
+"Begin your CodeDevils journey by filling out the below registration form.\n"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:18
 msgid "Have a question?"
 msgstr ""
 
-#: cdsso/templates/account/signup.html:16
+#: cdsso/templates/account/signup.html:18
 msgid "Contact us"
 msgstr ""
 
-#: cdsso/templates/account/signup.html:21
+#: cdsso/templates/account/signup.html:23
 msgid "Already have an account?"
 msgstr ""
 
-#: cdsso/templates/account/signup.html:21
+#: cdsso/templates/account/signup.html:23
 msgid "Sign in"
 msgstr ""
 
-#: cdsso/templates/account/signup.html:25
+#: cdsso/templates/account/signup.html:27
 msgid "Submit"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:37
+msgid "Join us on Slack"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:38
+msgid "Join us on Slack to start interacting with your fellow engineers"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:49
+msgid "Register on SunDevilSync"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:50
+msgid ""
+"SunDevilSync is the official online registrar of ASU student organizations"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:61
+msgid "Get in touch"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:65
+msgid "Arizona State University,"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:66
+msgid "Tempe, AZ"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:104
+msgid "Registration Support"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:108
+msgid ""
+"\n"
+"                    For questions about registration requirements for "
+"students or alumni, including joining\n"
+"                    Slack, registering on SunDevilSync, and registration "
+"status\n"
+"                    "
+msgstr ""
+
+#: cdsso/templates/account/signup.html:117
+msgid "General Support"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:121
+msgid ""
+"\n"
+"                    Have questions about the club before you join? Feel free "
+"to get a hold of us! We love\n"
+"                    to brag about all the amazing opportunities CodeDevils "
+"has to offer.\n"
+"                    "
 msgstr ""
 
 #: cdsso/templates/account/signup_closed.html:5
@@ -442,34 +529,42 @@ msgstr ""
 msgid "Connect to the service"
 msgstr ""
 
+#: cdsso/templates/register/registration_detail.html:8
+msgid "Detail "
+msgstr ""
+
+#: cdsso/templates/register/registration_list.html:8
+msgid "Registrations"
+msgstr ""
+
 #: cdsso/users/apps.py:7
 msgid "Users"
 msgstr ""
 
-#: cdsso/users/models.py:27
+#: cdsso/users/models.py:29
 msgid "Name of User"
 msgstr ""
 
-#: cdsso/users/models.py:29
+#: cdsso/users/models.py:35
 msgid "Anonymous"
 msgstr ""
 
-#: cdsso/users/models.py:30
+#: cdsso/users/models.py:37
 msgid ""
 "You have the option of keeping your account anonymous with CD. Selecting "
 "this will ensure your account stays private and supported applications don't "
 "have access to your data"
 msgstr ""
 
-#: cdsso/users/models.py:34
+#: cdsso/users/models.py:45
 msgid "Receive notifications"
 msgstr ""
 
-#: cdsso/users/models.py:37
+#: cdsso/users/models.py:52
 msgid "Is an alumni"
 msgstr ""
 
-#: cdsso/users/models.py:38
+#: cdsso/users/models.py:53
 msgid "Is an alumni of ASU. If False, the user is by default a student."
 msgstr ""
 
