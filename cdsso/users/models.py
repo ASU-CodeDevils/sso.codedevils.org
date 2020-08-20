@@ -41,6 +41,13 @@ class User(AbstractUser):
         null=True,
         help_text=_("User 512px profile image")
     )
+    slack_id = models.CharField(
+        db_column="SlackId",
+        max_length=12,
+        blank=True,
+        null=True,
+        help_text=_("ID assigned to this user on Slack")
+    )
     anonymous = models.BooleanField(
         db_column="IsAnonymous",
         default=True,
