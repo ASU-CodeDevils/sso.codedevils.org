@@ -48,4 +48,7 @@ class TestUserViewSet:
             "is_alumni": user.is_alumni,
             "receive_notifications": user.receive_notifications,
             "last_login": last_login,
+            "image_24": user.image_24,
+            "image_512": user.image_512,
+            "slack_id": user.slack_id
         }
