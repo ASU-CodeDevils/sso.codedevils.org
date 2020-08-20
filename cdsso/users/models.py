@@ -27,6 +27,20 @@ class User(AbstractUser):
     # First Name and Last Name do not cover name patterns
     # around the globe.
     name = CharField(_("Name of User"), blank=True, max_length=255)
+    image_24 = models.URLField(
+        db_column="Image24",
+        verbose_name=_("Image 24"),
+        blank=True,
+        null=True,
+        help_text=_("User 24px profile image")
+    )
+    image_512 = models.URLField(
+        db_column="Image512",
+        verbose_name=_("Image 512"),
+        blank=True,
+        null=True,
+        help_text=_("User 512px profile image")
+    )
     anonymous = models.BooleanField(
         db_column="IsAnonymous",
         default=True,
@@ -57,6 +71,9 @@ class User(AbstractUser):
     objects = UserManager()
     students = StudentManager()
     alumni = AlumniManager()
+
+    def get_image(self):
+        return self.image_512
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
