@@ -1,4 +1,5 @@
 from django.contrib.auth.models import AbstractUser, UserManager
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.db.models import CharField
 from django.urls import reverse
@@ -40,6 +41,13 @@ class User(AbstractUser):
         blank=True,
         null=True,
         help_text=_("User 512px profile image")
+    )
+    tz_offset = models.IntegerField(
+        db_column="TzOffset",
+        blank=True,
+        verbose_name=_("UTC Offset"),
+        validators=[MinValueValidator(-43200), MaxValueValidator(54000)],
+        help_text=_("UTC offset in seconds")
     )
     slack_id = models.CharField(
         db_column="SlackId",
