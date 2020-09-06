@@ -119,6 +119,8 @@ class KnownMember(RegistrationModelAbstract):
     tz_offset = models.IntegerField(
         db_column="TzOffset",
         blank=True,
+        null=True,
+        default=0,
         verbose_name=_("UTC Offset"),
         validators=[MinValueValidator(-43200), MaxValueValidator(54000)],
         help_text=_("UTC offset in seconds")
