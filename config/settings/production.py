@@ -129,14 +129,6 @@ LOGGING = {
             "formatter": "verbose",
             "filters": ["require_debug_false"],
         },
-        "test_file": {
-            "level": "DEBUG",
-            "class": "logging.handlers.RotatingFileHandler",
-            "filename": "logs/test.log",
-            "maxBytes": 1024 * 1024 * 5,  # 5 MB
-            "backupCount": 7,
-            "formatter": "verbose",
-        },
         "cas_file": {
             "level": "INFO",
             "class": "logging.handlers.RotatingFileHandler",
@@ -145,6 +137,14 @@ LOGGING = {
             "backupCount": 7,
             "formatter": "verbose",
         },
+        "api": {
+            "level": "INFO",
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": "logs/api.log",
+            "maxBytes": 1024 * 1024 * 5,  # 5 MB
+            "backupCount": 7,
+            "formatter": "verbose",
+        }
     },
     "root": {"level": "DEBUG", "handlers": ["console"]},
     "loggers": {
@@ -157,6 +157,11 @@ LOGGING = {
             "level": "ERROR",
             "handlers": ["console", "mail_admins"],
             "propagate": True,
+        },
+        "api": {
+            "level": "DEBUG",
+            "handlers": ["console", "api"],
+            "propagate": False,
         },
         "": {
             "handlers": ["console", "production_file"],
