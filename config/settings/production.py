@@ -25,6 +25,7 @@ CACHES = {
             # Mimicing memcache behavior.
             # http://jazzband.github.io/django-redis/latest/#_memcached_exceptions_behavior
             "IGNORE_EXCEPTIONS": True,
+            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'"
         },
     }
 }
