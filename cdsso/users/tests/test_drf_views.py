@@ -50,5 +50,6 @@ class TestUserViewSet:
             "last_login": last_login,
             "image_24": user.image_24,
             "image_512": user.image_512,
+            "tz_offset": user.tz_offset,
             "slack_id": user.slack_id
         }
