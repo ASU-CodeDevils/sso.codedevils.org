@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
@@ -111,6 +112,28 @@ class KnownMember(RegistrationModelAbstract):
     )
     name = models.CharField(
         db_column="Name", blank=True, max_length=255, verbose_name=_("Name of member")
+    )
+    slack_id = models.CharField(
+        db_column="SlackId", blank=True, max_length=12, verbose_name=_("Slack ID")
+    )
+    tz_offset = models.IntegerField(
+        db_column="TzOffset",
+        blank=True,
+        verbose_name=_("UTC Offset"),
+        validators=[MinValueValidator(-43200), MaxValueValidator(54000)],
+        help_text=_("UTC offset in seconds")
+    )
+    image_24 = models.URLField(
+        db_column="Image24",
+        blank=True,
+        verbose_name=_("Image 24"),
+        help_text=_("User 24px profile image")
+    )
+    image_512 = models.URLField(
+        db_column="Image512",
+        blank=True,
+        verbose_name=_("Image 512"),
+        help_text=_("User 512px profile image")
     )
 
     class Meta:
