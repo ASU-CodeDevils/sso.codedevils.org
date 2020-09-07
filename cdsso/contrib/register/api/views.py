@@ -60,6 +60,7 @@ class KnownMemberViewSet(RetrieveModelMixin, ListModelMixin, UpdateModelMixin, G
             # or create a new known member if they haven't registered
             else:
                 member, created = KnownMember.objects.get_or_create(email__exact=email)
+                member.email = email
                 member.slack_registered = True
                 if created:
                     logger.info("Member found on Slack, but not registered: {}".format(email))
