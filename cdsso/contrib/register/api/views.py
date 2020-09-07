@@ -11,11 +11,11 @@ from rest_framework.viewsets import GenericViewSet
 
 from cdsso.contrib.register.models import KnownMember, StudentRegistration
 
-from .serializers import(
+from .serializers import (
     KnownMemberSerializer,
-    SlackUserObjectSerializer,
     SlackErrorResponseSerializer,
     SlackResponseSerializer,
+    SlackUserObjectSerializer,
     StudentRegistrationSerializer,
 )
 
