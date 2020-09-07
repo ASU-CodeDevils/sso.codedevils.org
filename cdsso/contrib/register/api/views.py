@@ -1,6 +1,8 @@
 import logging
 
 from django.contrib.auth import get_user_model
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, UpdateModelMixin
@@ -9,7 +11,13 @@ from rest_framework.viewsets import GenericViewSet
 
 from cdsso.contrib.register.models import KnownMember, StudentRegistration
 
-from .serializers import KnownMemberSerializer, StudentRegistrationSerializer
+from .serializers import(
+    KnownMemberSerializer,
+    SlackUserObjectSerializer,
+    SlackErrorResponseSerializer,
+    SlackResponseSerializer,
+    StudentRegistrationSerializer,
+)
 
 logger = logging.getLogger("api")
 User = get_user_model()
@@ -26,10 +34,18 @@ class KnownMemberViewSet(RetrieveModelMixin, ListModelMixin, UpdateModelMixin, G
     queryset = KnownMember.objects.all()
     lookup_field = "email"
 
-    @action(detail=False, methods=["POST"], name="Update Slack information", url_path="slack", url_name="slack")
-    def register_slack(self, request):
+    @swagger_auto_schema(
+        request_body=SlackUserObjectSerializer,
+        responses={
+            200: openapi.Response("user registered on slack", SlackResponseSerializer),
+            400: openapi.Response("invalid format", SlackErrorResponseSerializer)
+        }
+    )
+    @action(detail=False, methods=["POST"], name="Update Slack information")
+    def slack(self, request):
         """
-        Confirms this user has been confirmed on Slack.
+        Updates a user's Slack information. If no user exists, their information is recorded for later
+        when the member registers.
         """
         try:
             data = request.data
