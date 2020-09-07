@@ -1,7 +1,7 @@
 import logging
-import requests
 from typing import List
 
+import requests
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
@@ -11,6 +11,7 @@ from django.core.validators import validate_email
 from config import celery_app
 
 from .models import StudentRegistration
+from .types import SlackUserObject
 from .utils import get_flameboi_jwt
 
 logger = logging.getLogger()
@@ -57,7 +58,7 @@ def register_on_slack(emails: Emails):
                 headers={"Authorization": "Bearer " + access, "Accept": "application/json"}
             )
             if response.status_code == 200:
-                data = response.json()
+                data: SlackUserObject = response.json()
                 if data["ok"]:
                     member = User.objects.get(email__exact=email)
                     user = data["user"]
