@@ -1,10 +1,8 @@
 import requests
-from typing import Tuple
-
 from django.conf import settings
 from django.core.mail import send_mail
 
-JWT = Tuple[str, str]
+from .types import JWT
 
 
 def email_user_complete_registration(email: str) -> None:
