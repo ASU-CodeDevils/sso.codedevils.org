@@ -61,10 +61,12 @@ def register_on_slack(emails: Emails):
                 if data["ok"]:
                     member = User.objects.get(email__exact=email)
                     user = data["user"]
+                    profile = user["profile"]
                     # update the user
                     member.slack_id = user["id"]
                     member.tz_offset = user["tz_offset"]
-                    member.name = user["profile"]["real_name"]
+                    member.name = profile["real_name"]
+                    member.first_name = user["profile"]
                     member.image_24 = user["profile"]["image_24"]
                     member.image_512 = user["profile"]["image_512"]
                     member.save()
