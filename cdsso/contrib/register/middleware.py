@@ -24,14 +24,12 @@ class UserRegistrationConfirmationMiddleware:
 
         # only run through middleware if the user is authenticated, is not already going to the
         # student registration page, and a file is not being loaded
-        print(request.path)
         signup_path = request.path.endswith(
             "/accounts/signup/"
         ) or request.path.endswith("/join/status/")
         logout_path = request.path.endswith("/cas/lougout") or request.path.endswith(
             "/accounts/logout/"
         )
-        print(signup_path)
         if (
             request.user.is_authenticated
             and not reg_path_regex.match(request.path)

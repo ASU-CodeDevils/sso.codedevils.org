@@ -54,7 +54,6 @@ class StudentRegistrationForm(forms.UserCreationForm):
             validate_email(email)
         except ValidationError:
             raise ValidationError(self.error_messages["invalid_email"])
-        print(f"{is_alumni}")
 
         # if a student, their email must end in asu.edu and be their asurite
         split_email = email.split("@")  # split email by username and domain
