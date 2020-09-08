@@ -118,13 +118,14 @@ class RegistrationDetailView(RegistrationViewAbstract, DetailView):
                 registration.slack_registered = True
             if slack_param == "false":
                 registration.slack_registered = False
+            registration.save()
         if "sds" in request.GET:
             sds_param = request.GET.get("sds")
             if sds_param == "true":
                 registration.sds_registered = True
             if sds_param == "false":
                 registration.sds_registered = False
-        registration.save()
+            registration.save()
         return self.render_to_response(context=context)
 
 
