@@ -114,7 +114,7 @@ AUTH_USER_MODEL = "users.User"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-redirect-url
 LOGIN_REDIRECT_URL = "users:redirect"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-url
-LOGIN_URL = "cas_server:login"
+LOGIN_URL = "login"
 # https://docs.djangoproject.com/en/3.0/ref/settings/#logout-redirect-url
 LOGOUT_REDIRECT_URL = LOGIN_URL
 
