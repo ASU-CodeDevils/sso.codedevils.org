@@ -85,6 +85,7 @@ class StudentRegistration(RegistrationModelAbstract):
         """
         super().__init__(*args, **kwargs)
         self._sds_notified = self.sds_registered
+        self._slack_add_attempt = False
 
     def __str__(self):
         return f"{self.user.name} [done: {self.completed_registration()}]"
