@@ -42,8 +42,10 @@ def notify_complete_registration(instance: StudentRegistration, **kwargs):
         if (
             settings.REGISTER_SLACK_USERS_WITH_FLAMEBOI
             and not instance.slack_registered
+            and not instance._slack_add_attempt
         ):
             register_on_slack.delay(emails=[instance.user.email])
+            instance._slack_add_attempt = True
 
         # notify managers of new users to be added to SunDevilSync
         if (
