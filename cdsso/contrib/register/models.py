@@ -76,7 +76,7 @@ class StudentRegistration(RegistrationModelAbstract):
         verbose_name = _("Student Registration")
         verbose_name_plural = _("Student Registration")
         ordering = ("slack_registered", "sds_registered", "-date_registered")
-        get_latest_by = "-date_registered"
+        get_latest_by = "date_registered"
 
     def __init__(self, *args, **kwargs):
         """
