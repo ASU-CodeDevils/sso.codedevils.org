@@ -1,3 +1,4 @@
+from dateutil import parser
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -10,6 +11,17 @@ User = get_user_model()
 
 class RegistrationStatusView(LoginRequiredMixin, TemplateView):
     template_name = "register/status.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user: User = self.request.user
+        registration: StudentRegistration = user.studentregistration
+        context["registration"] = registration
+        context["slack_registered"] = registration.slack_registered
+        context["sds_registered"] = registration.sds_registered
+        context["registration_complete"] = registration.completed_registration()
+
+        return context
 
 
 registration_status_view = RegistrationStatusView.as_view()
@@ -44,6 +56,49 @@ class RegistrationListView(RegistrationViewAbstract, ListView):
     paginate_by = settings.REGISTRATION_PAGINATION
     template_name = "register/registration_list.html"
 
+    def get(self, request, *args, **kwargs):
+        """
+        Overrides the get request to account for parameters. The parameters ``slack`` and
+        ``sds`` can be set to *true* or *false* to update the student's registration.
+
+        Args:
+            request (HttpResponse): The request object.
+        """
+        # register students and alumni based on the date of their registration
+        if "slack_student_register_date" in request.GET:
+            date = request.GET.get("slack_student_register_date")
+            if date:
+                date = parser.parse(date)
+                StudentRegistration.todo_registrations.filter(
+                    user__is_alumni=False, date_registered__lte=date
+                ).update(slack_registered=True)
+        if "slack_alumni_register_date" in request.GET:
+            date = request.GET.get("slack_alumni_register_date")
+            if date:
+                date = parser.parse(date)
+                StudentRegistration.todo_registrations.filter(
+                    user__is_alumni=True, date_registered__lte=date
+                ).update(slack_registered=True)
+        if "sds_student_register_date" in request.GET:
+            date = request.GET.get("sds_student_register_date")
+            if date:
+                date = parser.parse(date)
+                StudentRegistration.todo_registrations.filter(
+                    user__is_alumni=False, date_registered__lte=date
+                ).update(sds_registered=True)
+        if "sds_alumni_register_date" in request.GET:
+            date = request.GET.get("sds_alumni_register_date")
+            if date:
+                date = parser.parse(date)
+                StudentRegistration.todo_registrations.filter(
+                    user__is_alumni=True, date_registered__lte=date
+                ).update(sds_registered=True)
+
+        # required for overriding the get request
+        self.object_list = self.get_queryset()
+        context = self.get_context_data(**kwargs)
+        return self.render_to_response(context=context)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         slack_emails = StudentRegistration.todo_registrations.filter(
@@ -64,6 +119,13 @@ class RegistrationListView(RegistrationViewAbstract, ListView):
                     )
                 )
             )
+            slack_student = slack_emails.filter(user__is_alumni=False)
+            if slack_student:
+                context["slack_student_register_date"] = str(slack_student.latest("date_registered").date_registered)
+                print(context["slack_student_register_date"])
+            slack_alumni = slack_emails.filter(user__is_alumni=True)
+            if slack_alumni:
+                context["slack_alumni_register_date"] = str(slack_alumni.latest("date_registered").date_registered)
         sds_emails = StudentRegistration.todo_registrations.filter(sds_registered=False)
         if sds_emails:
             context["sds_student_emails"] = "\n".join(
@@ -80,6 +142,17 @@ class RegistrationListView(RegistrationViewAbstract, ListView):
                     )
                 )
             )
+            sds_student = sds_emails.filter(user__is_alumni=False)
+            if not sds_student:
+                context["sds_student_register_date"] = None
+            else:
+                context["sds_student_register_date"] = sds_student.latest("date_registered").date_registered
+
+            sds_alumni = sds_emails.filter(user__is_alumni=True)
+            if not sds_alumni:
+                context["sds_alumni_register_date"] = None
+            else:
+                context["sds_alumni_register_date"] = sds_alumni.latest("date_registered").date_registered
         return context
 
 
