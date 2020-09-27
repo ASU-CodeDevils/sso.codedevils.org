@@ -1,9 +1,3 @@
-// Get the modal
-var modal = document.getElementById("modal");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
 function filterByColumn(col, input) {
     // Declare variables
     var input, filter, table, tr, td, i, txtValue;
@@ -33,62 +27,140 @@ $("#registerTable tr.record").click(function () {
     window.location = lang + "/join/registrations/" + value + "/";
 });
 
-// modal info
+/* Side drawer */
 
-// Get the modal
-var slackModal = document.getElementById("slackModal");
-var slackInstructions = document.getElementById("slackInstructions");
-var sdsModal = document.getElementById("sdsModal");
-var sdsInstructions = document.getElementById("sdsInstructions");
-
-// Get the <span> element that closes the modal
-var slackInstructionsSpan = document.getElementById("slackInstructionsLink");
-var slackSpan = document.getElementById("slackClose");
-var sdsInstructionsSpan = document.getElementById("sdsInstructionsLink");
-var sdsSpan = document.getElementById("sdsClose");
-
-// Get the button that opens the modal
-var slackBtn = document.getElementById("slackBtn");
-var sdsBtn = document.getElementById("sdsBtn");
-slackBtn.onclick = function() {
-    slackModal.style.display = "block";
-}
-sdsBtn.onclick = function() {
-    sdsModal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-slackSpan.onclick = function() {
-  slackModal.style.display = "none";
-}
-slackInstructionsSpan.onclick = function() {
-    if(slackInstructions.style.display !== "none") {
-        slackInstructions.style.display = "none";
-        slackInstructionsSpan.innerHTML = "Show instructions";
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+    let drawer = document.getElementById("sideDrawer");
+    let openbtn = document.getElementById("openbtn");
+    if (drawer.style.width === "250px") {
+        drawer.style.width = "0";
+        openbtn.style.marginLeft = "0";
+        openbtn.innerHTML = "Open Actions &uarr;";
+        document.getElementsByTagName("main").item(0).style.marginLeft = "0";
+        document.getElementsByTagName("footer").item(0).style.marginLeft = "0";
     } else {
-        slackInstructions.style.display = "block";
-        slackInstructionsSpan.innerHTML = "Hide instructions";
-    }
-}
-sdsSpan.onclick = function() {
-  sdsModal.style.display = "none";
-}
-sdsInstructionsSpan.onclick = function() {
-    if(sdsInstructions.style.display !== "none") {
-        sdsInstructions.style.display = "none";
-        sdsInstructionsSpan.innerHTML = "Show instructions";
-    } else {
-        sdsInstructions.style.display = "block";
-        sdsInstructionsSpan.innerHTML = "Hide instructions";
+        drawer.style.width = "250px";
+        openbtn.style.marginLeft = "250px";
+        openbtn.innerHTML = "Close Actions &darr;";
+        document.getElementsByTagName("main").item(0).style.marginLeft = "270px";
+        document.getElementsByTagName("footer").item(0).style.marginLeft = "270px";
     }
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == slackModal) {
-    slackModal.style.display = "none";
-  }
-  if (event.target == sdsModal) {
-    sdsModal.style.display = "none";
-  }
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("sideDrawer").style.width = "0";
+    document.getElementById("openbtn").style.marginLeft = "0";
+    document.getElementById("openbtn").innerHTML = "Open Actions &uarr;";
+    document.getElementById("main").style.marginLeft = "20px";
+    document.getElementsByTagName("main").item(0).style.marginLeft = "0";
+    document.getElementsByTagName("footer").item(0).style.marginLeft = "0";
+}
+
+/* Clipboard navigation */
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function () {
+        /* clipboard successfully set */
+        alert("Copied to clipboard");
+    }, function () {
+        /* clipboard write failed */
+        alert("Could not copy to clipboard")
+    });
+}
+
+/* buttons */
+
+var slackCopyStudent = document.getElementById("slackCopyStudent");
+var slackCopyAlumni = document.getElementById("slackCopyAlumni");
+var slackConfirmStudent = document.getElementById("slackConfirmStudent");
+var slackConfirmAlumni = document.getElementById("slackConfirmAlumni");
+var sdsCopy = document.getElementById("sdsCopy");
+var sdsConfirm = document.getElementById("sdsConfirm");
+
+/* hidden value fields */
+
+var slack_student_emails = document.getElementById("slack_student_emails");
+var slack_alumni_emails = document.getElementById("slack_alumni_emails");
+var sds_student_emails = document.getElementById("sds_student_emails");
+var sds_alumni_emails = document.getElementById("sds_alumni_emails");
+
+/* copyy operations */
+
+slackCopyStudent.onclick = function () {
+    var value = slack_student_emails.value;
+    if (value === "") {
+        alert("All students have been confirmed on Slack");
+    } else {
+        copyToClipboard(value);
+    }
+}
+
+slackCopyAlumni.onclick = function () {
+    var value = slack_alumni_emails.value;
+    if (value === "") {
+        alert("All alumni have been confirmed on Slack");
+    } else {
+        copyToClipboard(value);
+    }
+}
+
+sdsCopy.onclick = function () {
+    var value = sds_student_emails.value.replace(/,/g, "\n");
+    if (value === "") {
+        alert("All SunDevilSync Registrations have been confirmed on Slack");
+    } else {
+        copyToClipboard(value);
+    }
+}
+
+/* confirmations */
+
+slackConfirmStudent.onclick = function () {
+    var value = slack_student_emails.value;
+    if (value === "") {
+        alert("All students have been confirmed on Slack");
+    } else {
+        var confirmStudent = confirm("Are you sure you want to confirm these students on Slack?");
+        if (confirmStudent == true) {
+            window.location.href = "/join/registrations/?slack_student_emails=" + value;
+        }
+    }
+}
+
+slackConfirmAlumni.onclick = function () {
+    var value = slack_alumni_emails.value;
+    if (value === "") {
+        alert("All alumni have been confirmed on Slack");
+    } else {
+        var confirmStudent = confirm("Are you sure you want to confirm these alumni on Slack?");
+        if (confirmStudent == true) {
+            window.location.href = "/join/registrations/?slack_alumni_emails=" + value;
+        }
+    }
+}
+
+sdsConfirm.onclick = function () {
+    var student_value = sds_student_emails.value
+    var alumni_value = sds_alumni_emails.value
+    if (student_value === "" && alumni_value === "") {
+        alert("All members have been confirmed on SunDevilSync");
+    } else {
+        var confirmSds = confirm("Are you sure you want to confirm these members on SunDevilSync?");
+        if (confirmSds == true) {
+            let href_location = "/join/registrations/?"
+            if (student_value !== "None") {
+                href_location += "sds_student_emails=" + student_value;
+            }
+
+            if (alumni_value !== "None") {
+                if (student_value !== "None") {
+                    href_location += "&";
+                }
+                href_location += "&sds_alumni_emails=" + alumni_value;
+            }
+            window.location.href = href_location;
+        }
+    }
 }
