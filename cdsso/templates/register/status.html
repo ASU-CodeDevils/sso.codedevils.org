@@ -1,2 +1,169 @@
-<!-- placed this here to test access lint -->
-Here we go
+{% extends "account/base.html" %}
+{% load crispy_forms_tags i18n static %}
+{% block 
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}"/>
+{% endblock extrahead %}
+{% block head_title %}{% trans "Your Registration" %}{% endblock head_title %}
+{% block content %}
+	<main>
+	<section class="section b-b">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <h2>{% if registration_complete %}
+                            {% trans 'Registration Complete' %}
+                        {% else %}
+                            {% trans 'In Progress' %}
+                        {% endif %}</h2>
+                    <p class="lead">{% if registration_complete %}
+                            {% trans 'You have completed your registration! You can now access all CodeDevils services. You can start by checking out the website at: ' %}
+                            <a href="https://codedevils.org/">codedevils.org</a>
+                        {% else %}
+                            {% trans 'You still need to complete some steps before your registration is complete.' %}
+                        {% endif %}</p>
+                </div>
+                <div id="basic-wizard" class="wizard sw-main sw-theme-circles">
+                    <ul class="mb-5 justify-content-center nav nav-tabs step-anchor">
+                        <li class="nav-item clickable{% if slack_registered %} done{% endif %} active"><a href="#bw-step-1" class="nav-link"><i class="fab fa-slack mb-2"></i>
+                                <p class="bold my-0">{% trans 'Step 1' %}</p><span class="small text-secondary">{% trans 'Join us on Slack' %}</span>
+                            </a></li>
+                        <li class="nav-item clickable{% if sds_registered %} done{% endif %}"><a href="#bw-step-2" class="nav-link"><i class="fas fa-university mb-2"></i>
+                                <p class="bold my-0">{% trans 'Step 2' %}</p><span class="small text-secondary">{% trans 'Register on SunDevilSync' %}</span>
+                            </a></li>
+                        <li class="nav-item clickable{% if registration_complete %} done{% endif %}"><a href="#bw-step-3" class="nav-link"><i class="fas fa-address-card mb-2"></i>
+                                <p class="bold my-0">{% trans 'Step 3' %}</p><span class="small text-secondary">{% trans 'Additional steps' %}</span>
+                            </a></li>
+                        <li class="nav-item clickable{% if registration_complete %} done{% endif %}"><a href="#bw-step-4" class="nav-link"><i class="fas fa-check-square mb-2"></i>
+                                <p class="bold my-0">{% trans 'Step 4' %}</p><span class="small text-secondary">{% trans 'Done!' %}</span>
+                            </a></li>
+                    </ul>
+                    <div class="mb-5 sw-container tab-content" style="min-height: 239px;">
+                        <div id="bw-step-1" class="tab-pane step-content" style="display: block;">
+                            <div class="card">
+                                <div class="card-header d-flex align-items-center justify-content-between">
+                                    <h5 class="m-0"><i class="fab fa-slack icon"></i><span>{% trans 'Step 1: Join us on Slack' %}</span></h5><span>{% trans 'Step 1 of 4' %}</span>
+                                </div>
+                                <div class="card-body">
+                                    {% if slack_registered %}
+                                        <p>{% blocktrans %}
+                                            You have successfully joined us on Slack! You can start by checking out these channels:
+                                        {% endblocktrans %}</p>
+                                        <ul>
+                                            <li><a target="_blank" href="https://codedevils.slack.com/archives/CMGU8033K">#intros</a> - {% trans 'Introduce yourself so everyone knows who you are!' %}</li>
+                                            <li><a target="_blank" href="https://codedevils.slack.com/archives/CT06NE2AV">#meetings</a> - {% trans 'Where we hold all our meetings and virtual study halls' %}</li>
+                                            <li><a target="_blank" href="https://codedevils.slack.com/archives/C2N5P84BD">#hangout</a> - {% trans 'Come here to chat with your fellow CodeDevils!' %}</li>
+                                        </ul>
+                                    {% else %}
+                                        <p>{% blocktrans %}
+                                            Slack is our team workspace. This is where we hold our meetings, collaborate on projects, and just chat with fellow
+                                            developers. You can join by signing into our workspace with your ASU email:
+                                        {% endblocktrans %}</p>
+                                    {% endif %}
+                                    <div class="media">
+                                        <i class="fab fa-slack font-l color-3 mr-3"></i>
+                                        <div class="media-body">
+                                            <a target="_blank" href="https://codedevils.slack.com">codedevils.slack.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="bw-step-2" class="tab-pane step-content" style="display: none;">
+                            <div class="card">
+                                <div class="card-header d-flex align-items-center justify-content-between">
+                                    <h5 class="m-0"><i class="fas fa-university icon"></i><span>{% trans 'Step 2: Register on SunDevilSync' %}</span></h5><span>{% trans 'Step 2 of 4' %}</span>
+                                </div>
+                                <div class="card-body">
+                                    {% if sds_registered %}
+                                        <p>{% blocktrans %}
+                                            You are officially part of the club! ASU now recognizes you as a member of CodeDevils through SunDevilSync.
+                                        {% endblocktrans %}</p>
+                                    {% else %}
+                                        <p>{% blocktrans %}
+                                            SunDevilSync is the official ASU online registrar, and is how ASU determines if you are an official member of an organization.
+                                            You must join CodeDevils on SunDevilSync before you are considered an official member. To do so:
+                                        {% endblocktrans %}</p>
+                                        <ul>
+                                            <li><a target="_blank" href="https://asu.campuslabs.com/engage/account/login?returnUrl=%2Fengage%2Forganization%2Fcodedevils%2F">{% trans 'Sign in' %}</a> {% trans 'to SunDevilSync. This link will take you straight to the CodeDevils home page.' %}</li>
+                                            <li>{% trans 'In the top right, select ' %} <strong>{% trans 'Join' %}</strong></li>
+                                        </ul>
+                                        <p>{% blocktrans %}
+                                            An officer from our team will add you to the organization, and you will receive a confirmation at your ASU email.
+                                        {% endblocktrans %}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div id="bw-step-3" class="tab-pane step-content" style="display: none;">
+                            <div class="card">
+                                <div class="card-header d-flex align-items-center justify-content-between">
+                                    <h5 class="m-0"><i class="fas fa-address-card icon"></i><span>{% trans 'Step 3: Additional Administrative Steps' %}</span></h5><span>{% trans 'Step 3 of 4' %}</span>
+                                </div>
+                                <div class="card-body">
+                                    {% if registration_complete %}
+                                        <p>{% blocktrans %}
+                                            Your registration needs have been administered... In other words, this step is complete!
+                                        {% endblocktrans %}</p>
+                                    {% else %}
+                                        <p>{% blocktrans %}
+                                            Someone is working on your registration and should have this step completed soon. If you have any questions, or this is taking
+                                            too long, feel free to contact us:
+                                        {% endblocktrans %}</p>
+                                        <div class="media">
+                                            <i class="fa fa-envelope font-l color-3 mr-3"></i>
+                                            <div class="media-body">
+                                                <!-- TODO if we integrate jira service desk make this link to their ticket -->
+                                                <a href="join@codedevils.org?subject=Registration information">join@codedevils.org</a>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div id="bw-step-4" class="tab-pane step-content" style="display: none;">
+                            <div class="card">
+                                <div class="card-header d-flex align-items-center justify-content-between">
+                                    <h5 class="m-0"><i class="fas fa-check-square icon"></i><span>{% trans 'Step 4: Completed Registration' %}</span></h5><span>{% trans 'Step 4 of 4' %}</span>
+                                </div>
+                                <div class="card-body">
+                                    {% if not registration_complete %}
+                                        <div class="panel panel-info mb-4">
+                                            <div class="panel-heading">
+                                                <div class="media">
+                                                    <i class="fas fa-info-circle font-l color-3 mr-3"></i>
+                                                    <div class="media-body">
+                                                        {% trans 'Registration is not complete, but you can view your information below. We will update it for you.' %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    <!--We can display all information of the users here, if you want?-->
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <th>{% trans 'Name' %}:</th>
+                                                <td>{{ user.name }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>{% trans 'Email' %}:</th>
+                                                <td>{{ user.email }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>{% trans 'Academic status' %}</th>
+                                                <td>{% if user.is_alumni %}{% trans 'Alumni' %}{% else %}{% trans 'Student' %}{% endif %}</th>
+                                            </tr>
+                                            <tr>
+                                                <th>{% trans 'Date registered' %}</th>
+                                                <td>{{ registration.date_registered }}</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+		</main>
+{% endblock %}
