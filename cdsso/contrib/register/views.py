@@ -1,8 +1,10 @@
 from dateutil import parser
+from datetime import datetime, timedelta
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DetailView, ListView, RedirectView, TemplateView
+from pytz import UTC
 
 from .models import StudentRegistration
 
@@ -56,6 +58,12 @@ class RegistrationListView(RegistrationViewAbstract, ListView):
     paginate_by = settings.REGISTRATION_PAGINATION
     template_name = "register/registration_list.html"
 
+    @staticmethod
+    def clean_date(date):
+        date = parser.parse(date).replace(tzinfo=UTC)
+        print(date)
+        return date
+
     def get(self, request, *args, **kwargs):
         """
         Overrides the get request to account for parameters. The parameters ``slack`` and
@@ -64,35 +72,33 @@ class RegistrationListView(RegistrationViewAbstract, ListView):
         Args:
             request (HttpResponse): The request object.
         """
-        # register students and alumni based on the date of their registration
-        if "slack_student_register_date" in request.GET:
-            date = request.GET.get("slack_student_register_date")
-            if date:
-                date = parser.parse(date)
-                StudentRegistration.todo_registrations.filter(
-                    user__is_alumni=False, date_registered__lte=date
-                ).update(slack_registered=True)
-        if "slack_alumni_register_date" in request.GET:
-            date = request.GET.get("slack_alumni_register_date")
-            if date:
-                date = parser.parse(date)
-                StudentRegistration.todo_registrations.filter(
-                    user__is_alumni=True, date_registered__lte=date
-                ).update(slack_registered=True)
-        if "sds_student_register_date" in request.GET:
-            date = request.GET.get("sds_student_register_date")
-            if date:
-                date = parser.parse(date)
-                StudentRegistration.todo_registrations.filter(
-                    user__is_alumni=False, date_registered__lte=date
-                ).update(sds_registered=True)
-        if "sds_alumni_register_date" in request.GET:
-            date = request.GET.get("sds_alumni_register_date")
-            if date:
-                date = parser.parse(date)
-                StudentRegistration.todo_registrations.filter(
-                    user__is_alumni=True, date_registered__lte=date
-                ).update(sds_registered=True)
+        # update all Slack student emails
+        slack_student_emails = request.GET.get("slack_student_emails")
+        if slack_student_emails:
+            slack_student_emails = slack_student_emails.split(",")
+            for email in slack_student_emails:
+                StudentRegistration.todo_registrations.filter(user__email=email).update(slack_registered=True)
+
+        # update all Slack alumni emails
+        slack_alumni_emails = request.GET.get("slack_alumni_emails")
+        if slack_alumni_emails:
+            slack_alumni_emails = slack_alumni_emails.split(",")
+            for email in slack_alumni_emails:
+                StudentRegistration.todo_registrations.filter(user__email=email).update(slack_registered=True)
+
+        # update all SunDevilSync student emails
+        sds_student_emails = request.GET.get("sds_student_emails")
+        if sds_student_emails:
+            sds_student_emails = sds_student_emails.split(",")
+            for email in sds_student_emails:
+                StudentRegistration.todo_registrations.filter(user__email=email).update(sds_registered=True)
+
+        # update all SunDevilSync alumni emails
+        sds_alumni_emails = request.GET.get("sds_alumni_emails")
+        if sds_alumni_emails:
+            sds_alumni_emails = sds_alumni_emails.split(",")
+            for email in sds_alumni_emails:
+                StudentRegistration.todo_registrations.filter(user__email=email).update(sds_registered=True)
 
         # required for overriding the get request
         self.object_list = self.get_queryset()
@@ -119,40 +125,22 @@ class RegistrationListView(RegistrationViewAbstract, ListView):
                     )
                 )
             )
-            slack_student = slack_emails.filter(user__is_alumni=False)
-            if slack_student:
-                context["slack_student_register_date"] = str(slack_student.latest("date_registered").date_registered)
-                print(context["slack_student_register_date"])
-            slack_alumni = slack_emails.filter(user__is_alumni=True)
-            if slack_alumni:
-                context["slack_alumni_register_date"] = str(slack_alumni.latest("date_registered").date_registered)
         sds_emails = StudentRegistration.todo_registrations.filter(sds_registered=False)
         if sds_emails:
-            context["sds_student_emails"] = "\n".join(
+            context["sds_student_emails"] = ",".join(
                 list(
                     sds_emails.filter(user__is_alumni=False).values_list(
                         "user__email", flat=True
                     )
                 )
             )
-            context["sds_alumni_emails"] = "\n".join(
+            context["sds_alumni_emails"] = ",".join(
                 list(
                     sds_emails.filter(user__is_alumni=True).values_list(
                         "user__email", flat=True
                     )
                 )
             )
-            sds_student = sds_emails.filter(user__is_alumni=False)
-            if not sds_student:
-                context["sds_student_register_date"] = None
-            else:
-                context["sds_student_register_date"] = sds_student.latest("date_registered").date_registered
-
-            sds_alumni = sds_emails.filter(user__is_alumni=True)
-            if not sds_alumni:
-                context["sds_alumni_register_date"] = None
-            else:
-                context["sds_alumni_register_date"] = sds_alumni.latest("date_registered").date_registered
         return context
 
 
