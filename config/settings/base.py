@@ -33,7 +33,9 @@ LANGUAGES = [
   ("fr", _("French")),
   ("ar", _("Arabic")),
   ("nl", _("Dutch")),
-  ("ge", _("German"))
+  ("ge", _("German")),
+  ("ja", _("Japanese")),
+  ("hi", _("Hindi"))
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
@@ -112,7 +114,7 @@ AUTHENTICATION_BACKENDS = [
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
 AUTH_USER_MODEL = "users.User"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-redirect-url
-LOGIN_REDIRECT_URL = "users:redirect"
+LOGIN_REDIRECT_URL = env("CDSSO_LOGIN_REDIRECT_URL", default="https://codedevils./org/")
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-url
 LOGIN_URL = "login"
 # https://docs.djangoproject.com/en/3.0/ref/settings/#logout-redirect-url
