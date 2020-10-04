@@ -1,10 +1,7 @@
-from dateutil import parser
-from datetime import datetime, timedelta
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DetailView, ListView, RedirectView, TemplateView
-from pytz import UTC
 
 from .models import StudentRegistration
 
@@ -57,12 +54,6 @@ class RegistrationListView(RegistrationViewAbstract, ListView):
     context_object_name = "student_registrations"
     paginate_by = settings.REGISTRATION_PAGINATION
     template_name = "register/registration_list.html"
-
-    @staticmethod
-    def clean_date(date):
-        date = parser.parse(date).replace(tzinfo=UTC)
-        print(date)
-        return date
 
     def get(self, request, *args, **kwargs):
         """
