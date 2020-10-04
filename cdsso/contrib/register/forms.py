@@ -47,7 +47,7 @@ class StudentRegistrationForm(forms.UserCreationForm):
     def clean_email(self):
         """Determines if the email is valid based on if the user is a student or alumni."""
         email = self.cleaned_data["email"]
-        is_alumni = self.data["is_alumni"]
+        is_alumni = getattr(self.data, "is_alumni", False)
 
         # check that the email is valid
         try:
