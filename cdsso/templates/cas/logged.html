@@ -51,7 +51,7 @@
 		    </section>
         <!--Log out modal-->
         <hr class="m-2"/>
-        <form class="form-signin mt-4" method="get" action="logout">
+        <form class="form-signin mt-4" method="get" action="{% url 'logout' %}">
           <div class="checkbox mb-2 small">
             <label>
               <input type="checkbox" name="all" value="1">{% trans "Log me out from all my sessions" %}

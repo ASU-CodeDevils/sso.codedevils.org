@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-19 04:49+0000\n"
+"POT-Creation-Date: 2020-09-28 04:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,7 @@ msgid "Countries"
 msgstr ""
 
 #: cdsso/contrib/countries/models.py:12
+#: cdsso/templates/register/status.html:143
 msgid "Name"
 msgstr ""
 
@@ -49,7 +50,7 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: cdsso/contrib/register/admin.py:20
+#: cdsso/contrib/register/admin.py:16
 msgid "Completed Registration"
 msgstr ""
 
@@ -81,63 +82,96 @@ msgstr ""
 msgid "Please enter your ASURITE email (<ASURITE>@asu.edu)"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:33
+#: cdsso/contrib/register/models.py:34
 msgid "Registered on Slack"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:34
+#: cdsso/contrib/register/models.py:35
 msgid "The user has been registered on Slack"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:40
+#: cdsso/contrib/register/models.py:41
 msgid "Registered on SunDevilSync"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:42
+#: cdsso/contrib/register/models.py:43
 msgid ""
 "The user has been registered on SunDevilSync. This is True by default for "
 "alumni."
 msgstr ""
 
-#: cdsso/contrib/register/models.py:59
+#: cdsso/contrib/register/models.py:60
 msgid "User"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:60
+#: cdsso/contrib/register/models.py:61
 msgid "This user's progress in the registration process."
 msgstr ""
 
-#: cdsso/contrib/register/models.py:65
+#: cdsso/contrib/register/models.py:66
 msgid "Date Registered"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:66
+#: cdsso/contrib/register/models.py:67
 msgid "The date/time the student submitted their registration form"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:75 cdsso/contrib/register/models.py:76
+#: cdsso/contrib/register/models.py:76 cdsso/contrib/register/models.py:77
 msgid "Student Registration"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:109
+#: cdsso/contrib/register/models.py:112
+#: cdsso/templates/register/status.html:147
 msgid "Email"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:112
+#: cdsso/contrib/register/models.py:115
 msgid "Name of member"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:116
+#: cdsso/contrib/register/models.py:118
+msgid "Slack ID"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:125 cdsso/users/models.py:50
+msgid "UTC Offset"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:127 cdsso/users/models.py:52
+msgid "UTC offset in seconds"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:132 cdsso/users/models.py:33
+msgid "Image 24"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:133 cdsso/users/models.py:36
+msgid "User 24px profile image"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:138 cdsso/users/models.py:40
+msgid "Image 512"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:139 cdsso/users/models.py:43
+msgid "User 512px profile image"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:143
 msgid "Known Member"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:117
+#: cdsso/contrib/register/models.py:144
 msgid "Known Members"
 msgstr ""
 
 #: cdsso/templates/_index/base.html:50 cdsso/templates/base.html:67
 #, python-format
 msgid "%(message)s"
+msgstr ""
+
+#: cdsso/templates/_index/header_meta.html:4
+msgid "CodeDevils - Develop. Network. Create."
 msgstr ""
 
 #: cdsso/templates/account/account_inactive.html:5
@@ -316,6 +350,7 @@ msgid "Already have an account?"
 msgstr ""
 
 #: cdsso/templates/account/signup.html:23
+#: cdsso/templates/register/status.html:87
 msgid "Sign in"
 msgstr ""
 
@@ -324,6 +359,7 @@ msgid "Submit"
 msgstr ""
 
 #: cdsso/templates/account/signup.html:37
+#: cdsso/templates/register/status.html:28
 msgid "Join us on Slack"
 msgstr ""
 
@@ -332,6 +368,7 @@ msgid "Join us on Slack to start interacting with your fellow engineers"
 msgstr ""
 
 #: cdsso/templates/account/signup.html:49
+#: cdsso/templates/register/status.html:31
 msgid "Register on SunDevilSync"
 msgstr ""
 
@@ -516,11 +553,11 @@ msgstr ""
 msgid "Forgot your password?"
 msgstr ""
 
-#: cdsso/templates/cas/logout.html:5
+#: cdsso/templates/cas/logout.html:6
 msgid "Click here"
 msgstr ""
 
-#: cdsso/templates/cas/logout.html:5
+#: cdsso/templates/cas/logout.html:6
 msgid "to log in again"
 msgstr ""
 
@@ -536,34 +573,232 @@ msgstr ""
 msgid "Registrations"
 msgstr ""
 
+#: cdsso/templates/register/status.html:7
+msgid "Your Registration"
+msgstr ""
+
+#: cdsso/templates/register/status.html:14
+msgid "Registration Complete"
+msgstr ""
+
+#: cdsso/templates/register/status.html:16
+msgid "In Progress"
+msgstr ""
+
+#: cdsso/templates/register/status.html:19
+msgid ""
+"You have completed your registration! You can now access all CodeDevils "
+"services. You can start by checking out the website at: "
+msgstr ""
+
+#: cdsso/templates/register/status.html:22
+msgid ""
+"You still need to complete some steps before your registration is complete."
+msgstr ""
+
+#: cdsso/templates/register/status.html:28
+msgid "Step 1"
+msgstr ""
+
+#: cdsso/templates/register/status.html:31
+msgid "Step 2"
+msgstr ""
+
+#: cdsso/templates/register/status.html:34
+msgid "Step 3"
+msgstr ""
+
+#: cdsso/templates/register/status.html:34
+msgid "Additional steps"
+msgstr ""
+
+#: cdsso/templates/register/status.html:37
+msgid "Step 4"
+msgstr ""
+
+#: cdsso/templates/register/status.html:37
+msgid "Done!"
+msgstr ""
+
+#: cdsso/templates/register/status.html:44
+msgid "Step 1: Join us on Slack"
+msgstr ""
+
+#: cdsso/templates/register/status.html:44
+msgid "Step 1 of 4"
+msgstr ""
+
+#: cdsso/templates/register/status.html:48
+msgid ""
+"\n"
+"                                            You have successfully joined us "
+"on Slack! You can start by checking out these channels:\n"
+"                                        "
+msgstr ""
+
+#: cdsso/templates/register/status.html:52
+msgid "Introduce yourself so everyone knows who you are!"
+msgstr ""
+
+#: cdsso/templates/register/status.html:53
+msgid "Where we hold all our meetings and virtual study halls"
+msgstr ""
+
+#: cdsso/templates/register/status.html:54
+msgid "Come here to chat with your fellow CodeDevils!"
+msgstr ""
+
+#: cdsso/templates/register/status.html:57
+msgid ""
+"\n"
+"                                            Slack is our team workspace. "
+"This is where we hold our meetings, collaborate on projects, and just chat "
+"with fellow\n"
+"                                            developers. You can join by "
+"signing into our workspace with your ASU email:\n"
+"                                        "
+msgstr ""
+
+#: cdsso/templates/register/status.html:74
+msgid "Step 2: Register on SunDevilSync"
+msgstr ""
+
+#: cdsso/templates/register/status.html:74
+msgid "Step 2 of 4"
+msgstr ""
+
+#: cdsso/templates/register/status.html:78
+msgid ""
+"\n"
+"                                            You are officially part of the "
+"club! ASU now recognizes you as a member of CodeDevils through "
+"SunDevilSync.\n"
+"                                        "
+msgstr ""
+
+#: cdsso/templates/register/status.html:82
+msgid ""
+"\n"
+"                                            SunDevilSync is the official ASU "
+"online registrar, and is how ASU determines if you are an official member of "
+"an organization.\n"
+"                                            You must join CodeDevils on "
+"SunDevilSync before you are considered an official member. To do so:\n"
+"                                        "
+msgstr ""
+
+#: cdsso/templates/register/status.html:87
+msgid ""
+"to SunDevilSync. This link will take you straight to the CodeDevils home "
+"page."
+msgstr ""
+
+#: cdsso/templates/register/status.html:88
+msgid "In the top right, select "
+msgstr ""
+
+#: cdsso/templates/register/status.html:88
+msgid "Join"
+msgstr ""
+
+#: cdsso/templates/register/status.html:90
+msgid ""
+"\n"
+"                                            An officer from our team will "
+"add you to the organization, and you will receive a confirmation at your ASU "
+"email.\n"
+"                                        "
+msgstr ""
+
+#: cdsso/templates/register/status.html:100
+msgid "Step 3: Additional Administrative Steps"
+msgstr ""
+
+#: cdsso/templates/register/status.html:100
+msgid "Step 3 of 4"
+msgstr ""
+
+#: cdsso/templates/register/status.html:104
+msgid ""
+"\n"
+"                                            Your registration needs have "
+"been administered... In other words, this step is complete!\n"
+"                                        "
+msgstr ""
+
+#: cdsso/templates/register/status.html:108
+msgid ""
+"\n"
+"                                            Someone is working on your "
+"registration and should have this step completed soon. If you have any "
+"questions, or this is taking\n"
+"                                            too long, feel free to contact "
+"us:\n"
+"                                        "
+msgstr ""
+
+#: cdsso/templates/register/status.html:126
+msgid "Step 4: Completed Registration"
+msgstr ""
+
+#: cdsso/templates/register/status.html:126
+msgid "Step 4 of 4"
+msgstr ""
+
+#: cdsso/templates/register/status.html:134
+msgid ""
+"Registration is not complete, but you can view your information below. We "
+"will update it for you."
+msgstr ""
+
+#: cdsso/templates/register/status.html:151
+msgid "Academic status"
+msgstr ""
+
+#: cdsso/templates/register/status.html:152
+msgid "Alumni"
+msgstr ""
+
+#: cdsso/templates/register/status.html:152
+msgid "Student"
+msgstr ""
+
+#: cdsso/templates/register/status.html:155
+msgid "Date registered"
+msgstr ""
+
 #: cdsso/users/apps.py:7
 msgid "Users"
 msgstr ""
 
-#: cdsso/users/models.py:29
+#: cdsso/users/models.py:30
 msgid "Name of User"
 msgstr ""
 
-#: cdsso/users/models.py:35
+#: cdsso/users/models.py:59
+msgid "ID assigned to this user on Slack"
+msgstr ""
+
+#: cdsso/users/models.py:66
 msgid "Anonymous"
 msgstr ""
 
-#: cdsso/users/models.py:37
+#: cdsso/users/models.py:68
 msgid ""
 "You have the option of keeping your account anonymous with CD. Selecting "
 "this will ensure your account stays private and supported applications don't "
 "have access to your data"
 msgstr ""
 
-#: cdsso/users/models.py:45
+#: cdsso/users/models.py:76
 msgid "Receive notifications"
 msgstr ""
 
-#: cdsso/users/models.py:52
+#: cdsso/users/models.py:83
 msgid "Is an alumni"
 msgstr ""
 
-#: cdsso/users/models.py:53
+#: cdsso/users/models.py:84
 msgid "Is an alumni of ASU. If False, the user is by default a student."
 msgstr ""
 
@@ -589,4 +824,16 @@ msgstr ""
 
 #: config/settings/base.py:35
 msgid "Dutch"
+msgstr ""
+
+#: config/settings/base.py:36
+msgid "German"
+msgstr ""
+
+#: config/settings/base.py:37
+msgid "Japanese"
+msgstr ""
+
+#: config/settings/base.py:38
+msgid "Hindi"
 msgstr ""

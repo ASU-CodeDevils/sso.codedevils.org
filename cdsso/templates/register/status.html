@@ -127,13 +127,11 @@
                                 </div>
                                 <div class="card-body">
                                     {% if not registration_complete %}
-                                        <div class="panel panel-info mb-4">
-                                            <div class="panel-heading">
-                                                <div class="media">
-                                                    <i class="fas fa-info-circle font-l color-3 mr-3"></i>
-                                                    <div class="media-body">
-                                                        {% trans 'Registration is not complete, but you can view your information below. We will update it for you.' %}
-                                                    </div>
+                                        <div class="alert alert-primary mb-4">
+                                            <div class="media">
+                                                <i class="fas fa-info-circle font-l mr-3"></i>
+                                                <div class="media-body">
+                                                    {% trans 'Registration is not complete, but you can view your information below. We will update it for you.' %}
                                                 </div>
                                             </div>
                                         </div>

@@ -6,16 +6,14 @@ class SSOLoginView(LoginView):
     """This login view is overriden so the user can be logged into both the CAS server and this site."""
 
     def post(self, request, *args, **kwargs):
-        # process the CAS login first
-        response = super().post(request, *args, **kwargs)
-
-        # then login the user to this site
+        # log the user into the website
         username = request.POST.get("username")
         password = request.POST.get("password")
         user = auth.authenticate(username=username, password=password)
         if user:
             auth.login(request=request, user=user)
-        return response
+        # then log them in through CAS
+        return super().post(request, *args, **kwargs)
 
 
 sso_login_view = SSOLoginView.as_view()
