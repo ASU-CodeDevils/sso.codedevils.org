@@ -114,7 +114,7 @@ AUTHENTICATION_BACKENDS = [
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
 AUTH_USER_MODEL = "users.User"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-redirect-url
-LOGIN_REDIRECT_URL = env("CDSSO_LOGIN_REDIRECT_URL", default="https://codedevils./org/")
+LOGIN_REDIRECT_URL = env("CDSSO_LOGIN_REDIRECT_URL", default="https://codedevils.org/")
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-url
 LOGIN_URL = "login"
 # https://docs.djangoproject.com/en/3.0/ref/settings/#logout-redirect-url
