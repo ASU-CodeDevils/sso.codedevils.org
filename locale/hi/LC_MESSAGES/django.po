@@ -9,168 +9,167 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-28 04:11+0000\n"
-"PO-Revision-Date: 2020-09-28 04:18+0000\n"
+"PO-Revision-Date: 2020-10-04 04:18+0000\n"
 "Last-Translator: b'Kevin Shelley <kevin.shelley@pm.me>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.4\n"
 
 #: cdsso/contrib/countries/apps.py:7 cdsso/contrib/countries/models.py:54
 msgid "Countries"
-msgstr "Des pays"
+msgstr "देश"
 
 #: cdsso/contrib/countries/models.py:12
 #: cdsso/templates/register/status.html:143
 msgid "Name"
-msgstr "Nom"
+msgstr "नाम"
 
 #: cdsso/contrib/countries/models.py:19
 msgid "Native Name"
-msgstr "Nom natif"
+msgstr "पैदाइशी नाम"
 
 #: cdsso/contrib/countries/models.py:26
 msgid "Alpha2 Code"
-msgstr "Code Alpha2"
+msgstr "अल्फा 2 कोड"
 
 #: cdsso/contrib/countries/models.py:33
 msgid "Alpha3 Code"
-msgstr "Code Alpha3"
+msgstr "अल्फा 3 कोड"
 
 #: cdsso/contrib/countries/models.py:36
 msgid "Numeric code"
-msgstr "Code numérique"
+msgstr "न्यूमेरिक कोड"
 
 #: cdsso/contrib/countries/models.py:39
 msgid "Flag"
-msgstr "Drapeau"
+msgstr "झंडा"
 
 #: cdsso/contrib/countries/models.py:53
 msgid "Country"
-msgstr "Pays"
+msgstr "देश"
 
 #: cdsso/contrib/register/admin.py:16
 msgid "Completed Registration"
-msgstr "Inscription terminée"
+msgstr "पूर्ण पंजीकरण"
 
 #: cdsso/contrib/register/apps.py:7
 msgid "Register"
-msgstr "S'inscrire"
+msgstr "रजिस्टर करें"
 
 #: cdsso/contrib/register/forms.py:13 cdsso/users/forms.py:16
 msgid "This username has already been taken."
-msgstr "Ce nom d'utilisateur a déjà été pris."
+msgstr "यह उपयोगकर्ता नाम पहले ही लिया जा चुका है।"
 
 #: cdsso/contrib/register/forms.py:14
 msgid "Please enter a valid email address"
-msgstr "S'il vous plaît, mettez une adresse email valide"
+msgstr "कृपया एक वैध ई - मेल एड्रेस डालें"
 
 #: cdsso/contrib/register/forms.py:15
 msgid "This email has already been taken."
-msgstr "Cet e-mail a déjà été pris."
+msgstr "यह ईमेल पहले ही लिया जा चुका है।"
 
 #: cdsso/contrib/register/forms.py:16
 msgid "Please enter your ASU email."
-msgstr "Veuillez saisir votre adresse e-mail ASU."
+msgstr "कृपया अपना ASU ईमेल दर्ज करें।"
 
 #: cdsso/contrib/register/forms.py:18
 msgid "You are applying as an alumni and cannot use your student email"
 msgstr ""
-"Vous postulez en tant qu'ancien et ne pouvez pas utiliser votre adresse "
-"e-mail d'étudiant"
+"आप एक पूर्व छात्र के रूप में आवेदन कर रहे हैं और अपने छात्र ईमेल का उपयोग "
+"नहीं कर सकते"
 
 #: cdsso/contrib/register/forms.py:21
 msgid "Please enter your ASURITE email (<ASURITE>@asu.edu)"
-msgstr "Veuillez saisir votre adresse e-mail ASURITE (<ASURITE> @ asu.edu)"
+msgstr "कृपया अपना ASURITE ईमेल दर्ज करें (<ASURITE>@asu.edu)"
 
 #: cdsso/contrib/register/models.py:34
 msgid "Registered on Slack"
-msgstr "Enregistré sur Slack"
+msgstr "Slack पर पंजीकृत"
 
 #: cdsso/contrib/register/models.py:35
 msgid "The user has been registered on Slack"
-msgstr "L'utilisateur a été enregistré sur Slack"
+msgstr "उपयोगकर्ता को Slack पर पंजीकृत किया गया है"
 
 #: cdsso/contrib/register/models.py:41
 msgid "Registered on SunDevilSync"
-msgstr "Enregistré sur SunDevilSync"
+msgstr "SunDevilSync पर पंजीकृत"
 
 #: cdsso/contrib/register/models.py:43
 msgid ""
 "The user has been registered on SunDevilSync. This is True by default for "
 "alumni."
 msgstr ""
-"L'utilisateur a été enregistré sur SunDevilSync. C'est vrai par défaut pour "
-"les anciens."
+"उपयोगकर्ता SunDevilSync पर पंजीकृत किया गया है। यह पूर्व छात्रों के लिए "
+"डिफ़ॉल्ट रूप से सही है।"
 
 #: cdsso/contrib/register/models.py:60
 msgid "User"
-msgstr "Utilisatrice"
+msgstr "उपयोगकर्ता"
 
 #: cdsso/contrib/register/models.py:61
 msgid "This user's progress in the registration process."
-msgstr "Progression de cet utilisateur dans le processus d'inscription."
+msgstr "पंजीकरण प्रक्रिया में उपयोगकर्ता की प्रगति।"
 
 #: cdsso/contrib/register/models.py:66
 msgid "Date Registered"
-msgstr "Date d'enregistrement"
+msgstr "तारीख दर्ज की गई"
 
 #: cdsso/contrib/register/models.py:67
 msgid "The date/time the student submitted their registration form"
-msgstr ""
-"La date / heure à laquelle l'étudiant a soumis son formulaire d'inscription"
+msgstr "छात्र द्वारा अपना पंजीकरण फॉर्म जमा करने की तिथि / समय"
 
 #: cdsso/contrib/register/models.py:76 cdsso/contrib/register/models.py:77
 msgid "Student Registration"
-msgstr "Inscription des étudiants"
+msgstr "छात्र पंजीकरण"
 
 #: cdsso/contrib/register/models.py:112
 #: cdsso/templates/register/status.html:147
 msgid "Email"
-msgstr "Email"
+msgstr "ईमेल"
 
 #: cdsso/contrib/register/models.py:115
 msgid "Name of member"
-msgstr "Nom du membre"
+msgstr "सदस्य का नाम"
 
 #: cdsso/contrib/register/models.py:118
 msgid "Slack ID"
-msgstr "Identifiant Slack"
+msgstr "सुस्त पहचान"
 
 #: cdsso/contrib/register/models.py:125 cdsso/users/models.py:50
 msgid "UTC Offset"
-msgstr "Décalage UTC"
+msgstr "UTC ऑफसेट"
 
 #: cdsso/contrib/register/models.py:127 cdsso/users/models.py:52
 msgid "UTC offset in seconds"
-msgstr "Décalage UTC en secondes"
+msgstr "UTC सेकंड में ऑफसेट"
 
 #: cdsso/contrib/register/models.py:132 cdsso/users/models.py:33
 msgid "Image 24"
-msgstr "Image 24"
+msgstr "छवि 24"
 
 #: cdsso/contrib/register/models.py:133 cdsso/users/models.py:36
 msgid "User 24px profile image"
-msgstr "Image de profil utilisateur 24 pixels"
+msgstr "उपयोगकर्ता 24 पिक्सेल प्रोफ़ाइल छवि"
 
 #: cdsso/contrib/register/models.py:138 cdsso/users/models.py:40
 msgid "Image 512"
-msgstr "Image 512"
+msgstr "छवि 512"
 
 #: cdsso/contrib/register/models.py:139 cdsso/users/models.py:43
 msgid "User 512px profile image"
-msgstr "Image de profil utilisateur 512 pixels"
+msgstr "उपयोगकर्ता 512 पिक्सेल प्रोफ़ाइल छवि"
 
 #: cdsso/contrib/register/models.py:143
 msgid "Known Member"
-msgstr "Membre connu"
+msgstr "ज्ञात सदस्य"
 
 #: cdsso/contrib/register/models.py:144
 msgid "Known Members"
-msgstr "Membres connus"
+msgstr "ज्ञात सदस्य"
 
 #: cdsso/templates/_index/base.html:50 cdsso/templates/base.html:67
 #, python-format
@@ -179,56 +178,56 @@ msgstr "%(message)s"
 
 #: cdsso/templates/_index/header_meta.html:4
 msgid "CodeDevils - Develop. Network. Create."
-msgstr "CodeDevils - Développez. Réseau. Créer."
+msgstr "CodeDevils - विकसित करें। नेटवर्क। सृजन करना।"
 
 #: cdsso/templates/account/account_inactive.html:5
 #: cdsso/templates/account/account_inactive.html:8
 msgid "Account Inactive"
-msgstr "compte inactif"
+msgstr "खाता निष्क्रिय"
 
 #: cdsso/templates/account/account_inactive.html:10
 msgid "This account is inactive."
-msgstr "Ce compte est inactif."
+msgstr "यह खाता निष्क्रिय है।"
 
 #: cdsso/templates/account/email.html:7
 msgid "Account"
-msgstr "Compte"
+msgstr "लेखा"
 
 #: cdsso/templates/account/email.html:10
 msgid "E-mail Addresses"
-msgstr "Adresses mail"
+msgstr "ईमेल पता"
 
 #: cdsso/templates/account/email.html:13
 msgid "The following e-mail addresses are associated with your account:"
-msgstr "Les adresses e-mail suivantes sont associées à votre compte:"
+msgstr "निम्नलिखित ई-मेल पते आपके खाते से जुड़े हैं:"
 
 #: cdsso/templates/account/email.html:27
 msgid "Verified"
-msgstr "Vérifié"
+msgstr "सत्यापित"
 
 #: cdsso/templates/account/email.html:29
 msgid "Unverified"
-msgstr "Non vérifié"
+msgstr "असत्यापित"
 
 #: cdsso/templates/account/email.html:31
 msgid "Primary"
-msgstr "Primaire"
+msgstr "मुख्य"
 
 #: cdsso/templates/account/email.html:37
 msgid "Make Primary"
-msgstr "Rendre primaire"
+msgstr "प्राथमिक बनाएं"
 
 #: cdsso/templates/account/email.html:38
 msgid "Re-send Verification"
-msgstr "Renvoyer vérification"
+msgstr "सत्यापन पुनः भेजें"
 
 #: cdsso/templates/account/email.html:39
 msgid "Remove"
-msgstr "Retirer"
+msgstr "हटाना"
 
 #: cdsso/templates/account/email.html:46
 msgid "Warning:"
-msgstr "Avertissement:"
+msgstr "चेतावनी:"
 
 #: cdsso/templates/account/email.html:46
 msgid ""
@@ -236,26 +235,26 @@ msgid ""
 "an e-mail address so you can receive notifications, reset your password, "
 "etc."
 msgstr ""
-"Vous n'avez actuellement aucune adresse e-mail configurée. Vous devez "
-"vraiment ajouter une adresse e-mail pour pouvoir recevoir des notifications,"
-" réinitialiser votre mot de passe, etc."
+"वर्तमान में आपके पास कोई ई-मेल पता सेट नहीं है। आपको वास्तव में एक ई-मेल पता"
+" जोड़ना चाहिए ताकि आप सूचनाएं प्राप्त कर सकें, अपना पासवर्ड रीसेट कर सकें, "
+"आदि।"
 
 #: cdsso/templates/account/email.html:51
 msgid "Add E-mail Address"
-msgstr "Ajouter une adresse e-mail"
+msgstr "ईमेल पता जोड़ें"
 
 #: cdsso/templates/account/email.html:56
 msgid "Add E-mail"
-msgstr "Ajouter un e-mail"
+msgstr "ई-मेल जोड़ें"
 
 #: cdsso/templates/account/email.html:66
 msgid "Do you really want to remove the selected e-mail address?"
-msgstr "Voulez-vous vraiment supprimer l'adresse e-mail sélectionnée?"
+msgstr "क्या आप वास्तव में चयनित ई-मेल पते को निकालना चाहते हैं?"
 
 #: cdsso/templates/account/email_confirm.html:6
 #: cdsso/templates/account/email_confirm.html:10
 msgid "Confirm E-mail Address"
-msgstr "Confirmez votre adresse email"
+msgstr "ईमेल पते की पुष्टि करें"
 
 #: cdsso/templates/account/email_confirm.html:16
 #, python-format
@@ -263,12 +262,12 @@ msgid ""
 "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
 "address for user %(user_display)s."
 msgstr ""
-"Veuillez confirmer que <a href=\"mailto:%(email)s\">%(email)s</a> est une "
-"adresse e-mail pour l'utilisateur %(user_display)s."
+"कृपया पुष्टि करें कि <a href=\"mailto:%(email)s\">%(email)s</a> उपयोगकर्ता "
+"%(user_display)s के लिए एक ई-मेल पता है।"
 
 #: cdsso/templates/account/email_confirm.html:20
 msgid "Confirm"
-msgstr "Confirmer"
+msgstr "पुष्टि करें"
 
 #: cdsso/templates/account/email_confirm.html:27
 #, python-format
@@ -276,51 +275,50 @@ msgid ""
 "This e-mail confirmation link expired or is invalid. Please <a "
 "href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
 msgstr ""
-"Ce lien de confirmation par e-mail a expiré ou n'est pas valide. Veuillez <a"
-" href=\"%(email_url)s\"> envoyer une nouvelle demande de confirmation par "
-"e-mail</a>."
+"यह ई-मेल पुष्टिकरण लिंक की समय सीमा समाप्त या अमान्य है। कृपया <a "
+"href=\"%(email_url)s\"> नया ई-मेल पुष्टिकरण अनुरोध जारी करें</a>।"
 
 #: cdsso/templates/account/password_change.html:7
 #: cdsso/templates/account/password_change.html:12
 #: cdsso/templates/account/password_reset_from_key.html:7
 #: cdsso/templates/account/password_reset_from_key_done.html:6
 msgid "Change Password"
-msgstr "Changer le mot de passe"
+msgstr "पासवर्ड बदलें"
 
 #: cdsso/templates/account/password_reset.html:10
 #: cdsso/templates/account/password_reset_done.html:7
 msgid "Password Reset"
-msgstr "Réinitialisation du mot de passe"
+msgstr "पासवर्ड रीसेट"
 
 #: cdsso/templates/account/password_reset.html:15
 msgid ""
 "Forgotten your password? Enter your e-mail address below, and we'll send you"
 " an e-mail allowing you to reset it."
 msgstr ""
-"Mot de passe oublié? Saisissez votre adresse e-mail ci-dessous et nous vous "
-"enverrons un e-mail vous permettant de la réinitialiser."
+"अपना पासवर्ड भूल गए? अपना ई-मेल पता नीचे दर्ज करें, और हम आपको एक ई-मेल "
+"भेजेंगे जिससे आप इसे रीसेट कर सकते हैं।"
 
 #: cdsso/templates/account/password_reset.html:20
 msgid "Reset My Password"
-msgstr "Réinitialiser mon mot de passe"
+msgstr "अपना पासवर्ड रीसेट करें"
 
 #: cdsso/templates/account/password_reset.html:23
 msgid "Please contact us if you have any trouble resetting your password."
 msgstr ""
-"Veuillez nous contacter si vous rencontrez des difficultés pour "
-"réinitialiser votre mot de passe."
+"यदि आपको अपना पासवर्ड रीसेट करने में कोई परेशानी हो तो कृपया हमसे संपर्क "
+"करें।"
 
 #: cdsso/templates/account/password_reset_done.html:13
 msgid ""
 "We have sent you an e-mail. Please contact us if you do not receive it "
 "within a few minutes."
 msgstr ""
-"Nous vous avons envoyé un e-mail. Veuillez nous contacter si vous ne le "
-"recevez pas dans quelques minutes."
+"हमने आपको एक ई-मेल भेजा है। कृपया हमसे संपर्क करें यदि आप इसे कुछ मिनटों के "
+"भीतर प्राप्त नहीं करते हैं।"
 
 #: cdsso/templates/account/password_reset_from_key.html:7
 msgid "Bad Token"
-msgstr "Mauvais jeton"
+msgstr "खराब टोकन"
 
 #: cdsso/templates/account/password_reset_from_key.html:11
 #, python-format
@@ -329,33 +327,32 @@ msgid ""
 "used.  Please request a <a href=\"%(passwd_reset_url)s\">new password "
 "reset</a>."
 msgstr ""
-"Le lien de réinitialisation du mot de passe n'était pas valide, probablement"
-" parce qu'il a déjà été utilisé. Veuillez demander une <a "
-"href=\"%(passwd_reset_url)s\"> réinitialisation du nouveau mot de passe "
-"</a>."
+"पासवर्ड रीसेट लिंक अमान्य था, संभवतः क्योंकि इसका उपयोग पहले ही किया जा चुका"
+" है। कृपया <a href=\"%(passwd_reset_url)s\"> नया पासवर्ड रीसेट</a> का अनुरोध"
+" करें।"
 
 #: cdsso/templates/account/password_reset_from_key.html:17
 msgid "change password"
-msgstr "changer le mot de passe"
+msgstr "पासवर्ड बदलें"
 
 #: cdsso/templates/account/password_reset_from_key.html:20
 #: cdsso/templates/account/password_reset_from_key_done.html:7
 msgid "Your password is now changed."
-msgstr "Votre mot de passe est maintenant changé."
+msgstr "अब आपका पासवर्ड बदल गया है।"
 
 #: cdsso/templates/account/password_reset_from_key_done.html:7
 #: cdsso/templates/cas/login.html:19 cdsso/templates/cas/login.html:48
 msgid "Login"
-msgstr "S'identifier"
+msgstr "लॉग इन करें"
 
 #: cdsso/templates/account/password_set.html:7
 #: cdsso/templates/account/password_set.html:12
 msgid "Set Password"
-msgstr "Définir le mot de passe"
+msgstr "पासवर्ड सेट करें"
 
 #: cdsso/templates/account/signup.html:3 cdsso/templates/cas/logged.html:5
 msgid "Welcome to CodeDevils!"
-msgstr "Bienvenue chez CodeDevils!"
+msgstr "CodeDevils में आपका स्वागत है!"
 
 #: cdsso/templates/account/signup.html:4
 msgid ""
@@ -363,55 +360,52 @@ msgid ""
 "Begin your CodeDevils journey by filling out the below registration form.\n"
 msgstr ""
 "\n"
-"Commencez votre voyage CodeDevils en remplissant le formulaire d'inscription ci-dessous.\n"
+"नीचे पंजीकरण फार्म भरकर अपनी CodeDevils यात्रा शुरू करें।\n"
 
 #: cdsso/templates/account/signup.html:18
 msgid "Have a question?"
-msgstr "Avoir une question?"
+msgstr "एक सवाल है?"
 
 #: cdsso/templates/account/signup.html:18
 msgid "Contact us"
-msgstr "Nous contacter"
+msgstr "संपर्क करें"
 
 #: cdsso/templates/account/signup.html:23
 msgid "Already have an account?"
-msgstr "Vous avez déjà un compte?"
+msgstr "पहले से ही एक खाता है?"
 
 #: cdsso/templates/account/signup.html:23
 #: cdsso/templates/register/status.html:87
 msgid "Sign in"
-msgstr "Se connecter"
+msgstr "साइन इन करें"
 
 #: cdsso/templates/account/signup.html:27
 msgid "Submit"
-msgstr "Soumettre"
+msgstr "प्रस्तुत"
 
 #: cdsso/templates/account/signup.html:37
 #: cdsso/templates/register/status.html:28
 msgid "Join us on Slack"
-msgstr "Rejoignez-nous sur Slack"
+msgstr "हमें Slack पर शामिल करें"
 
 #: cdsso/templates/account/signup.html:38
 msgid "Join us on Slack to start interacting with your fellow engineers"
 msgstr ""
-"Rejoignez-nous sur Slack pour commencer à interagir avec vos collègues "
-"ingénieurs"
+"अपने साथी इंजीनियरों के साथ बातचीत शुरू करने के लिए Slack पर हमसे जुड़ें"
 
 #: cdsso/templates/account/signup.html:49
 #: cdsso/templates/register/status.html:31
 msgid "Register on SunDevilSync"
-msgstr "Inscrivez-vous sur SunDevilSync"
+msgstr "SunDevilSync पर पंजीकरण करें"
 
 #: cdsso/templates/account/signup.html:50
 msgid ""
 "SunDevilSync is the official online registrar of ASU student organizations"
-msgstr ""
-"SunDevilSync est le registraire en ligne officiel des organisations "
-"étudiantes de l'ASU"
+msgstr "SunDevilSync ASU छात्र संगठनों का आधिकारिक ऑनलाइन रजिस्ट्रार है"
 
 #: cdsso/templates/account/signup.html:61
 msgid "Get in touch"
-msgstr "Entrer en contact"
+msgstr "संपर्क में रहो"
 
 #: cdsso/templates/account/signup.html:65
 msgid "Arizona State University,"
@@ -423,7 +417,7 @@ msgstr "Tempe, AZ"
 
 #: cdsso/templates/account/signup.html:104
 msgid "Registration Support"
-msgstr "Aide à l'enregistrement"
+msgstr "पंजीकरण का समर्थन"
 
 #: cdsso/templates/account/signup.html:108
 msgid ""
@@ -433,11 +427,11 @@ msgid ""
 "                    "
 msgstr ""
 "\n"
-"Pour des questions sur les conditions d'inscription des étudiants ou des anciens, y compris l'adhésion Slack, enregistrement sur SunDevilSync et statut d'enregistrement"
+"छात्रों या पूर्व छात्रों के लिए पंजीकरण आवश्यकताओं के बारे में प्रश्नों के लिए, जिसमें Slack में शामिल होना, SunDevilSync पर पंजीकरण करना और पंजीकरण स्थिति शामिल है"
 
 #: cdsso/templates/account/signup.html:117
 msgid "General Support"
-msgstr "Support général"
+msgstr "सामान्य समर्थन"
 
 #: cdsso/templates/account/signup.html:121
 msgid ""
@@ -447,23 +441,23 @@ msgid ""
 "                    "
 msgstr ""
 "\n"
-"Vous avez des questions sur le club avant de vous joindre? N'hésitez pas à nous contacter! Nous aimons pour se vanter de toutes les opportunités incroyables que CodeDevils a à offrir."
+"आपके शामिल होने से पहले क्लब के बारे में प्रश्न हैं? हमें एक पकड़ पाने के लिए स्वतंत्र महसूस करें! हम सभी अद्भुत अवसरों के बारे में अपनी बड़ाई करना पसंद करते हैं जो कोडडविल को पेश करना है।"
 
 #: cdsso/templates/account/signup_closed.html:5
 #: cdsso/templates/account/signup_closed.html:8
 msgid "Sign Up Closed"
-msgstr "Inscriptions closes"
+msgstr "पंजीकरण अब बंद"
 
 #: cdsso/templates/account/signup_closed.html:10
 msgid "We are sorry, but the sign up is currently closed."
-msgstr "Nous sommes désolés, mais l'inscription est actuellement fermée."
+msgstr "हमें खेद है, लेकिन वर्तमान में साइन अप बंद है।"
 
 #: cdsso/templates/account/verification_sent.html:5
 #: cdsso/templates/account/verification_sent.html:8
 #: cdsso/templates/account/verified_email_required.html:5
 #: cdsso/templates/account/verified_email_required.html:8
 msgid "Verify Your E-mail Address"
-msgstr "Vérifiez votre adresse e-mail"
+msgstr "अपने ईमेल पते की पुष्टि करें"
 
 #: cdsso/templates/account/verification_sent.html:10
 msgid ""
@@ -471,9 +465,9 @@ msgid ""
 "finalize the signup process. Please contact us if you do not receive it "
 "within a few minutes."
 msgstr ""
-"Nous vous avons envoyé un e-mail pour vérification. Suivez le lien fourni "
-"pour finaliser le processus d'inscription. Veuillez nous contacter si vous "
-"ne le recevez pas dans quelques minutes."
+"हमने आपको सत्यापन के लिए एक ई-मेल भेजा है। साइनअप प्रक्रिया को अंतिम रूप "
+"देने के लिए दिए गए लिंक का पालन करें। कृपया हमसे संपर्क करें यदि आप इसे कुछ "
+"मिनटों के भीतर प्राप्त नहीं करते हैं।"
 
 #: cdsso/templates/account/verified_email_required.html:12
 msgid ""
@@ -481,9 +475,9 @@ msgid ""
 "you are who you claim to be. For this purpose, we require that you\n"
 "verify ownership of your e-mail address. "
 msgstr ""
-"Cette partie du site nous oblige à vérifier que vous êtes qui vous prétendez"
-" être. À cette fin, nous exigeons que vous valider la propriété de votre "
-"adresse e-mail."
+"साइट के इस हिस्से को हमें सत्यापित करने की आवश्यकता है कि आप वह हैं जो आप "
+"होने का दावा करते हैं। इस उद्देश्य के लिए, हमें आपकी आवश्यकता है अपने ई-मेल "
+"पते के स्वामित्व को सत्यापित करें।"
 
 #: cdsso/templates/account/verified_email_required.html:16
 msgid ""
@@ -491,9 +485,8 @@ msgid ""
 "verification. Please click on the link inside this e-mail. Please\n"
 "contact us if you do not receive it within a few minutes."
 msgstr ""
-"Nous vous avons envoyé un e-mail pour vérification. Veuillez cliquer sur le "
-"lien à l'intérieur de cet e-mail. S'il vous plaît contactez-nous si vous ne "
-"le recevez pas dans quelques minutes."
+"हमने आपके लिए एक ई-मेल भेजा है\n"
+"सत्यापन। कृपया इस ई-मेल के लिंक पर क्लिक करें। कृपया हमसे संपर्क करें यदि आप इसे कुछ मिनटों के भीतर प्राप्त नहीं करते हैं।"
 
 #: cdsso/templates/account/verified_email_required.html:20
 #, python-format
@@ -501,37 +494,37 @@ msgid ""
 "<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your "
 "e-mail address</a>."
 msgstr ""
-"<strong>Remarque:</strong> vous pouvez toujours <a href=\"%(email_url)s\"> "
-"modifier votre adresse e-mail</a>."
+"<strong>नोट:</strong> आप अभी भी <a href=\"%(email_url)s\"> अपना ई-मेल बदल "
+"सकते हैं</a>।"
 
 #: cdsso/templates/base.html:47
 msgid "Ready to join?"
-msgstr "Prêt à nous rejoindre?"
+msgstr "शामिल होने के लिए तैयार हैं?"
 
 #: cdsso/templates/base.html:48
 msgid "Create a CodeDevil account"
-msgstr "Créer un compte CodeDevil"
+msgstr "एक CodeDevil खाता बनाएँ"
 
 #: cdsso/templates/base.html:50
 msgid "Create account"
-msgstr "Create account"
+msgstr "खाता बनाएं"
 
 #: cdsso/templates/cas/logged.html:12
 msgid "Log In Successful"
-msgstr "Connexion réussie"
+msgstr "सफलतापूर्ण प्रवेश"
 
 #: cdsso/templates/cas/logged.html:12
 msgid ""
 "You now have access to all CodeDevils services that \n"
 "          support logging in! Check out some of the ones below to see what being a member offers you!"
 msgstr ""
-"Vous avez désormais accès à tous les services CodeDevils prise en charge de "
-"la connexion! Découvrez quelques-unes de celles ci-dessous pour voir ce que "
-"vous offre d'être membre!"
+"अब आपके पास सभी CodeDevils सेवाओं का उपयोग है जो लॉग इन करने का समर्थन करता "
+"है! एक सदस्य होने के नाते आपको देखने के लिए नीचे दिए गए कुछ विकल्पों को "
+"देखें!"
 
 #: cdsso/templates/cas/logged.html:21
 msgid "CodeDevils Website"
-msgstr "Site Web CodeDevils"
+msgstr "CodeDevils वेबसाइट"
 
 #: cdsso/templates/cas/logged.html:22
 msgid ""
@@ -541,7 +534,7 @@ msgid ""
 "              "
 msgstr ""
 "\n"
-"Le site Web CodeDevils est la page d'accueil de l'organisation! Découvrez-le pour en savoir plus l'histoire de l'organisation, son leadership et d'autres ressources pour tout ce qui concerne CodeDevils."
+"CodeDevils वेबसाइट संगठन का मुख पृष्ठ है! संगठन के इतिहास, इसके नेतृत्व और अन्य संसाधनों के बारे में जानने के लिए इसे देखें।"
 
 #: cdsso/templates/cas/logged.html:39
 msgid "IONS"
@@ -556,128 +549,124 @@ msgid ""
 "              "
 msgstr ""
 "\n"
-"Imagery of Natural Systems (IONS) est un projet collaboratif entre ASU SESE et CodeDevils. Il s'associe à Planet pour traiter les images satellites et les analyser pour la couverture des cendres et ses effets\n"
-"sur la végétation environnante."
+"Imagery of Natural Systems (IONS) ASU SESE और कोडडविल्स के बीच एक सहयोगी परियोजना है। यह ग्रह के साथ उपग्रह छवियों को संसाधित करने और राख कवरेज और इसके प्रभाव के लिए उनका विश्लेषण करने के लिए साझेदार है आसपास की वनस्पति पर।"
 
 #: cdsso/templates/cas/logged.html:57
 msgid "Log me out from all my sessions"
-msgstr "Me déconnecter de toutes mes sessions"
+msgstr "मेरे सभी सत्रों से मुझे लॉग आउट करें"
 
 #: cdsso/templates/cas/logged.html:63
 msgid "Forget the identity provider"
-msgstr "Oubliez le fournisseur d'identité"
+msgstr "पहचान प्रदाता को भूल जाओ"
 
 #: cdsso/templates/cas/logged.html:67
 msgid "Logout"
-msgstr "Se déconnecter"
+msgstr "लॉग आउट"
 
 #: cdsso/templates/cas/login.html:9
 msgid "Welcome to"
-msgstr "Bienvenue à"
+msgstr "में स्वागत"
 
 #: cdsso/templates/cas/login.html:12
 msgid "Login to your account"
-msgstr "Connectez-vous à votre compte"
+msgstr "अपने खाते में प्रवेश करें"
 
 #: cdsso/templates/cas/login.html:21
 msgid "Don't have an account yet?"
-msgstr "Vous n'avez pas encore de compte?"
+msgstr "अब तक कोई खाता नहीं है?"
 
 #: cdsso/templates/cas/login.html:22
 msgid "Create it here"
-msgstr "Créez-le ici"
+msgstr "इसे यहाँ बनाएँ"
 
 #: cdsso/templates/cas/login.html:32 cdsso/templates/cas/login.html:34
 msgid "Username"
-msgstr "Username"
+msgstr "उपयोगकर्ता नाम"
 
 #: cdsso/templates/cas/login.html:37 cdsso/templates/cas/login.html:39
 msgid "Password"
-msgstr "Mot de passe"
+msgstr "कुंजिका"
 
 #: cdsso/templates/cas/login.html:44
 msgid "Forgot your password?"
-msgstr "Mot de passe oublié?"
+msgstr "क्या आप अपना पासवर्ड भूल गए?"
 
 #: cdsso/templates/cas/logout.html:6
 msgid "Click here"
-msgstr "Cliquez ici"
+msgstr "यहाँ क्लिक करें"
 
 #: cdsso/templates/cas/logout.html:6
 msgid "to log in again"
-msgstr "se reconnecter"
+msgstr "फिर से लॉग इन करने के लिए"
 
 #: cdsso/templates/cas/warn.html:9
 msgid "Connect to the service"
-msgstr "Connectez-vous au service"
+msgstr "सेवा से कनेक्ट करें"
 
 #: cdsso/templates/register/registration_detail.html:8
 msgid "Detail "
-msgstr "Détail"
+msgstr "विस्तार"
 
 #: cdsso/templates/register/registration_list.html:8
 msgid "Registrations"
-msgstr "Inscriptions"
+msgstr "पंजीकरण"
 
 #: cdsso/templates/register/status.html:7
 msgid "Your Registration"
-msgstr "Votre inscription"
+msgstr "आपका पंजीकरण"
 
 #: cdsso/templates/register/status.html:14
 msgid "Registration Complete"
-msgstr "Inscription complète"
+msgstr "पंजीकरण पूर्ण"
 
 #: cdsso/templates/register/status.html:16
 msgid "In Progress"
-msgstr "En cours"
+msgstr "चालू"
 
 #: cdsso/templates/register/status.html:19
 msgid ""
 "You have completed your registration! You can now access all CodeDevils "
 "services. You can start by checking out the website at: "
 msgstr ""
-"Vous avez terminé votre inscription! Vous pouvez désormais accéder à tous "
-"les services CodeDevils. Vous pouvez commencer par consulter le site Web à "
-"l'adresse:"
+"आपने अपना पंजीकरण पूरा कर लिया है! अब आप सभी CodeDevils सेवाओं का उपयोग कर "
+"सकते हैं। आप वेबसाइट की जाँच यहाँ से शुरू कर सकते हैं:"
 
 #: cdsso/templates/register/status.html:22
 msgid ""
 "You still need to complete some steps before your registration is complete."
-msgstr ""
-"Vous devez encore effectuer certaines étapes avant que votre inscription ne "
-"soit terminée."
+msgstr "अपना पंजीकरण पूरा होने से पहले आपको कुछ चरणों को पूरा करना होगा।"
 
 #: cdsso/templates/register/status.html:28
 msgid "Step 1"
-msgstr "Étape 1"
+msgstr "चरण 1"
 
 #: cdsso/templates/register/status.html:31
 msgid "Step 2"
-msgstr "Étape 2"
+msgstr "चरण 2"
 
 #: cdsso/templates/register/status.html:34
 msgid "Step 3"
-msgstr "Étape 3"
+msgstr "चरण 3"
 
 #: cdsso/templates/register/status.html:34
 msgid "Additional steps"
-msgstr "Etapes supplémentaires"
+msgstr "अतिरिक्त कदम"
 
 #: cdsso/templates/register/status.html:37
 msgid "Step 4"
-msgstr "Étape 4"
+msgstr "चरण 4"
 
 #: cdsso/templates/register/status.html:37
 msgid "Done!"
-msgstr "Terminé!"
+msgstr "किया हुआ!"
 
 #: cdsso/templates/register/status.html:44
 msgid "Step 1: Join us on Slack"
-msgstr "Étape 1: Rejoignez-nous sur Slack"
+msgstr "चरण 1: सुस्त पर हमसे जुड़ें"
 
 #: cdsso/templates/register/status.html:44
 msgid "Step 1 of 4"
-msgstr "Étape 1 de 4"
+msgstr "चरण 1 की 4"
 
 #: cdsso/templates/register/status.html:48
 msgid ""
@@ -686,19 +675,19 @@ msgid ""
 "                                        "
 msgstr ""
 "\n"
-"Vous nous avez rejoint avec succès sur Slack! Vous pouvez commencer par consulter ces chaînes:"
+"आपने हमें धीरे-धीरे स्लैक में शामिल कर लिया है! आप इन चैनलों की जाँच करके शुरू कर सकते हैं:"
 
 #: cdsso/templates/register/status.html:52
 msgid "Introduce yourself so everyone knows who you are!"
-msgstr "Présentez-vous pour que tout le monde sache qui vous êtes!"
+msgstr "अपना परिचय दें ताकि सभी को पता चले कि आप कौन हैं!"
 
 #: cdsso/templates/register/status.html:53
 msgid "Where we hold all our meetings and virtual study halls"
-msgstr "Où nous tenons toutes nos réunions et salles d'étude virtuelles"
+msgstr "जहां हम अपनी सभी मीटिंग और वर्चुअल स्टडी हॉल रखते हैं"
 
 #: cdsso/templates/register/status.html:54
 msgid "Come here to chat with your fellow CodeDevils!"
-msgstr "Venez ici pour discuter avec vos collègues CodeDevils!"
+msgstr "अपने साथी के साथ चैट करने के लिए यहां आइये CodeDevils!"
 
 #: cdsso/templates/register/status.html:57
 msgid ""
@@ -708,16 +697,15 @@ msgid ""
 "                                        "
 msgstr ""
 "\n"
-"Slack est notre espace de travail d'équipe. C'est là que nous tenons nos réunions, collaborons sur des projets et discutons simplement avec d'autres\n"
-"développeurs. Vous pouvez rejoindre en vous connectant à notre espace de travail avec votre email ASU:"
+"Slack हमारी टीम कार्यक्षेत्र है। यह वह जगह है जहां हम अपनी बैठकें करते हैं, परियोजनाओं पर सहयोग करते हैं, और बस साथी डेवलपर्स के साथ चैट करते हैं। आप अपने ASU ईमेल के साथ हमारे कार्यक्षेत्र में प्रवेश करके जुड़ सकते हैं:"
 
 #: cdsso/templates/register/status.html:74
 msgid "Step 2: Register on SunDevilSync"
-msgstr "Étape 2: Inscrivez-vous sur SunDevilSync"
+msgstr "चरण 2: SunDevilSync पर पंजीकरण करें"
 
 #: cdsso/templates/register/status.html:74
 msgid "Step 2 of 4"
-msgstr "Étape 2 de 4"
+msgstr "चरण 2 की 4"
 
 #: cdsso/templates/register/status.html:78
 msgid ""
@@ -726,7 +714,7 @@ msgid ""
 "                                        "
 msgstr ""
 "\n"
-"Vous faites officiellement partie du club! ASU vous reconnaît désormais en tant que membre de CodeDevils via SunDevilSync."
+"आप आधिकारिक तौर पर क्लब का हिस्सा हैं! ASU अब आपको SunDevilSync के माध्यम से CodeDevils के सदस्य के रूप में पहचानता है।"
 
 #: cdsso/templates/register/status.html:82
 msgid ""
@@ -736,23 +724,22 @@ msgid ""
 "                                        "
 msgstr ""
 "\n"
-"SunDevilSync est le registraire en ligne officiel de l'ASU, et c'est ainsi qu'ASU détermine si vous êtes un membre officiel d'une organisation. Vous devez rejoindre CodeDevils sur SunDevilSync avant d'être considéré comme un membre officiel. Faire cela:"
+"SunDevilSync आधिकारिक ASU ऑनलाइन रजिस्ट्रार है, और यदि आप किसी संगठन के आधिकारिक सदस्य हैं तो ASU कैसे निर्धारित करता है। आधिकारिक सदस्य माने जाने से पहले आपको SunDevilSync पर CodeDevils से जुड़ना होगा। ऐसा करने के लिए:"
 
 #: cdsso/templates/register/status.html:87
 msgid ""
 "to SunDevilSync. This link will take you straight to the CodeDevils home "
 "page."
 msgstr ""
-"à SunDevilSync. Ce lien vous mènera directement à la page d'accueil de "
-"CodeDevils."
+"SunDevilSync के लिए। यह लिंक आपको सीधे CodeDevils के होम पेज पर ले जाएगा।"
 
 #: cdsso/templates/register/status.html:88
 msgid "In the top right, select "
-msgstr "En haut à droite, sélectionnez"
+msgstr "शीर्ष दाईं ओर, का चयन करें "
 
 #: cdsso/templates/register/status.html:88
 msgid "Join"
-msgstr "Join"
+msgstr "शामिल हों"
 
 #: cdsso/templates/register/status.html:90
 msgid ""
@@ -761,15 +748,15 @@ msgid ""
 "                                        "
 msgstr ""
 "\n"
-"Un responsable de notre équipe vous ajoutera à l'organisation et vous recevrez une confirmation sur votre adresse e-mail ASU."
+"हमारी टीम का एक अधिकारी आपको संगठन में शामिल करेगा, और आपको अपने एएसयू ईमेल पर एक पुष्टिकरण प्राप्त होगा।"
 
 #: cdsso/templates/register/status.html:100
 msgid "Step 3: Additional Administrative Steps"
-msgstr "Étape 3: étapes administratives supplémentaires"
+msgstr "चरण 3: अतिरिक्त प्रशासनिक चरण"
 
 #: cdsso/templates/register/status.html:100
 msgid "Step 3 of 4"
-msgstr "Étape 3 de 4"
+msgstr "चरण 3 की 4"
 
 #: cdsso/templates/register/status.html:104
 msgid ""
@@ -778,7 +765,7 @@ msgid ""
 "                                        "
 msgstr ""
 "\n"
-"Vos besoins d'inscription ont été gérés ... En d'autres termes, cette étape est terminée!"
+"आपके पंजीकरण की आवश्यकता को प्रशासित किया गया है ... दूसरे शब्दों में, यह चरण पूरा हो गया है!"
 
 #: cdsso/templates/register/status.html:108
 msgid ""
@@ -788,55 +775,55 @@ msgid ""
 "                                        "
 msgstr ""
 "\n"
-"Quelqu'un travaille sur votre inscription et devrait bientôt terminer cette étape. Si vous avez des questions ou si cela prend trop longtemps, n'hésitez pas à nous contacter:"
+"कोई व्यक्ति आपके पंजीकरण पर काम कर रहा है और यह कदम जल्द ही पूरा होना चाहिए। यदि आपके कोई प्रश्न हैं, या यह बहुत लंबा समय ले रहा है, तो हमसे संपर्क करने में संकोच न करें:"
 
 #: cdsso/templates/register/status.html:126
 msgid "Step 4: Completed Registration"
-msgstr "Étape 4: Inscription terminée"
+msgstr "चरण 4: पूर्ण पंजीकरण"
 
 #: cdsso/templates/register/status.html:126
 msgid "Step 4 of 4"
-msgstr "Étape 4 de 4"
+msgstr "चरण 4 की 4"
 
 #: cdsso/templates/register/status.html:134
 msgid ""
 "Registration is not complete, but you can view your information below. We "
 "will update it for you."
 msgstr ""
-"L'inscription n'est pas terminée, mais vous pouvez consulter vos "
-"informations ci-dessous. Nous le mettrons à jour pour vous."
+"पंजीकरण पूर्ण नहीं है, लेकिन आप अपनी जानकारी नीचे देख सकते हैं। हम इसे आपके "
+"लिए अपडेट करेंगे।"
 
 #: cdsso/templates/register/status.html:151
 msgid "Academic status"
-msgstr "Statut académique"
+msgstr "शैक्षणिक स्थिति"
 
 #: cdsso/templates/register/status.html:152
 msgid "Alumni"
-msgstr "Anciens"
+msgstr "पूर्व छात्रों"
 
 #: cdsso/templates/register/status.html:152
 msgid "Student"
-msgstr "Étudiante"
+msgstr "छात्र"
 
 #: cdsso/templates/register/status.html:155
 msgid "Date registered"
-msgstr "Date d'enregistrement"
+msgstr "तारीख दर्ज की गई"
 
 #: cdsso/users/apps.py:7
 msgid "Users"
-msgstr "Utilisatrices"
+msgstr "उपयोगकर्ता"
 
 #: cdsso/users/models.py:30
 msgid "Name of User"
-msgstr "Nom de l'utilisateur"
+msgstr "उपयोगकर्ता का नाम"
 
 #: cdsso/users/models.py:59
 msgid "ID assigned to this user on Slack"
-msgstr "ID attribué à cet utilisateur sur Slack"
+msgstr "पहचान Slack पर इस उपयोगकर्ता को सौंपी गई"
 
 #: cdsso/users/models.py:66
 msgid "Anonymous"
-msgstr "Anonyme"
+msgstr "गुमनाम"
 
 #: cdsso/users/models.py:68
 msgid ""
@@ -844,55 +831,56 @@ msgid ""
 "this will ensure your account stays private and supported applications don't"
 " have access to your data"
 msgstr ""
-"Vous avez la possibilité de garder votre compte anonyme avec CD. En "
-"sélectionnant cette option, votre compte restera privé et les applications "
-"prises en charge n'auront pas accès à vos données"
+"आपके पास CodeDevils के साथ अपने खाते को गुमनाम रखने का विकल्प है। इसे चुनने "
+"से यह सुनिश्चित होगा कि आपका खाता निजी रहेगा और समर्थित एप्लिकेशन आपके डेटा "
+"तक नहीं पहुंचेंगे"
 
 #: cdsso/users/models.py:76
 msgid "Receive notifications"
-msgstr "Recevoir des notifications"
+msgstr "सूचनाएं प्राप्त करें"
 
 #: cdsso/users/models.py:83
 msgid "Is an alumni"
-msgstr "Est un ancien"
+msgstr "पूर्व छात्र है"
 
 #: cdsso/users/models.py:84
 msgid "Is an alumni of ASU. If False, the user is by default a student."
 msgstr ""
-"Est un ancien de l'ASU. Si False, l'utilisateur est par défaut un étudiant."
+"एएसयू का पूर्व छात्र है। यदि गलत है, तो उपयोगकर्ता डिफ़ॉल्ट रूप से एक छात्र "
+"है।"
 
 #: cdsso/users/views.py:34
 msgid "Infos successfully updated"
-msgstr "Infos mises à jour avec succès"
+msgstr "Infos सफलतापूर्वक अपडेट किया गया"
 
 #: config/settings/base.py:31
 msgid "Spanish"
-msgstr "Espagnole"
+msgstr "स्पेनिश"
 
 #: config/settings/base.py:32
 msgid "English"
-msgstr "Anglaise"
+msgstr "अंग्रेज़ी"
 
 #: config/settings/base.py:33
 msgid "French"
-msgstr "Française"
+msgstr "फ्रेंच"
 
 #: config/settings/base.py:34
 msgid "Arabic"
-msgstr "Arabe"
+msgstr "अरबी"
 
 #: config/settings/base.py:35
 msgid "Dutch"
-msgstr "Néerlandaise"
+msgstr "डच"
 
 #: config/settings/base.py:36
 msgid "German"
-msgstr "Allemande"
+msgstr "जर्मन"
 
 #: config/settings/base.py:37
 msgid "Japanese"
-msgstr "Japonaise"
+msgstr "जापानी"
 
 #: config/settings/base.py:38
 msgid "Hindi"
-msgstr "Hindi"
+msgstr "हिंदी"
