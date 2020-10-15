@@ -29,7 +29,7 @@ def register_on_slack(emails: Emails):
     Args:
         email (Emails): The list of emails to be checked.
     """
-    if settings.REGISTER_SLACK_USERS_WITH_FLAMEBOI:
+    if settings.FLAMEBOI["REGISTER_SLACK_USERS_WITH_FLAMEBOI"]:
         # validate emails, this will raise a ValidationError
         invalid_emails = []
         for email in emails:
@@ -43,7 +43,7 @@ def register_on_slack(emails: Emails):
         valid_emails = [email for email in emails if email not in invalid_emails]
 
         # TODO check this endpoint
-        url = settings.FLAMEBOI_API_URL + "get_student/"
+        url = settings.FLAMEBOI["API_URL"] + "get_student/"
 
         # get the access token needed for the requests
         try:

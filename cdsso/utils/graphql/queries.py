@@ -13,11 +13,12 @@ def make_cdweb_query(query: str, variables: dict = None) -> GraphQLResponse:
     """
     Makes a GraphQL query to the CodeDevils website.
     """
+    website = settings.CODEDEVILS_WEBSITE
     return make_query(
         query=query,
         variables=variables,
-        url=settings.CODEDEVILS_WEBSITE_GRAPHQL_URL,
-        headers={"Authorization": f"Token {settings.CODEDEVILS_WEBSITE_API_KEY}"},
+        url=website["BASE_URL"] + website["GRAPHQL_API"],
+        headers={"Authorization": f"Token {settings.CODEDEVILS_WEBSITE['API_KEY']}"},
     )
 
 

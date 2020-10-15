@@ -31,8 +31,8 @@ def update_codedevils_org(
     instance: User, created: bool, update_fields: frozenset, **kwargs
 ):
     """Updates the CodeDevils website with new user information."""
-    DEFAULT_FIELDS = settings.CODEDEVILS_WEBSITE_UPDATE_FIELDS
-    FIELDS_TO_SKIP = settings.CODEDEVILS_WEBSITE_SKIP_FIELDS
+    DEFAULT_FIELDS = settings.CODEDEVILS_WEBSITE["UPDATE_FIELDS"]
+    FIELDS_TO_SKIP = settings.CODEDEVILS_WEBSITE["SKIP_FIELDS"]
 
     # update only if this is an active user
     if instance.is_active and not created:

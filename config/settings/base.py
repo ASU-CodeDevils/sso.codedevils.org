@@ -378,6 +378,24 @@ GRAPHENE = {
 
 # CD SSO-specific settings
 # -------------------------------------------------------------------------------
+
+# CD website
+CODEDEVILS_WEBSITE = {
+    "BASE_URL": env("CODEDEVILS_WEBSITE_BASE_URL", default="https://codedevils.org"),
+    "API_KEY": env("CODEDEVILS_WEBSITE_API_KEY"),
+    "GRAPHQL_API": env("CODEDEVILS_WEBSITE_GRAPHQL_API", default="/api/graphql/"),
+    "REST_API": env("CODEDEVILS_WEBSITE_REST_API", default="/api/"),
+    "UPDATE_FIELDS": env.list("CODEDEVILS_WEBSITE_UPDATE_FIELDS", default="email,name,anonymous"),
+    "SKIP_FIELDS": env.list("CODEDEVILS_WEBSITE_SKIP_FIELDS", default="last_login")
+}
+
+# Flameboi Slack
+FLAMEBOI = {
+    "API_URL": env("FLAMEBOI_API_URL", default="https://flameboi.codedevils.org/"),
+    "USERNAME": env("FLAMEBOI_API_USERNAME"),
+    "PASSWORD": env("FLAMEBOI_API_PASSWORD"),
+    "REGISTER_SLACK_USERS_WITH_FLAMEBOI": env.bool("FLAMEBOI_REGISTER_SLACK_USERS_WITH_FLAMEBOI", default=True)
+}
 CODEDEVILS_WEBSITE_GRAPHQL_URL = env(
     "CDSSO_CODEDEVILS_WEBSITE_URL", default="https://codedevils.org/api/graphql/"
 )

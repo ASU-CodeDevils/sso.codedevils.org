@@ -26,9 +26,9 @@ def get_flameboi_jwt() -> JWT:
     Returns:
         The access and refresh tokens as a tuple.
     """
-    url = settings.FLAMEBOI_API_URL
-    username = settings.FLAMEBOI_API_USERNAME
-    password = settings.FLAMEBOI_API_PASSWORD
+    url = settings.FLAMEBOI["API_URL"]
+    username = settings.FLAMEBOI["USERNAME"]
+    password = settings.FLAMEBOI["PASSWORD"]
 
     response = requests.post(url=url, json={"username": username, "password": password})
     if response.status_code == 200:
