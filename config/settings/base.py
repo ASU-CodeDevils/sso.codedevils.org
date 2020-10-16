@@ -28,14 +28,14 @@ TIME_ZONE = "UTC"
 LANGUAGE_CODE = env("DJANGO_LANGUAGE_CODE", default="en-us")
 
 LANGUAGES = [
-  ("es", _("Spanish")),
-  ("en-us", _("English")),
-  ("fr", _("French")),
-  ("ar", _("Arabic")),
-  ("nl", _("Dutch")),
-  ("ge", _("German")),
-  ("ja", _("Japanese")),
-  ("hi", _("Hindi"))
+    ("es", _("Spanish")),
+    ("en-us", _("English")),
+    ("fr", _("French")),
+    ("ar", _("Arabic")),
+    ("nl", _("Dutch")),
+    ("ge", _("German")),
+    ("ja", _("Japanese")),
+    ("hi", _("Hindi")),
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
@@ -52,9 +52,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-DATABASES = {
-    "default": env.db("DATABASE_URL", default="mysql:///codedevils_weblogin")
-}
+DATABASES = {"default": env.db("DATABASE_URL", default="mysql:///codedevils_weblogin")}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # URLS
@@ -88,13 +86,13 @@ THIRD_PARTY_APPS = [
     "graphene_django",
     "rest_framework",
     "rest_framework.authtoken",
-    "rosetta"
+    "rosetta",
 ]
 
 LOCAL_APPS = [
     "cdsso.users.apps.UsersConfig",
     "cdsso.contrib.countries.apps.CountriesConfig",
-    "cdsso.contrib.register.apps.RegisterConfig"
+    "cdsso.contrib.register.apps.RegisterConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -154,7 +152,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.common.BrokenLinkEmailsMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "cdsso.contrib.register.middleware.UserRegistrationConfirmationMiddleware"
+    "cdsso.contrib.register.middleware.UserRegistrationConfirmationMiddleware",
 ]
 
 # STATIC
@@ -320,9 +318,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = "cdsso.users.adapters.SocialAccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/forms.html#account-forms
-ACCOUNT_FORMS = {
-    "signup": "cdsso.contrib.register.forms.StudentRegistrationForm"
-}
+ACCOUNT_FORMS = {"signup": "cdsso.contrib.register.forms.StudentRegistrationForm"}
 
 # django-rest-framework
 # -------------------------------------------------------------------------------
@@ -361,20 +357,14 @@ DRF_YASG_LICENSE = "BSD License"
 # https://drf-yasg.readthedocs.io/en/stable/security.html#describing-authentication-schemes
 SWAGGER_SETTINGS = {
     "SECURITY_DEFINITIONS": {
-        "Token": {
-            "type": "apiKey",
-            "name": "Authorization",
-            "in": "header"
-        }
+        "Token": {"type": "apiKey", "name": "Authorization", "in": "header"}
     }
 }
 
 # graphene
 # https://docs.graphene-python.org/projects/django/en/latest/
 # -------------------------------------------------------------------------------
-GRAPHENE = {
-    "SCHEMA": "config.graphene.schema.schema"
-}
+GRAPHENE = {"SCHEMA": "config.graphene.schema.schema"}
 
 # CD SSO-specific settings
 # -------------------------------------------------------------------------------
@@ -385,8 +375,10 @@ CODEDEVILS_WEBSITE = {
     "API_KEY": env("CODEDEVILS_WEBSITE_API_KEY"),
     "GRAPHQL_API": env("CODEDEVILS_WEBSITE_GRAPHQL_API", default="/api/graphql/"),
     "REST_API": env("CODEDEVILS_WEBSITE_REST_API", default="/api/"),
-    "UPDATE_FIELDS": env.list("CODEDEVILS_WEBSITE_UPDATE_FIELDS", default="email,name,anonymous"),
-    "SKIP_FIELDS": env.list("CODEDEVILS_WEBSITE_SKIP_FIELDS", default="last_login")
+    "UPDATE_FIELDS": env.list(
+        "CODEDEVILS_WEBSITE_UPDATE_FIELDS", default="email,name,anonymous"
+    ),
+    "SKIP_FIELDS": env.list("CODEDEVILS_WEBSITE_SKIP_FIELDS", default="last_login"),
 }
 
 # Flameboi Slack
@@ -394,11 +386,11 @@ FLAMEBOI = {
     "API_URL": env("FLAMEBOI_API_URL", default="https://flameboi.codedevils.org/"),
     "USERNAME": env("FLAMEBOI_API_USERNAME"),
     "PASSWORD": env("FLAMEBOI_API_PASSWORD"),
-    "REGISTER_SLACK_USERS_WITH_FLAMEBOI": env.bool("FLAMEBOI_REGISTER_SLACK_USERS_WITH_FLAMEBOI", default=True)
+    "REGISTER_SLACK_USERS_WITH_FLAMEBOI": env.bool(
+        "FLAMEBOI_REGISTER_SLACK_USERS_WITH_FLAMEBOI", default=True
+    ),
 }
-REGISTRATION_PAGINATION = env.int(
-    "CDSSO_REGISTRATION_PAGINATION", default=100
-)
+REGISTRATION_PAGINATION = env.int("CDSSO_REGISTRATION_PAGINATION", default=100)
 NOTIFY_MANAGERS_SDS_REGISTRATION = env.bool(
     "CDSSO_NOTIFY_MANAGERS_SDS_REGISTRATION", default=True
 )

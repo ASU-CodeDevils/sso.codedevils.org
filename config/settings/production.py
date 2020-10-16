@@ -25,7 +25,7 @@ CACHES = {
             # Mimicing memcache behavior.
             # http://jazzband.github.io/django-redis/latest/#_memcached_exceptions_behavior
             "IGNORE_EXCEPTIONS": True,
-            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'"
+            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
 }
@@ -83,9 +83,7 @@ DEFAULT_FROM_EMAIL = env(
 # https://docs.djangoproject.com/en/dev/ref/settings/#server-email
 SERVER_EMAIL = env("DJANGO_SERVER_EMAIL", default=DEFAULT_FROM_EMAIL)
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
-EMAIL_SUBJECT_PREFIX = env(
-    "DJANGO_EMAIL_SUBJECT_PREFIX", default="[CodeDevils]"
-)
+EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default="[CodeDevils]")
 
 # ADMIN
 # ------------------------------------------------------------------------------
@@ -145,7 +143,7 @@ LOGGING = {
             "maxBytes": 1024 * 1024 * 5,  # 5 MB
             "backupCount": 7,
             "formatter": "verbose",
-        }
+        },
     },
     "root": {"level": "DEBUG", "handlers": ["console"]},
     "loggers": {
@@ -159,15 +157,8 @@ LOGGING = {
             "handlers": ["console", "mail_admins"],
             "propagate": True,
         },
-        "api": {
-            "level": "DEBUG",
-            "handlers": ["console", "api"],
-            "propagate": False,
-        },
-        "": {
-            "handlers": ["console", "production_file"],
-            "level": "DEBUG",
-        }
+        "api": {"level": "DEBUG", "handlers": ["console", "api"], "propagate": False,},
+        "": {"handlers": ["console", "production_file"], "level": "DEBUG",},
     },
 }
 

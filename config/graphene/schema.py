@@ -9,18 +9,17 @@ from config.graphene import auth as auth_schema
 
 
 class Query(
-        auth_schema.Query,
-        user_schema.Query,
-        countries_schema.Query,
-        register_schema.Query,
-        graphene.ObjectType
+    auth_schema.Query,
+    user_schema.Query,
+    countries_schema.Query,
+    register_schema.Query,
+    graphene.ObjectType,
 ):
     debug = graphene.Field(DjangoDebug, name="_debug")
 
 
 class Mutation(
-        user_schema.Mutation,
-        graphene.ObjectType,
+    user_schema.Mutation, graphene.ObjectType,
 ):
     debug = graphene.Field(DjangoDebug, name="_debug")
 

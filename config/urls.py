@@ -13,7 +13,7 @@ urlpatterns = i18n_patterns(
     # user management
     path("users/", include("cdsso.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
-    path("join/", include("cdsso.contrib.register.urls", namespace="register"))
+    path("join/", include("cdsso.contrib.register.urls", namespace="register")),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # API URLS
