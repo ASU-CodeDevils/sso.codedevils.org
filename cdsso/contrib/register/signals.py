@@ -62,7 +62,7 @@ def notify_complete_registration(instance: StudentRegistration, **kwargs):
             settings.SEND_COMPLETED_REGISTRATION_NOTIFICATION
             and instance.completed_registration
             and not instance.completed_registration_notification
-            and not instance._restart_registration
+            and not kwargs["restart_registration"]
         ):
             # TODO send the user an email saying their registration has been completed
             email_user_complete_registration(email=instance.user.email)
