@@ -4,17 +4,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from django.views import defaults as default_views
-from django.views.decorators.debug import sensitive_post_parameters
-
-from .views import sso_login_view, sso_logout_view
 
 urlpatterns = i18n_patterns(
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # django-simple-sso
-    path("cas/login/", sensitive_post_parameters("password")(sso_login_view), name="login"),
-    path("cas/logout/", sso_logout_view, name="logout"),
-    path("cas/", include("cas_server.urls", namespace="cas_server")),
+    path("cas/", include("config.cas", namespace="cas_server")),
     # user management
     path("users/", include("cdsso.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
