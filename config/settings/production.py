@@ -157,8 +157,8 @@ LOGGING = {
             "handlers": ["console", "mail_admins"],
             "propagate": True,
         },
-        "api": {"level": "DEBUG", "handlers": ["console", "api"], "propagate": False,},
-        "": {"handlers": ["console", "production_file"], "level": "DEBUG",},
+        "api": {"level": "DEBUG", "handlers": ["console", "api"], "propagate": False},
+        "": {"handlers": ["console", "production_file"], "level": "DEBUG"},
     },
 }
 
