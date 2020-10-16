@@ -6,12 +6,17 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('register', '0005_auto_20200906_0935'),
+        ("register", "0005_auto_20200906_0935"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='studentregistration',
-            options={'get_latest_by': 'date_registered', 'ordering': ('slack_registered', 'sds_registered', '-date_registered'), 'verbose_name': 'Student Registration', 'verbose_name_plural': 'Student Registration'},
+            name="studentregistration",
+            options={
+                "get_latest_by": "date_registered",
+                "ordering": ("slack_registered", "sds_registered", "-date_registered"),
+                "verbose_name": "Student Registration",
+                "verbose_name_plural": "Student Registration",
+            },
         ),
     ]

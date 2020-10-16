@@ -29,7 +29,9 @@ class StudentRegistrationViewSet(RetrieveModelMixin, ListModelMixin, GenericView
     lookup_field = "id"
 
 
-class KnownMemberViewSet(RetrieveModelMixin, ListModelMixin, UpdateModelMixin, GenericViewSet):
+class KnownMemberViewSet(
+    RetrieveModelMixin, ListModelMixin, UpdateModelMixin, GenericViewSet
+):
     serializer_class = KnownMemberSerializer
     queryset = KnownMember.objects.all()
     lookup_field = "email"
@@ -38,8 +40,8 @@ class KnownMemberViewSet(RetrieveModelMixin, ListModelMixin, UpdateModelMixin, G
         request_body=SlackUserObjectSerializer,
         responses={
             200: openapi.Response("user registered on slack", SlackResponseSerializer),
-            400: openapi.Response("invalid format", SlackErrorResponseSerializer)
-        }
+            400: openapi.Response("invalid format", SlackErrorResponseSerializer),
+        },
     )
     @action(detail=False, methods=["POST"], name="Update Slack information")
     def slack(self, request):
@@ -65,7 +67,9 @@ class KnownMemberViewSet(RetrieveModelMixin, ListModelMixin, UpdateModelMixin, G
                 member.email = email
                 member.slack_registered = True
                 if created:
-                    logger.info("Member found on Slack, but not registered: {}".format(email))
+                    logger.info(
+                        "Member found on Slack, but not registered: {}".format(email)
+                    )
 
             member.slack_id = user["id"]
             member.tz_offset = user["tz_offset"]
@@ -76,20 +80,22 @@ class KnownMemberViewSet(RetrieveModelMixin, ListModelMixin, UpdateModelMixin, G
             member.save()
             return Response(
                 status=status.HTTP_200_OK,
-                data={"ok": True,
-                      "created": created,
-                      "detail": "user registered on slack"}
+                data={
+                    "ok": True,
+                    "created": created,
+                    "detail": "user registered on slack",
+                },
             )
         # caught if a key was placed in the wrong position
         except KeyError as key:
             return Response(
                 status=status.HTTP_400_BAD_REQUEST,
-                data={"ok": False, "detail": "invalid format", "key": str(key)}
+                data={"ok": False, "detail": "invalid format", "key": str(key)},
             )
         # unknown exceptions are caught and notify admin
         except Exception as e:
             logger.error("Error when register new member with Slack: {}".format(e))
             return Response(
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                data={"ok": False, "detail": "internal server error"}
+                data={"ok": False, "detail": "internal server error"},
             )

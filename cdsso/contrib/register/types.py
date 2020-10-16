@@ -1,11 +1,4 @@
-from typing import (
-    Any,
-    Dict,
-    List,
-    Optional,
-    Tuple,
-    Union
-)
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 JWT = Tuple[str, str]
 
@@ -66,7 +59,7 @@ class SlackUserDict(Dict):
     is_restricted: bool
     is_ultra_restricted: bool
     is_bot: bool
-    is_stranger:  Optional[bool]
+    is_stranger: Optional[bool]
     is_invited_user: Optional[bool]
     is_app_user: Optional[bool]
     updated: Optional[int]
@@ -80,6 +73,7 @@ class SlackUserObject(Dict):
     and add which fields are optional for this project. You can see more information here:
     https://api.slack.com/types/user
     """
+
     ok: Optional[bool]
     user: SlackUserDict
     enterprise_user: Optional[SlackEnterpriseUserDict]

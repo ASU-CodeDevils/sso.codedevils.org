@@ -6,7 +6,12 @@ from cdsso.contrib.register.models import KnownMember, StudentRegistration
 
 @admin.register(StudentRegistration)
 class StudentRegistrationAdmin(admin.ModelAdmin):
-    list_display = ["user", "slack_registered", "sds_registered", "completed_registration"]
+    list_display = [
+        "user",
+        "slack_registered",
+        "sds_registered",
+        "completed_registration",
+    ]
     list_filter = ["slack_registered", "sds_registered"]
     search_fields = ["user"]
 

@@ -6,27 +6,69 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('register', '0002_auto_20200730_0413'),
+        ("register", "0002_auto_20200730_0413"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='KnownMember',
+            name="KnownMember",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('slack_registered', models.BooleanField(db_column='SlackRegistered', default=False, help_text='The user has been registered on Slack', verbose_name='Registered on Slack')),
-                ('sds_registered', models.BooleanField(db_column='SDSRegistered', default=False, help_text='The user has been registered on SunDevilSync. This is True by default for alumni.', verbose_name='Registered on SunDevilSync')),
-                ('email', models.EmailField(db_column='Email', max_length=254, verbose_name='Email')),
-                ('name', models.CharField(blank=True, db_column='Name', max_length=255, verbose_name='Name of member')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "slack_registered",
+                    models.BooleanField(
+                        db_column="SlackRegistered",
+                        default=False,
+                        help_text="The user has been registered on Slack",
+                        verbose_name="Registered on Slack",
+                    ),
+                ),
+                (
+                    "sds_registered",
+                    models.BooleanField(
+                        db_column="SDSRegistered",
+                        default=False,
+                        help_text="The user has been registered on SunDevilSync. This is True by default for alumni.",
+                        verbose_name="Registered on SunDevilSync",
+                    ),
+                ),
+                (
+                    "email",
+                    models.EmailField(
+                        db_column="Email", max_length=254, verbose_name="Email"
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(
+                        blank=True,
+                        db_column="Name",
+                        max_length=255,
+                        verbose_name="Name of member",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Known Member',
-                'verbose_name_plural': 'Known Members',
-                'ordering': ('slack_registered', 'sds_registered', 'email'),
+                "verbose_name": "Known Member",
+                "verbose_name_plural": "Known Members",
+                "ordering": ("slack_registered", "sds_registered", "email"),
             },
         ),
         migrations.AlterModelOptions(
-            name='studentregistration',
-            options={'get_latest_by': '-date_registered', 'ordering': ('slack_registered', 'sds_registered', '-date_registered'), 'verbose_name': 'Student Registration', 'verbose_name_plural': 'Student Registration'},
+            name="studentregistration",
+            options={
+                "get_latest_by": "-date_registered",
+                "ordering": ("slack_registered", "sds_registered", "-date_registered"),
+                "verbose_name": "Student Registration",
+                "verbose_name_plural": "Student Registration",
+            },
         ),
     ]

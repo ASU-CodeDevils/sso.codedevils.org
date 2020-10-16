@@ -72,28 +72,36 @@ class RegistrationListView(RegistrationViewAbstract, ListView):
         if slack_student_emails:
             slack_student_emails = slack_student_emails.split(",")
             for email in slack_student_emails:
-                StudentRegistration.todo_registrations.filter(user__email=email).update(slack_registered=True)
+                StudentRegistration.todo_registrations.filter(user__email=email).update(
+                    slack_registered=True
+                )
 
         # update all Slack alumni emails
         slack_alumni_emails = request.GET.get("slack_alumni_emails")
         if slack_alumni_emails:
             slack_alumni_emails = slack_alumni_emails.split(",")
             for email in slack_alumni_emails:
-                StudentRegistration.todo_registrations.filter(user__email=email).update(slack_registered=True)
+                StudentRegistration.todo_registrations.filter(user__email=email).update(
+                    slack_registered=True
+                )
 
         # update all SunDevilSync student emails
         sds_student_emails = request.GET.get("sds_student_emails")
         if sds_student_emails:
             sds_student_emails = sds_student_emails.split(",")
             for email in sds_student_emails:
-                StudentRegistration.todo_registrations.filter(user__email=email).update(sds_registered=True)
+                StudentRegistration.todo_registrations.filter(user__email=email).update(
+                    sds_registered=True
+                )
 
         # update all SunDevilSync alumni emails
         sds_alumni_emails = request.GET.get("sds_alumni_emails")
         if sds_alumni_emails:
             sds_alumni_emails = sds_alumni_emails.split(",")
             for email in sds_alumni_emails:
-                StudentRegistration.todo_registrations.filter(user__email=email).update(sds_registered=True)
+                StudentRegistration.todo_registrations.filter(user__email=email).update(
+                    sds_registered=True
+                )
 
         # required for overriding the get request
         self.object_list = self.get_queryset()
@@ -186,7 +194,12 @@ class RegistrationDetailView(RegistrationViewAbstract, DetailView):
         if slack_param or sds_param:
             # determines if admin manually restarted the registration process
             # this stops a confirmation email from being sent to the registree
-            restart_registration = (slack_param and sds_param and slack_param == "false" and sds_param == "false")
+            restart_registration = (
+                slack_param
+                and sds_param
+                and slack_param == "false"
+                and sds_param == "false"
+            )
             registration.save(restart_registration=restart_registration)
         return self.render_to_response(context=context)
 

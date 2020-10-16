@@ -20,11 +20,14 @@ class KnownMemberSerializer(serializers.ModelSerializer):
     class Meta:
         model = KnownMember
         fields = "__all__"
-        description = "All known members that have not completed the online registration."
+        description = (
+            "All known members that have not completed the online registration."
+        )
 
 
 # ------------------------------------------------------
 # Below are specific to Flameboi and are used to format the request body
+
 
 class SlackUserProfileSerializer(serializers.Serializer):
     title = serializers.CharField()
@@ -99,7 +102,7 @@ class SlackResponseSerializer(serializers.Serializer):
     ok = serializers.BooleanField(default=True)
     created = serializers.BooleanField(
         required=False,
-        help_text="true if the user has not started the registration process"
+        help_text="true if the user has not started the registration process",
     )
     detail = serializers.CharField(default="user registered on slack")
 
@@ -107,4 +110,7 @@ class SlackResponseSerializer(serializers.Serializer):
 class SlackErrorResponseSerializer(serializers.Serializer):
     ok = serializers.BooleanField(default=False)
     detail = serializers.CharField(default="invalid format")
-    key = serializers.CharField(required=False, help_text="Identifies the missing key if invalid format is raised")
+    key = serializers.CharField(
+        required=False,
+        help_text="Identifies the missing key if invalid format is raised",
+    )

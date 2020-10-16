@@ -55,7 +55,10 @@ def register_on_slack(emails: Emails):
         for email in valid_emails:
             response = requests.get(
                 url=url,
-                headers={"Authorization": "Bearer " + access, "Accept": "application/json"}
+                headers={
+                    "Authorization": "Bearer " + access,
+                    "Accept": "application/json",
+                },
             )
             if response.status_code == 200:
                 data: SlackUserObject = response.json()
@@ -79,13 +82,21 @@ def register_on_slack(emails: Emails):
                 else:
                     error = data["error"]
                     if error == "user_not_found":
-                        logger.warning("User registered on SSO, but not on Slack: {}".format(email))
+                        logger.warning(
+                            "User registered on SSO, but not on Slack: {}".format(email)
+                        )
                     else:
-                        logger.error("An unknown error occurred with the Flameboi API: {}".format(error))
+                        logger.error(
+                            "An unknown error occurred with the Flameboi API: {}".format(
+                                error
+                            )
+                        )
             else:
-                logger.error("Invalid status code {} when retrieving member info {}".format(
-                    response.status_code, email
-                ))
+                logger.error(
+                    "Invalid status code {} when retrieving member info {}".format(
+                        response.status_code, email
+                    )
+                )
     else:
         logger.warning(
             "To add users to slack automatically, please set REGISTER_SLACK_USERS_WITH_FLAMEBOI to True"

@@ -76,7 +76,7 @@ class StudentRegistration(RegistrationModelAbstract):
         help_text=_(
             "Flag to track whether a CodeDevils officer has been notified that this "
             "student needs to be added to SunDevilSync"
-        )
+        ),
     )
     slack_add_attempt = models.BooleanField(
         db_column="SlackAddAttempt",
@@ -86,7 +86,7 @@ class StudentRegistration(RegistrationModelAbstract):
         help_text=_(
             "Flag to track if the API was used previously to add this user to Slack. "
             "This stops consecutive attempts of adding this user."
-        )
+        ),
     )
     completed_registration_notification = models.BooleanField(
         db_column="CompletedRegistrationNotification",
@@ -95,7 +95,7 @@ class StudentRegistration(RegistrationModelAbstract):
         verbose_name=_("Completed Registration Notification"),
         help_text=_(
             "Flag to track if this user has been notified that their registration has been completed."
-        )
+        ),
     )
 
     # custom managers
@@ -123,7 +123,9 @@ class StudentRegistration(RegistrationModelAbstract):
     def __str__(self):
         return f"{self.user.name} [done: {self.completed_registration()}]"
 
-    def save(self, admin_view_change=False, restart_registration=False, *args, **kwargs):
+    def save(
+        self, admin_view_change=False, restart_registration=False, *args, **kwargs
+    ):
         """Sets SDS registration to True if the user is registering as alumni."""
         if self.user.is_alumni and not admin_view_change:
             self.sds_registered = self.sds_notified = True
@@ -155,19 +157,19 @@ class KnownMember(RegistrationModelAbstract):
         default=0,
         verbose_name=_("UTC Offset"),
         validators=[MinValueValidator(-43200), MaxValueValidator(54000)],
-        help_text=_("UTC offset in seconds")
+        help_text=_("UTC offset in seconds"),
     )
     image_24 = models.URLField(
         db_column="Image24",
         blank=True,
         verbose_name=_("Image 24"),
-        help_text=_("User 24px profile image")
+        help_text=_("User 24px profile image"),
     )
     image_512 = models.URLField(
         db_column="Image512",
         blank=True,
         verbose_name=_("Image 512"),
-        help_text=_("User 512px profile image")
+        help_text=_("User 512px profile image"),
     )
 
     class Meta:
