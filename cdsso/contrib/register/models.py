@@ -123,11 +123,13 @@ class StudentRegistration(RegistrationModelAbstract):
     def __str__(self):
         return f"{self.user.name} [done: {self.completed_registration()}]"
 
-    def save(self, admin_view_change=False, *args, **kwargs):
+    def save(self, admin_view_change=False, restart_registration=False, *args, **kwargs):
         """Sets SDS registration to True if the user is registering as alumni."""
         if self.user.is_alumni and not admin_view_change:
             self.sds_registered = self.sds_notified = True
         self._admin_view_change = admin_view_change
+        if restart_registration:
+            self.completed_registration_notification = True
         super().save(*args, **kwargs)
 
 
