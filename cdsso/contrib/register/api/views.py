@@ -57,6 +57,8 @@ class KnownMemberViewSet(RetrieveModelMixin, ListModelMixin, UpdateModelMixin, G
             created = False
             if member.exists():
                 member = member.first()
+                member.studentregistration.slack_registered = True
+                member.studentregistration.save()
             # or create a new known member if they haven't registered
             else:
                 member, created = KnownMember.objects.get_or_create(email__exact=email)
