@@ -55,6 +55,10 @@ class RegistrationListView(RegistrationViewAbstract, ListView):
     paginate_by = settings.REGISTRATION_PAGINATION
     template_name = "register/registration_list.html"
 
+    def get_queryset(self):
+        """Overrides the default queryset to return only registrations that need to be done."""
+        return StudentRegistration.todo_registrations.all()
+
     def get(self, request, *args, **kwargs):
         """
         Overrides the get request to account for parameters. The parameters ``slack`` and
@@ -164,20 +168,26 @@ class RegistrationDetailView(RegistrationViewAbstract, DetailView):
         registration = context["registration"]
         # accept sds and slack arguments if they're passed and update the user
         # registration accordingly
+        slack_param = None
+        sds_param = None
         if "slack" in request.GET:
             slack_param = request.GET.get("slack")
             if slack_param == "true":
                 registration.slack_registered = True
             if slack_param == "false":
                 registration.slack_registered = False
-            registration.save()
         if "sds" in request.GET:
             sds_param = request.GET.get("sds")
             if sds_param == "true":
                 registration.sds_registered = True
             if sds_param == "false":
                 registration.sds_registered = False
-            registration.save()
+
+        if slack_param or sds_param:
+            # determines if admin manually restarted the registration process
+            # this stops a confirmation email from being sent to the registree
+            restart_registration = (slack_param and sds_param and slack_param == "false" and sds_param == "false")
+            registration.save(restart_registration=restart_registration)
         return self.render_to_response(context=context)
 
 
