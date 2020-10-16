@@ -67,6 +67,37 @@ class StudentRegistration(RegistrationModelAbstract):
         help_text=_("The date/time the student submitted their registration form"),
     )
 
+    # these flags are used to manage notifications
+    sds_notified = models.BooleanField(
+        db_column="SdsNotified",
+        default=False,
+        null=False,
+        verbose_name=_("SunDevilSync Notification"),
+        help_text=_(
+            "Flag to track whether a CodeDevils officer has been notified that this "
+            "student needs to be added to SunDevilSync"
+        )
+    )
+    slack_add_attempt = models.BooleanField(
+        db_column="SlackAddAttempt",
+        default=False,
+        null=False,
+        verbose_name=_("Slack Add Attempt"),
+        help_text=_(
+            "Flag to track if the API was used previously to add this user to Slack. "
+            "This stops consecutive attempts of adding this user."
+        )
+    )
+    completed_registration_notification = models.BooleanField(
+        db_column="CompletedRegistrationNotification",
+        default=False,
+        null=False,
+        verbose_name=_("Completed Registration Notification"),
+        help_text=_(
+            "Flag to track if this user has been notified that their registration has been completed."
+        )
+    )
+
     # custom managers
     objects = models.Manager()
     completed_registrations = CompletedRegistrationManager()
@@ -78,26 +109,24 @@ class StudentRegistration(RegistrationModelAbstract):
         ordering = ("slack_registered", "sds_registered", "-date_registered")
         get_latest_by = "date_registered"
 
-    def __init__(self, *args, **kwargs):
+    def completed_registration(self):
         """
-        Overriden to check if any of the fields have immediately changed. These are useful for making sure multiple
-        notifications aren't sent for the same step of the registration process.
+        Determines if this student has completed the registration process. This method is used in every step in the
+        registration process from sending notification emails to administrative views, and ultimately controls if the
+        user can log into CodeDevils services. Change the logic of this method to determine how a user is considered
+        registered.
+
+        Registration is complete as soon as the user is registered on Slack and SunDevilSync.
         """
-        super().__init__(*args, **kwargs)
-        self._sds_notified = self.sds_registered
-        self._slack_add_attempt = False
+        return self.slack_registered and self.sds_registered
 
     def __str__(self):
         return f"{self.user.name} [done: {self.completed_registration()}]"
 
-    def completed_registration(self):
-        return self.slack_registered and self.sds_registered
-
     def save(self, admin_view_change=False, *args, **kwargs):
         """Sets SDS registration to True if the user is registering as alumni."""
         if self.user.is_alumni and not admin_view_change:
-            self.sds_registered = True
-            self._sds_notified = True
+            self.sds_registered = self.sds_notified = True
         self._admin_view_change = admin_view_change
         super().save(*args, **kwargs)
 
