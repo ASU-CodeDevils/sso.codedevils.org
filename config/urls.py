@@ -50,4 +50,4 @@ if settings.DEBUG:
 
     if "rosetta" in settings.INSTALLED_APPS:
 
-        urlpatterns = [path("rosetta", include("rosetta.urls"))] + urlpatterns
+        urlpatterns = i18n_patterns(path("rosetta", include("rosetta.urls"))) + urlpatterns
