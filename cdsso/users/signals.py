@@ -6,6 +6,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 from cdsso.contrib.register.models import StudentRegistration
+from cdsso.utils.graphql.queries import underscore_to_camelcase
 
 from .utils import update_user_on_codedevils_website
 
@@ -40,7 +41,7 @@ def update_codedevils_org(
         user_data = {"username": instance.username}
 
         # update the default fields if no update_fields are specified
-        fields_to_update = DEFAULT_FIELDS if not update_fields else update_fields
+        fields_to_update = DEFAULT_FIELDS
 
         # add each of the updated fields to the query
         for key in fields_to_update:
@@ -50,7 +51,9 @@ def update_codedevils_org(
                 and key not in FIELDS_TO_SKIP
                 and getattr(instance, key, None)
             ):
-                user_data.update({key: getattr(instance, key)})
+                # convert to camel case to work with graphql query
+                camelcase_key = underscore_to_camelcase(key)
+                user_data.update({camelcase_key: getattr(instance, key)})
         # send request with only updated fields
         try:
             ok, mutation_ok, data = update_user_on_codedevils_website(

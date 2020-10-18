@@ -9,6 +9,20 @@ logger = logging.getLogger()
 GraphQLResponse = Tuple[bool, bool, Dict]
 
 
+def underscore_to_camelcase(param: str) -> str:
+    """
+    Converts a parameter written in underscore notation (i.e. `slack_id`) and converts it to camel case (i.e.
+    `slackId`). This is required for the conversion from the standard Pythonic underscore notation to the
+    GraphQL camel case.
+
+    Args:
+        param (str): The parameter in underscore notation.
+    Return:
+        The param in camel case notation.
+    """
+    return param.split("_")[0] + "".join(x.capitalize() or "_" for x in param.split("_")[1:])
+
+
 def make_cdweb_query(query: str, variables: dict = None) -> GraphQLResponse:
     """
     Makes a GraphQL query to the CodeDevils website.
