@@ -376,7 +376,7 @@ CODEDEVILS_WEBSITE = {
     "GRAPHQL_API": env("CODEDEVILS_WEBSITE_GRAPHQL_API", default="/api/graphql/"),
     "REST_API": env("CODEDEVILS_WEBSITE_REST_API", default="/api/"),
     "UPDATE_FIELDS": env.list(
-        "CODEDEVILS_WEBSITE_UPDATE_FIELDS", default="email,name,anonymous"
+        "CODEDEVILS_WEBSITE_UPDATE_FIELDS", default=["email", "name", "anonymous", "slack_id", "image_24", "image_512"]
     ),
     "SKIP_FIELDS": env.list("CODEDEVILS_WEBSITE_SKIP_FIELDS", default="last_login"),
 }
