@@ -26,16 +26,16 @@ class LanguageIdenitifcationMiddleware:
                 split_url = referer.rsplit("/", 1)
                 if len(split_url) > 1:
                     base_with_i18n = split_url[0].replace("http://", "").replace("https://", "")
-                    print(base_with_i18n)
-                    i18n_lang = base_with_i18n.split("/")[1]
-                    print(i18n_lang)
-                    lang = [item for item in settings.LANGUAGES if item[0] == i18n_lang]
-                    if lang:
-                        lang = lang[0][0]
-                        # only change if we are not using the language already
-                        if lang != translation.get_language():
-                            response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang)
-                            translation.activate(lang)
+                    i18n_lang = base_with_i18n.split("/")
+                    if len(i18n_lang) > 1:
+                        i18n_lang = i18n_lang[1]
+                        lang = [item for item in settings.LANGUAGES if item[0] == i18n_lang]
+                        if lang:
+                            lang = lang[0][0]
+                            # only change if we are not using the language already
+                            if lang != translation.get_language():
+                                response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang)
+                                translation.activate(lang)
             # TODO can use this, but need to check the current site to make sure it is not coming form
             # this site
             # else:
