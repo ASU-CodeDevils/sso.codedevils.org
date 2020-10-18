@@ -130,8 +130,7 @@ class StudentRegistration(RegistrationModelAbstract):
         if self.user.is_alumni and not admin_view_change:
             self.sds_registered = self.sds_notified = True
         self._admin_view_change = admin_view_change
-        if restart_registration:
-            self.completed_registration_notification = True
+        self._restart_registration = restart_registration
         super().save(*args, **kwargs)
 
 
