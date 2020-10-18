@@ -5,6 +5,15 @@ from django.shortcuts import redirect
 
 from .models import StudentRegistration
 
+# urls that will not be redirected to the status page if the user is not registered
+# TODO make this regex to account for end slashes
+SAFE_URLS = (
+    "/accounts/signup", "/accounts/signup/",
+    "/accounts/logout", "/accounts/logout/",
+    "/join/status/", "/join/status/",
+    "/cas/logout", "/cas/logout/"
+)
+
 
 class UserRegistrationConfirmationMiddleware:
     """
@@ -22,19 +31,12 @@ class UserRegistrationConfirmationMiddleware:
         # this will stop any static pages (i.e. css or js files) from being redirected
         reg_path_regex = re.compile(".+\.\w+", re.IGNORECASE)  # noqa W605
 
-        # only run through middleware if the user is authenticated, is not already going to the
-        # student registration page, and a file is not being loaded
-        signup_path = request.path.endswith(
-            "/accounts/signup/"
-        ) or request.path.endswith("/join/status/")
-        logout_path = request.path.endswith("/cas/lougout") or request.path.endswith(
-            "/accounts/logout/"
-        )
+        whitelisted_path = request.path.endswith(SAFE_URLS)
         if (
             request.user.is_authenticated
             and not reg_path_regex.match(request.path)
-            and not signup_path
-            and not logout_path
+            and request.path not in SAFE_URLS
+            and not whitelisted_path
         ):
             reg_info, _ = StudentRegistration.objects.get_or_create(user=request.user)
 
