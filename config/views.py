@@ -1,5 +1,6 @@
 from cas_server.views import LoginView, LogoutView
 from django.contrib import auth
+from django.shortcuts import redirect
 
 
 class SSOLoginView(LoginView):
@@ -13,6 +14,12 @@ class SSOLoginView(LoginView):
         if user:
             auth.login(request=request, user=user)
         # then log them in through CAS
+        nextUrl = request.GET.get("next", None)
+        # next param specifies destination after logging in
+        if nextUrl:
+            super().post(request, *args, **kwargs)
+            return redirect(nextUrl, *args, **kwargs)
+        # default login workflow designated by cas server
         return super().post(request, *args, **kwargs)
 
 
