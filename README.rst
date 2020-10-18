@@ -5,10 +5,10 @@ Identity Access Manager (IAM) user weblogin for CodeDevils, offering CAS 3.0 pro
 users into CodeDevils applications.
 
 .. image:: https://travis-ci.com/ASU-CodeDevils/sso.codedevils.org.svg?branch=master
-    :target: https://travis-ci.com/ASU-CodeDevils/cdsso
+    :target: https://travis-ci.com/ASU-CodeDevils/sso.codedevils.org
     :alt: Build
-.. image:: https://codecov.io/gh/ASU-CodeDevils/cdsso/branch/master/graph/badge.svg?token=THP1UWQI9G
-    :target: https://codecov.io/gh/ASU-CodeDevils/cdsso
+.. image:: https://codecov.io/gh/ASU-CodeDevils/sso.codedevils.org/branch/master/graph/badge.svg?token=THP1UWQI9G
+    :target: https://codecov.io/gh/ASU-CodeDevils/sso.codedevils.org
     :alt: Codecov
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :target: https://opensource.org/licenses/MIT
@@ -24,7 +24,7 @@ Production
 ^^^^^^^^^^
 
 .. image:: https://travis-ci.com/ASU-CodeDevils/sso.codedevils.org.svg?branch=master
-    :target: https://travis-ci.com/github/ASU-CodeDevils/cdsso
+    :target: https://travis-ci.com/github/ASU-CodeDevils/sso.codedevils.org
     :alt: Build
 .. image:: https://img.shields.io/uptimerobot/status/m784417521-1b9dcabb76b05ae6fdc099b3
     :target: https://sso.codedevils.org
@@ -37,7 +37,7 @@ QA
 ^^
 
 .. image:: https://travis-ci.com/ASU-CodeDevils/sso.codedevils.org.svg?branch=dev
-    :target: https://travis-ci.com/github/ASU-CodeDevils/cdsso
+    :target: https://travis-ci.com/github/ASU-CodeDevils/sso.codedevils.org
     :alt: Build
 .. image:: https://img.shields.io/uptimerobot/status/m784417527-57e543ec1e2e0752a9ba2228
     :target: https://qa-sso.codedevils.org
