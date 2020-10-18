@@ -4,7 +4,7 @@ sso.codedevils.org
 Identity Access Manager (IAM) user weblogin for CodeDevils, offering CAS 3.0 protocol to log
 users into CodeDevils applications.
 
-.. image:: https://travis-ci.com/ASU-CodeDevils/cdsso.svg?token=FhsGC7ZUMb7rskmp3jDy&branch=master
+.. image:: https://travis-ci.com/ASU-CodeDevils/sso.codedevils.org.svg?branch=master
     :target: https://travis-ci.com/ASU-CodeDevils/cdsso
     :alt: Build
 .. image:: https://codecov.io/gh/ASU-CodeDevils/cdsso/branch/master/graph/badge.svg?token=THP1UWQI9G
@@ -23,7 +23,7 @@ Website Status
 Production
 ^^^^^^^^^^
 
-.. image:: https://travis-ci.com/ASU-CodeDevils/cdsso.svg?token=FhsGC7ZUMb7rskmp3jDy&branch=master
+.. image:: https://travis-ci.com/ASU-CodeDevils/sso.codedevils.org.svg?branch=master
     :target: https://travis-ci.com/github/ASU-CodeDevils/cdsso
     :alt: Build
 .. image:: https://img.shields.io/uptimerobot/status/m784417521-1b9dcabb76b05ae6fdc099b3
@@ -36,7 +36,7 @@ Production
 QA
 ^^
 
-.. image:: https://travis-ci.com/ASU-CodeDevils/cdsso.svg?token=FhsGC7ZUMb7rskmp3jDy&branch=dev
+.. image:: https://travis-ci.com/ASU-CodeDevils/sso.codedevils.org.svg?branch=dev
     :target: https://travis-ci.com/github/ASU-CodeDevils/cdsso
     :alt: Build
 .. image:: https://img.shields.io/uptimerobot/status/m784417527-57e543ec1e2e0752a9ba2228
