@@ -153,6 +153,7 @@ MIDDLEWARE = [
     "django.middleware.common.BrokenLinkEmailsMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "cdsso.contrib.register.middleware.UserRegistrationConfirmationMiddleware",
+    "config.middleware.LanguageIdenitifcationMiddleware",
 ]
 
 # STATIC
