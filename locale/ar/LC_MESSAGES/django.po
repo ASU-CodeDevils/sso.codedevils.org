@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-28 04:11+0000\n"
-"PO-Revision-Date: 2020-10-04 04:51+0000\n"
+"POT-Creation-Date: 2020-10-18 01:12+0000\n"
+"PO-Revision-Date: 2020-10-18 01:16+0000\n"
 "Last-Translator: b'Kevin Shelley <kevin.shelley@pm.me>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -52,7 +52,7 @@ msgstr "علم"
 msgid "Country"
 msgstr "بلد"
 
-#: cdsso/contrib/register/admin.py:16
+#: cdsso/contrib/register/admin.py:21
 msgid "Completed Registration"
 msgstr "التسجيل مكتمل"
 
@@ -83,6 +83,34 @@ msgstr "أنت تتقدم كخريج ولا يمكنك استخدام البري
 #: cdsso/contrib/register/forms.py:21
 msgid "Please enter your ASURITE email (<ASURITE>@asu.edu)"
 msgstr "الرجاء إدخال بريدك الإلكتروني ASURITE (<ASURITE>@asu.edu)"
+
+#: cdsso/contrib/register/forms.py:40
+msgid ""
+"We will send you emails about events, exciting new projects and "
+"opportunities, and different ways to get involved in CodeDevils."
+msgstr ""
+"سنرسل لك رسائل بريد إلكتروني حول الأحداث والمشاريع والفرص الجديدة المثيرة "
+"والطرق المختلفة للمشاركة في CodeDevils."
+
+#: cdsso/contrib/register/forms.py:44
+msgid ""
+"Check here if you are an alumni. We will get you in contact with an Officer "
+"to help set you up."
+msgstr ""
+"تحقق هنا إذا كنت من الخريجين. سوف نجعلك على اتصال مع أحد الضباط للمساعدة في "
+"إعدادك."
+
+#: cdsso/contrib/register/forms.py:47
+msgid ""
+"You can opt to be anonymous, which means we will block your information "
+"publicly and limit it between different CodeDevils products. This will also "
+"disable the feature that allows people - employers, members or other outside"
+" users on our website - from viewing your profile."
+msgstr ""
+"يمكنك اختيار أن تكون مجهول الهوية ، مما يعني أننا سنحظر معلوماتك علنًا "
+"ونحصرها بين منتجات CodeDevils المختلفة. سيؤدي هذا أيضًا إلى تعطيل الميزة "
+"التي تسمح للأشخاص - أصحاب العمل أو الأعضاء أو مستخدمين خارجيين آخرين على "
+"موقعنا - من مشاهدة ملف التعريف الخاص بك."
 
 #: cdsso/contrib/register/models.py:34
 msgid "Registered on Slack"
@@ -118,52 +146,86 @@ msgstr "تاريخ مسجل"
 msgid "The date/time the student submitted their registration form"
 msgstr "التاريخ / الوقت الذي قدم فيه الطالب استمارة التسجيل"
 
-#: cdsso/contrib/register/models.py:76 cdsso/contrib/register/models.py:77
+#: cdsso/contrib/register/models.py:75
+msgid "SunDevilSync Notification"
+msgstr "إعلام SunDevilSync"
+
+#: cdsso/contrib/register/models.py:77
+msgid ""
+"Flag to track whether a CodeDevils officer has been notified that this "
+"student needs to be added to SunDevilSync"
+msgstr ""
+"علامة لتتبع ما إذا كان قد تم إخطار ضابط CodeDevils بضرورة إضافة هذا الطالب "
+"إلى SunDevilSync"
+
+#: cdsso/contrib/register/models.py:85
+msgid "Slack Add Attempt"
+msgstr "Slack إضافة محاولة"
+
+#: cdsso/contrib/register/models.py:87
+msgid ""
+"Flag to track if the API was used previously to add this user to Slack. This"
+" stops consecutive attempts of adding this user."
+msgstr ""
+"ضع علامة لتتبع ما إذا تم استخدام API مسبقًا لإضافة هذا المستخدم إلى Slack. "
+"هذا يوقف المحاولات المتتالية لإضافة هذا المستخدم."
+
+#: cdsso/contrib/register/models.py:95
+msgid "Completed Registration Notification"
+msgstr "إشعار التسجيل المكتمل"
+
+#: cdsso/contrib/register/models.py:97
+msgid ""
+"Flag to track if this user has been notified that their registration has "
+"been completed."
+msgstr "ضع علامة للتتبع إذا تم إخطار هذا المستخدم بأن تسجيله قد اكتمل."
+
+#: cdsso/contrib/register/models.py:107 cdsso/contrib/register/models.py:108
 msgid "Student Registration"
 msgstr "تسجيل الطالب"
 
-#: cdsso/contrib/register/models.py:112
+#: cdsso/contrib/register/models.py:144
 #: cdsso/templates/register/status.html:147
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
-#: cdsso/contrib/register/models.py:115
+#: cdsso/contrib/register/models.py:147
 msgid "Name of member"
 msgstr "اسم العضو"
 
-#: cdsso/contrib/register/models.py:118
+#: cdsso/contrib/register/models.py:150
 msgid "Slack ID"
 msgstr "معرف سلاك"
 
-#: cdsso/contrib/register/models.py:125 cdsso/users/models.py:50
+#: cdsso/contrib/register/models.py:157 cdsso/users/models.py:50
 msgid "UTC Offset"
 msgstr "تعويض التوقيت العالمي"
 
-#: cdsso/contrib/register/models.py:127 cdsso/users/models.py:52
+#: cdsso/contrib/register/models.py:159 cdsso/users/models.py:52
 msgid "UTC offset in seconds"
 msgstr "تعويض التوقيت العالمي (UTC) بالثواني"
 
-#: cdsso/contrib/register/models.py:132 cdsso/users/models.py:33
+#: cdsso/contrib/register/models.py:164 cdsso/users/models.py:33
 msgid "Image 24"
 msgstr "صورة 24"
 
-#: cdsso/contrib/register/models.py:133 cdsso/users/models.py:36
+#: cdsso/contrib/register/models.py:165 cdsso/users/models.py:36
 msgid "User 24px profile image"
 msgstr "صورة الملف الشخصي للمستخدم 24 بكسل"
 
-#: cdsso/contrib/register/models.py:138 cdsso/users/models.py:40
+#: cdsso/contrib/register/models.py:170 cdsso/users/models.py:40
 msgid "Image 512"
 msgstr "صورة 512"
 
-#: cdsso/contrib/register/models.py:139 cdsso/users/models.py:43
+#: cdsso/contrib/register/models.py:171 cdsso/users/models.py:43
 msgid "User 512px profile image"
 msgstr "صورة الملف الشخصي للمستخدم 512 بكسل"
 
-#: cdsso/contrib/register/models.py:143
+#: cdsso/contrib/register/models.py:175
 msgid "Known Member"
 msgstr "عضو معروف"
 
-#: cdsso/contrib/register/models.py:144
+#: cdsso/contrib/register/models.py:176
 msgid "Known Members"
 msgstr "أعضاء معروفون"
 

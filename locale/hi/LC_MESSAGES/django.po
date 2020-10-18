@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-28 04:11+0000\n"
-"PO-Revision-Date: 2020-10-04 04:18+0000\n"
+"POT-Creation-Date: 2020-10-18 01:12+0000\n"
+"PO-Revision-Date: 2020-10-18 01:18+0000\n"
 "Last-Translator: b'Kevin Shelley <kevin.shelley@pm.me>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -52,7 +52,7 @@ msgstr "झंडा"
 msgid "Country"
 msgstr "देश"
 
-#: cdsso/contrib/register/admin.py:16
+#: cdsso/contrib/register/admin.py:21
 msgid "Completed Registration"
 msgstr "पूर्ण पंजीकरण"
 
@@ -85,6 +85,35 @@ msgstr ""
 #: cdsso/contrib/register/forms.py:21
 msgid "Please enter your ASURITE email (<ASURITE>@asu.edu)"
 msgstr "कृपया अपना ASURITE ईमेल दर्ज करें (<ASURITE>@asu.edu)"
+
+#: cdsso/contrib/register/forms.py:40
+msgid ""
+"We will send you emails about events, exciting new projects and "
+"opportunities, and different ways to get involved in CodeDevils."
+msgstr ""
+"हम आपको ईवेंट, रोमांचक नई परियोजनाओं और अवसरों और कोडडेविल्स में शामिल होने "
+"के विभिन्न तरीकों के बारे में ईमेल भेजेंगे।"
+
+#: cdsso/contrib/register/forms.py:44
+msgid ""
+"Check here if you are an alumni. We will get you in contact with an Officer "
+"to help set you up."
+msgstr ""
+"यदि आप पूर्व छात्र हैं तो यहां देखें। हम आपको स्थापित करने में मदद करने के "
+"लिए एक अधिकारी के संपर्क में आएंगे।"
+
+#: cdsso/contrib/register/forms.py:47
+msgid ""
+"You can opt to be anonymous, which means we will block your information "
+"publicly and limit it between different CodeDevils products. This will also "
+"disable the feature that allows people - employers, members or other outside"
+" users on our website - from viewing your profile."
+msgstr ""
+"आप गुमनाम होने का विकल्प चुन सकते हैं, जिसका अर्थ है कि हम आपकी जानकारी को "
+"सार्वजनिक रूप से रोकेंगे और विभिन्न कोडवर्ड उत्पादों के बीच इसे सीमित "
+"करेंगे। यह उस सुविधा को भी अक्षम कर देगा जो आपकी वेबसाइट पर लोगों - "
+"नियोक्ताओं, सदस्यों या अन्य बाहरी उपयोगकर्ताओं को आपकी प्रोफ़ाइल देखने की "
+"अनुमति देती है।"
 
 #: cdsso/contrib/register/models.py:34
 msgid "Registered on Slack"
@@ -122,52 +151,89 @@ msgstr "तारीख दर्ज की गई"
 msgid "The date/time the student submitted their registration form"
 msgstr "छात्र द्वारा अपना पंजीकरण फॉर्म जमा करने की तिथि / समय"
 
-#: cdsso/contrib/register/models.py:76 cdsso/contrib/register/models.py:77
+#: cdsso/contrib/register/models.py:75
+msgid "SunDevilSync Notification"
+msgstr "SunDevilSync अधिसूचना"
+
+#: cdsso/contrib/register/models.py:77
+msgid ""
+"Flag to track whether a CodeDevils officer has been notified that this "
+"student needs to be added to SunDevilSync"
+msgstr ""
+"ट्रैक करने के लिए ध्वज कि क्या एक CodeDevils अधिकारी को सूचित किया गया है कि"
+" इस छात्र को SunDevilSync में जोड़ा जाना चाहिए"
+
+#: cdsso/contrib/register/models.py:85
+msgid "Slack Add Attempt"
+msgstr "Slack प्रयास को जोड़ें"
+
+#: cdsso/contrib/register/models.py:87
+msgid ""
+"Flag to track if the API was used previously to add this user to Slack. This"
+" stops consecutive attempts of adding this user."
+msgstr ""
+"यह उपयोगकर्ता स्लैक में जोड़ने के लिए पहले एपीआई का उपयोग किया गया था, तो "
+"ट्रैक करने के लिए ध्वज। यह इस उपयोगकर्ता को जोड़ने के लगातार प्रयासों को "
+"रोकता है।"
+
+#: cdsso/contrib/register/models.py:95
+msgid "Completed Registration Notification"
+msgstr "पूर्ण पंजीकरण सूचना"
+
+#: cdsso/contrib/register/models.py:97
+msgid ""
+"Flag to track if this user has been notified that their registration has "
+"been completed."
+msgstr ""
+"ट्रैक करने के लिए ध्वज यदि इस उपयोगकर्ता को सूचित किया गया है कि उनका "
+"पंजीकरण पूरा हो चुका है।"
+
+#: cdsso/contrib/register/models.py:107 cdsso/contrib/register/models.py:108
 msgid "Student Registration"
 msgstr "छात्र पंजीकरण"
 
-#: cdsso/contrib/register/models.py:112
+#: cdsso/contrib/register/models.py:144
 #: cdsso/templates/register/status.html:147
 msgid "Email"
 msgstr "ईमेल"
 
-#: cdsso/contrib/register/models.py:115
+#: cdsso/contrib/register/models.py:147
 msgid "Name of member"
 msgstr "सदस्य का नाम"
 
-#: cdsso/contrib/register/models.py:118
+#: cdsso/contrib/register/models.py:150
 msgid "Slack ID"
 msgstr "सुस्त पहचान"
 
-#: cdsso/contrib/register/models.py:125 cdsso/users/models.py:50
+#: cdsso/contrib/register/models.py:157 cdsso/users/models.py:50
 msgid "UTC Offset"
 msgstr "UTC ऑफसेट"
 
-#: cdsso/contrib/register/models.py:127 cdsso/users/models.py:52
+#: cdsso/contrib/register/models.py:159 cdsso/users/models.py:52
 msgid "UTC offset in seconds"
 msgstr "UTC सेकंड में ऑफसेट"
 
-#: cdsso/contrib/register/models.py:132 cdsso/users/models.py:33
+#: cdsso/contrib/register/models.py:164 cdsso/users/models.py:33
 msgid "Image 24"
 msgstr "छवि 24"
 
-#: cdsso/contrib/register/models.py:133 cdsso/users/models.py:36
+#: cdsso/contrib/register/models.py:165 cdsso/users/models.py:36
 msgid "User 24px profile image"
 msgstr "उपयोगकर्ता 24 पिक्सेल प्रोफ़ाइल छवि"
 
-#: cdsso/contrib/register/models.py:138 cdsso/users/models.py:40
+#: cdsso/contrib/register/models.py:170 cdsso/users/models.py:40
 msgid "Image 512"
 msgstr "छवि 512"
 
-#: cdsso/contrib/register/models.py:139 cdsso/users/models.py:43
+#: cdsso/contrib/register/models.py:171 cdsso/users/models.py:43
 msgid "User 512px profile image"
 msgstr "उपयोगकर्ता 512 पिक्सेल प्रोफ़ाइल छवि"
 
-#: cdsso/contrib/register/models.py:143
+#: cdsso/contrib/register/models.py:175
 msgid "Known Member"
 msgstr "ज्ञात सदस्य"
 
-#: cdsso/contrib/register/models.py:144
+#: cdsso/contrib/register/models.py:176
 msgid "Known Members"
 msgstr "ज्ञात सदस्य"
 

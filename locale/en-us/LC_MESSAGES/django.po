@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-28 04:11+0000\n"
+"POT-Creation-Date: 2020-10-18 01:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: cdsso/contrib/register/admin.py:16
+#: cdsso/contrib/register/admin.py:21
 msgid "Completed Registration"
 msgstr ""
 
@@ -80,6 +80,26 @@ msgstr ""
 
 #: cdsso/contrib/register/forms.py:21
 msgid "Please enter your ASURITE email (<ASURITE>@asu.edu)"
+msgstr ""
+
+#: cdsso/contrib/register/forms.py:40
+msgid ""
+"We will send you emails about events, exciting new projects and "
+"opportunities, and different ways to get involved in CodeDevils."
+msgstr ""
+
+#: cdsso/contrib/register/forms.py:44
+msgid ""
+"Check here if you are an alumni. We will get you in contact with an Officer "
+"to help set you up."
+msgstr ""
+
+#: cdsso/contrib/register/forms.py:47
+msgid ""
+"You can opt to be anonymous, which means we will block your information "
+"publicly and limit it between different CodeDevils products. This will also "
+"disable the feature that allows people - employers, members or other outside "
+"users on our website - from viewing your profile."
 msgstr ""
 
 #: cdsso/contrib/register/models.py:34
@@ -116,52 +136,82 @@ msgstr ""
 msgid "The date/time the student submitted their registration form"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:76 cdsso/contrib/register/models.py:77
+#: cdsso/contrib/register/models.py:75
+msgid "SunDevilSync Notification"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:77
+msgid ""
+"Flag to track whether a CodeDevils officer has been notified that this "
+"student needs to be added to SunDevilSync"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:85
+msgid "Slack Add Attempt"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:87
+msgid ""
+"Flag to track if the API was used previously to add this user to Slack. This "
+"stops consecutive attempts of adding this user."
+msgstr ""
+
+#: cdsso/contrib/register/models.py:95
+msgid "Completed Registration Notification"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:97
+msgid ""
+"Flag to track if this user has been notified that their registration has "
+"been completed."
+msgstr ""
+
+#: cdsso/contrib/register/models.py:107 cdsso/contrib/register/models.py:108
 msgid "Student Registration"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:112
+#: cdsso/contrib/register/models.py:144
 #: cdsso/templates/register/status.html:147
 msgid "Email"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:115
+#: cdsso/contrib/register/models.py:147
 msgid "Name of member"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:118
+#: cdsso/contrib/register/models.py:150
 msgid "Slack ID"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:125 cdsso/users/models.py:50
+#: cdsso/contrib/register/models.py:157 cdsso/users/models.py:50
 msgid "UTC Offset"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:127 cdsso/users/models.py:52
+#: cdsso/contrib/register/models.py:159 cdsso/users/models.py:52
 msgid "UTC offset in seconds"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:132 cdsso/users/models.py:33
+#: cdsso/contrib/register/models.py:164 cdsso/users/models.py:33
 msgid "Image 24"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:133 cdsso/users/models.py:36
+#: cdsso/contrib/register/models.py:165 cdsso/users/models.py:36
 msgid "User 24px profile image"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:138 cdsso/users/models.py:40
+#: cdsso/contrib/register/models.py:170 cdsso/users/models.py:40
 msgid "Image 512"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:139 cdsso/users/models.py:43
+#: cdsso/contrib/register/models.py:171 cdsso/users/models.py:43
 msgid "User 512px profile image"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:143
+#: cdsso/contrib/register/models.py:175
 msgid "Known Member"
 msgstr ""
 
-#: cdsso/contrib/register/models.py:144
+#: cdsso/contrib/register/models.py:176
 msgid "Known Members"
 msgstr ""
 

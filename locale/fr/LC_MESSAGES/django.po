@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-28 04:11+0000\n"
-"PO-Revision-Date: 2020-09-28 04:18+0000\n"
+"POT-Creation-Date: 2020-10-18 01:12+0000\n"
+"PO-Revision-Date: 2020-10-18 01:14+0000\n"
 "Last-Translator: b'Kevin Shelley <kevin.shelley@pm.me>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -52,7 +52,7 @@ msgstr "Drapeau"
 msgid "Country"
 msgstr "Pays"
 
-#: cdsso/contrib/register/admin.py:16
+#: cdsso/contrib/register/admin.py:21
 msgid "Completed Registration"
 msgstr "Inscription terminée"
 
@@ -85,6 +85,36 @@ msgstr ""
 #: cdsso/contrib/register/forms.py:21
 msgid "Please enter your ASURITE email (<ASURITE>@asu.edu)"
 msgstr "Veuillez saisir votre adresse e-mail ASURITE (<ASURITE> @ asu.edu)"
+
+#: cdsso/contrib/register/forms.py:40
+msgid ""
+"We will send you emails about events, exciting new projects and "
+"opportunities, and different ways to get involved in CodeDevils."
+msgstr ""
+"Nous vous enverrons des e-mails sur les événements, les nouveaux projets et "
+"opportunités passionnants et les différentes façons de s'impliquer dans "
+"CodeDevils."
+
+#: cdsso/contrib/register/forms.py:44
+msgid ""
+"Check here if you are an alumni. We will get you in contact with an Officer "
+"to help set you up."
+msgstr ""
+"Cochez ici si vous êtes un ancien. Nous vous mettrons en contact avec un "
+"agent pour vous aider à vous installer."
+
+#: cdsso/contrib/register/forms.py:47
+msgid ""
+"You can opt to be anonymous, which means we will block your information "
+"publicly and limit it between different CodeDevils products. This will also "
+"disable the feature that allows people - employers, members or other outside"
+" users on our website - from viewing your profile."
+msgstr ""
+"Vous pouvez choisir d'être anonyme, ce qui signifie que nous bloquerons vos "
+"informations publiquement et les limiterons entre les différents produits "
+"CodeDevils. Cela désactivera également la fonctionnalité qui permet aux "
+"personnes - employeurs, membres ou autres utilisateurs externes sur notre "
+"site Web - de consulter votre profil."
 
 #: cdsso/contrib/register/models.py:34
 msgid "Registered on Slack"
@@ -123,52 +153,89 @@ msgid "The date/time the student submitted their registration form"
 msgstr ""
 "La date / heure à laquelle l'étudiant a soumis son formulaire d'inscription"
 
-#: cdsso/contrib/register/models.py:76 cdsso/contrib/register/models.py:77
+#: cdsso/contrib/register/models.py:75
+msgid "SunDevilSync Notification"
+msgstr "Notification SunDevilSync"
+
+#: cdsso/contrib/register/models.py:77
+msgid ""
+"Flag to track whether a CodeDevils officer has been notified that this "
+"student needs to be added to SunDevilSync"
+msgstr ""
+"Indicateur pour savoir si un responsable CodeDevils a été informé que cet "
+"étudiant doit être ajouté à SunDevilSync"
+
+#: cdsso/contrib/register/models.py:85
+msgid "Slack Add Attempt"
+msgstr "Tentative d'ajout Slack"
+
+#: cdsso/contrib/register/models.py:87
+msgid ""
+"Flag to track if the API was used previously to add this user to Slack. This"
+" stops consecutive attempts of adding this user."
+msgstr ""
+"Indiquez pour savoir si l'API a été utilisée précédemment pour ajouter cet "
+"utilisateur à Slack. Cela arrête les tentatives consécutives d'ajout de cet "
+"utilisateur."
+
+#: cdsso/contrib/register/models.py:95
+msgid "Completed Registration Notification"
+msgstr "Notification d'inscription terminée"
+
+#: cdsso/contrib/register/models.py:97
+msgid ""
+"Flag to track if this user has been notified that their registration has "
+"been completed."
+msgstr ""
+"Marquer pour savoir si cet utilisateur a été informé que son enregistrement "
+"est terminé."
+
+#: cdsso/contrib/register/models.py:107 cdsso/contrib/register/models.py:108
 msgid "Student Registration"
 msgstr "Inscription des étudiants"
 
-#: cdsso/contrib/register/models.py:112
+#: cdsso/contrib/register/models.py:144
 #: cdsso/templates/register/status.html:147
 msgid "Email"
 msgstr "Email"
 
-#: cdsso/contrib/register/models.py:115
+#: cdsso/contrib/register/models.py:147
 msgid "Name of member"
 msgstr "Nom du membre"
 
-#: cdsso/contrib/register/models.py:118
+#: cdsso/contrib/register/models.py:150
 msgid "Slack ID"
 msgstr "Identifiant Slack"
 
-#: cdsso/contrib/register/models.py:125 cdsso/users/models.py:50
+#: cdsso/contrib/register/models.py:157 cdsso/users/models.py:50
 msgid "UTC Offset"
 msgstr "Décalage UTC"
 
-#: cdsso/contrib/register/models.py:127 cdsso/users/models.py:52
+#: cdsso/contrib/register/models.py:159 cdsso/users/models.py:52
 msgid "UTC offset in seconds"
 msgstr "Décalage UTC en secondes"
 
-#: cdsso/contrib/register/models.py:132 cdsso/users/models.py:33
+#: cdsso/contrib/register/models.py:164 cdsso/users/models.py:33
 msgid "Image 24"
 msgstr "Image 24"
 
-#: cdsso/contrib/register/models.py:133 cdsso/users/models.py:36
+#: cdsso/contrib/register/models.py:165 cdsso/users/models.py:36
 msgid "User 24px profile image"
 msgstr "Image de profil utilisateur 24 pixels"
 
-#: cdsso/contrib/register/models.py:138 cdsso/users/models.py:40
+#: cdsso/contrib/register/models.py:170 cdsso/users/models.py:40
 msgid "Image 512"
 msgstr "Image 512"
 
-#: cdsso/contrib/register/models.py:139 cdsso/users/models.py:43
+#: cdsso/contrib/register/models.py:171 cdsso/users/models.py:43
 msgid "User 512px profile image"
 msgstr "Image de profil utilisateur 512 pixels"
 
-#: cdsso/contrib/register/models.py:143
+#: cdsso/contrib/register/models.py:175
 msgid "Known Member"
 msgstr "Membre connu"
 
-#: cdsso/contrib/register/models.py:144
+#: cdsso/contrib/register/models.py:176
 msgid "Known Members"
 msgstr "Membres connus"
 
