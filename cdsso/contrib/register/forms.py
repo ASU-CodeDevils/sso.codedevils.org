@@ -36,13 +36,24 @@ class StudentRegistrationForm(forms.UserCreationForm):
         ]
         labels = {"is_alumni": "Alumni"}
         help_texts = {
-            "receive_notifications": "We will send you emails about events, exciting new projects and opportunities, "
-            "and different ways to get involved in CodeDevils",
-            "is_alumni": "Check here if you are an alumni. We will get you in contact with an Officer to help set "
-            "you up",
-            "anonymous": "You can opt to be anonymous, which means we will block your information publicly and "
-            "limit it between different CodeDevils products.",
+            "receive_notifications": _(
+                "We will send you emails about events, exciting new projects and opportunities, and different ways to "
+                "get involved in CodeDevils."
+            ),
+            "is_alumni": _(
+                "Check here if you are an alumni. We will get you in contact with an Officer to help set you up."
+            ),
+            "anonymous": _(
+                "You can opt to be anonymous, which means we will block your information publicly and limit it "
+                "between different CodeDevils products. This will also disable the feature that allows people - "
+                "employers, members or other outside users on our website - from viewing your profile."
+            )
         }
+
+    def __init__(self, *args, **kwargs):
+        """Sets the `anonymous` option to `False`."""
+        super(StudentRegistrationForm, self).__init__(*args, **kwargs)
+        self.fields['anonymous'].initial = False
 
     def clean_email(self):
         """Determines if the email is valid based on if the user is a student or alumni."""
