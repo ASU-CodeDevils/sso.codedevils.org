@@ -9,19 +9,36 @@ logger = logging.getLogger()
 GraphQLResponse = Tuple[bool, bool, Dict]
 
 
+def underscore_to_camelcase(param: str) -> str:
+    """
+    Converts a parameter written in underscore notation (i.e. `slack_id`) and converts it to camel case (i.e.
+    `slackId`). This is required for the conversion from the standard Pythonic underscore notation to the
+    GraphQL camel case.
+
+    Args:
+        param (str): The parameter in underscore notation.
+    Return:
+        The param in camel case notation.
+    """
+    return param.split("_")[0] + "".join(x.capitalize() or "_" for x in param.split("_")[1:])
+
+
 def make_cdweb_query(query: str, variables: dict = None) -> GraphQLResponse:
     """
     Makes a GraphQL query to the CodeDevils website.
     """
+    website = settings.CODEDEVILS_WEBSITE
     return make_query(
         query=query,
         variables=variables,
-        url=settings.CODEDEVILS_WEBSITE_GRAPHQL_URL,
-        headers={"Authorization": f"Token {settings.CODEDEVILS_WEBSITE_API_KEY}"}
+        url=website["BASE_URL"] + website["GRAPHQL_API"],
+        headers={"Authorization": f"Token {settings.CODEDEVILS_WEBSITE['API_KEY']}"},
     )
 
 
-def make_query(url: str, query: str, variables: dict = None, headers: dict = None) -> GraphQLResponse:
+def make_query(
+    url: str, query: str, variables: dict = None, headers: dict = None
+) -> GraphQLResponse:
     """
     Constructs and sends a GraphQL query. The query returns a tuple with the status of the query,
     the status of a mutation (if any), and the data itself.
@@ -55,4 +72,6 @@ def make_query(url: str, query: str, variables: dict = None, headers: dict = Non
             return True, True, response["data"]
     else:
         error_message = response["errors"][0]["message"]
-        raise Exception(f"Query failed to run by returning code of {status}: {error_message}")
+        raise Exception(
+            f"Query failed to run by returning code of {status}: {error_message}"
+        )

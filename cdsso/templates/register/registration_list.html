@@ -1,0 +1,93 @@
+<!--TODO include links to various CD resources here-->
+{% extends "account/base.html" %}
+{% load crispy_forms_tags i18n static %}
+{% block 
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}"/>
+{% endblock extrahead %}
+{% block head_title %}{% trans "Registrations" %}{% endblock head_title %}
+{% block content %}
+<section>
+<div>
+    <div id="sideDrawer" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <!-- Filtering -->
+        <p class="bold">Filtering</p>
+        <input type="text" id="nameInput" onkeyup="filterByColumn(1, 'nameInput')" placeholder="Search for names..">
+        <input type="text" id="emailInput" onkeyup="filterByColumn(2, 'emailInput')" placeholder="Search for emails..">
+        <hr class="hrDrawer">
+        <!-- Slack actions -->
+        <p class="bold">Slack</p>
+        <button id="slackCopyStudent" type="button" class="btn btn-primary border-0 bg-3 mb-2 w-100 text-center">Copy Student Emails</button>
+        <button id="slackCopyAlumni" type="button" class="btn btn-primary border-0 bg-3 mb-2 w-100 text-center">Copy Alumni Emails</button>
+        <button id="slackConfirmStudent" type="button" class="btn btn-primary border-0 bg-3 mb-2 w-100 text-center">Confirm Students</button>
+        <button id="slackConfirmAlumni" type="button" class="btn btn-primary border-0 bg-3 mb-2 w-100 text-center">Confirm Alumni</button>
+        <hr class="hrDrawer">
+        <!-- SunDevilSync actions -->
+        <p class="bold">SunDevilSync</p>
+        <button id="sdsCopy" type="button" class="btn btn-primary border-0 bg-3 mb-2 w-100 text-center">Copy SDS Emails</button>
+        <button id="sdsConfirm" type="button" class="btn btn-primary border-0 bg-3 mb-2 w-100 text-center">Confirm Registration</button>
+    </div>
+    </div>
+</div>
+<button id="openbtn" class="openbtn" onclick="openNav()">Open Actions &uarr;</button>
+<div id="main">
+    <table id="registerTable" class="table table-hover table-responsive-lg">
+        <thead>
+            <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col" class="text-center">Slack</th>
+            <th scope="col" class="text-center">SunDevilSync</th>
+            <th scope="col">Date Registered</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for registration in student_registrations %}
+                    <tr class="record">
+                        <td>{{ registration.user.id }}</td>
+                        <td>{{ registration.user.name }}</td>
+                        <td>{{ registration.user.email }}</td>
+                        <td class="text-center" value="{{ registration.slack_registered }}">
+                            <i class="fa {% if registration.slack_registered %}fa-check-circle text-success{% else %}fa-times-circle text-danger{% endif %}" aria-hidden="true"></i>
+                        </td>
+                        <td class="text-center" value="{{ registration.sds_registered }}">
+                            <i class="fa {% if registration.sds_registered %}fa-check-circle text-success{% else %}fa-times-circle text-danger{% endif %}" aria-hidden="true"></i>
+                        </td>
+                        <td>{{ registration.date_registered }}</td>
+                    </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+        <div id="stateComponents">
+            <input type="hidden" id="slack_student_emails" value="{{ slack_student_emails }}">
+            <input type="hidden" id="slack_alumni_emails" value="{{ slack_alumni_emails }}">
+            <input type="hidden" id="sds_student_emails" value="{{ sds_student_emails }}">
+            <input type="hidden" id="sds_alumni_emails" value="{{ sds_alumni_emails }}">
+        </div>
+    {% if page_obj and page_obj.has_next or page_obj.has_previous %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+    {% endif %}
+</div>
+</section>
+{% endblock %}
+{% block bottom_content %}
+    <script src="{% static 'js/register.js' %}"></script>
+{% endblock bottom_content %}

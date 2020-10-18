@@ -33,4 +33,6 @@ def _get(url: str, params: dict = None, headers: dict = None):
             raise Exception(f"No data was returned with GET request: {url}")
         return response.json()
     else:
-        raise Exception(f"{response.status_code}-level response returned from url: {url}")
+        raise Exception(
+            f"{response.status_code}-level response returned from url: {url}"
+        )

@@ -1,0 +1,978 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-18 10:04+0000\n"
+"PO-Revision-Date: 2020-10-18 01:17+0000\n"
+"Last-Translator: b'Kevin Shelley <kevin.shelley@pm.me>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Translated-Using: django-rosetta 0.9.4\n"
+
+#: cdsso/contrib/countries/apps.py:7 cdsso/contrib/countries/models.py:54
+msgid "Countries"
+msgstr "国"
+
+#: cdsso/contrib/countries/models.py:12
+#: cdsso/templates/register/status.html:143
+msgid "Name"
+msgstr "名前"
+
+#: cdsso/contrib/countries/models.py:19
+msgid "Native Name"
+msgstr "ネイティブ名"
+
+#: cdsso/contrib/countries/models.py:26
+msgid "Alpha2 Code"
+msgstr "Alpha2コード"
+
+#: cdsso/contrib/countries/models.py:33
+msgid "Alpha3 Code"
+msgstr "Alpha3コード"
+
+#: cdsso/contrib/countries/models.py:36
+msgid "Numeric code"
+msgstr "数値コード"
+
+#: cdsso/contrib/countries/models.py:39
+msgid "Flag"
+msgstr "国旗"
+
+#: cdsso/contrib/countries/models.py:53
+msgid "Country"
+msgstr "国"
+
+#: cdsso/contrib/register/admin.py:21
+msgid "Completed Registration"
+msgstr "登録完了"
+
+#: cdsso/contrib/register/apps.py:7
+msgid "Register"
+msgstr "登録"
+
+#: cdsso/contrib/register/forms.py:13 cdsso/users/forms.py:16
+msgid "This username has already been taken."
+msgstr "このユーザー名はすでに使用されています。"
+
+#: cdsso/contrib/register/forms.py:14
+msgid "Please enter a valid email address"
+msgstr "有効なメールアドレスを入力してください"
+
+#: cdsso/contrib/register/forms.py:15
+msgid "This email has already been taken."
+msgstr "このメールはすでに届いています。"
+
+#: cdsso/contrib/register/forms.py:16
+msgid "Please enter your ASU email."
+msgstr "ASUのメールアドレスを入力してください。"
+
+#: cdsso/contrib/register/forms.py:18
+msgid "You are applying as an alumni and cannot use your student email"
+msgstr "卒業生として申請しており、学生の電子メールを使用できません"
+
+#: cdsso/contrib/register/forms.py:21
+msgid "Please enter your ASURITE email (<ASURITE>@asu.edu)"
+msgstr "ASURITEメールアドレスを入力してください（<ASURITE>@asu.edu）"
+
+#: cdsso/contrib/register/forms.py:40
+msgid ""
+"We will send you emails about events, exciting new projects and "
+"opportunities, and different ways to get involved in CodeDevils."
+msgstr ""
+"匿名を選択できます。つまり、お客様の情報を公にブロックし、異なるCodeDevils製"
+"品間で制限します。これにより、ユーザー（雇用主、メンバー、または当社のWebサイ"
+"ト上の他の外部ユーザー）があなたのプロファイルを表示できないようにする機能も"
+"無効になります。"
+
+#: cdsso/contrib/register/forms.py:44
+msgid ""
+"Check here if you are an alumni. We will get you in contact with an Officer "
+"to help set you up."
+msgstr ""
+"卒業生の方はこちらをご覧ください。私たちはあなたをセットアップするのを手伝う"
+"ために役員と連絡を取ります。"
+
+#: cdsso/contrib/register/forms.py:47
+msgid ""
+"You can opt to be anonymous, which means we will block your information "
+"publicly and limit it between different CodeDevils products. This will also "
+"disable the feature that allows people - employers, members or other outside "
+"users on our website - from viewing your profile."
+msgstr ""
+"匿名を選択できます。つまり、お客様の情報を公にブロックし、異なるCodeDevils製"
+"品間で制限します。これにより、ユーザー（雇用主、メンバー、または当社のWebサイ"
+"ト上の他の外部ユーザー）があなたのプロファイルを表示できないようにする機能も"
+"無効になります。"
+
+#: cdsso/contrib/register/models.py:34
+msgid "Registered on Slack"
+msgstr "Slackに登録"
+
+#: cdsso/contrib/register/models.py:35
+msgid "The user has been registered on Slack"
+msgstr "ユーザーはSlackに登録されています"
+
+#: cdsso/contrib/register/models.py:41
+msgid "Registered on SunDevilSync"
+msgstr "SunDevilSyncに登録"
+
+#: cdsso/contrib/register/models.py:43
+msgid ""
+"The user has been registered on SunDevilSync. This is True by default for "
+"alumni."
+msgstr ""
+"ユーザーはSunDevilSyncに登録されています。これは、卒業生のデフォルトではTrue"
+"です。"
+
+#: cdsso/contrib/register/models.py:60
+msgid "User"
+msgstr "ユーザー"
+
+#: cdsso/contrib/register/models.py:61
+msgid "This user's progress in the registration process."
+msgstr "登録プロセスにおけるこのユーザーの進捗状況。"
+
+#: cdsso/contrib/register/models.py:66
+msgid "Date Registered"
+msgstr "登録日"
+
+#: cdsso/contrib/register/models.py:67
+msgid "The date/time the student submitted their registration form"
+msgstr "学生が登録フォームを提出した日時"
+
+#: cdsso/contrib/register/models.py:75
+msgid "SunDevilSync Notification"
+msgstr "SunDevilSync通知"
+
+#: cdsso/contrib/register/models.py:77
+msgid ""
+"Flag to track whether a CodeDevils officer has been notified that this "
+"student needs to be added to SunDevilSync"
+msgstr ""
+"この学生をSunDevilSyncに追加する必要があることをCodeDevils役員に通知したかど"
+"うかを追跡するためのフラグ"
+
+#: cdsso/contrib/register/models.py:85
+msgid "Slack Add Attempt"
+msgstr "Slack追加の試行"
+
+#: cdsso/contrib/register/models.py:87
+msgid ""
+"Flag to track if the API was used previously to add this user to Slack. This "
+"stops consecutive attempts of adding this user."
+msgstr ""
+"このユーザーをSlackに追加するためにAPIが以前に使用されたかどうかを追跡するた"
+"めのフラグ。これにより、このユーザーを追加しようとする連続した試行が停止しま"
+"す。"
+
+#: cdsso/contrib/register/models.py:95
+msgid "Completed Registration Notification"
+msgstr "登録通知の完了"
+
+#: cdsso/contrib/register/models.py:97
+msgid ""
+"Flag to track if this user has been notified that their registration has "
+"been completed."
+msgstr ""
+"このユーザーに登録が完了したことが通知されたかどうかを追跡するためのフラグ。"
+
+#: cdsso/contrib/register/models.py:107 cdsso/contrib/register/models.py:108
+msgid "Student Registration"
+msgstr "学生登録"
+
+#: cdsso/contrib/register/models.py:144
+#: cdsso/templates/register/status.html:147
+msgid "Email"
+msgstr "Eメール"
+
+#: cdsso/contrib/register/models.py:147
+msgid "Name of member"
+msgstr "メンバーの名前"
+
+#: cdsso/contrib/register/models.py:150
+msgid "Slack ID"
+msgstr "Slackの識別"
+
+#: cdsso/contrib/register/models.py:157 cdsso/users/models.py:50
+msgid "UTC Offset"
+msgstr "UTCオフセット"
+
+#: cdsso/contrib/register/models.py:159 cdsso/users/models.py:52
+msgid "UTC offset in seconds"
+msgstr "秒単位のUTCオフセット"
+
+#: cdsso/contrib/register/models.py:164 cdsso/users/models.py:33
+msgid "Image 24"
+msgstr "画像24"
+
+#: cdsso/contrib/register/models.py:165 cdsso/users/models.py:36
+msgid "User 24px profile image"
+msgstr "ユーザー24ピクセルのプロフィール画像"
+
+#: cdsso/contrib/register/models.py:170 cdsso/users/models.py:40
+msgid "Image 512"
+msgstr "画像512"
+
+#: cdsso/contrib/register/models.py:171 cdsso/users/models.py:43
+msgid "User 512px profile image"
+msgstr "ユーザー512ピクセルのプロフィール画像"
+
+#: cdsso/contrib/register/models.py:175
+msgid "Known Member"
+msgstr "既知のメンバー"
+
+#: cdsso/contrib/register/models.py:176
+msgid "Known Members"
+msgstr "既知のメンバー"
+
+#: cdsso/templates/_index/base.html:50 cdsso/templates/base.html:67
+#, python-format
+msgid "%(message)s"
+msgstr "%(message)s"
+
+#: cdsso/templates/_index/header_meta.html:4
+msgid "CodeDevils - Develop. Network. Create."
+msgstr "CodeDevils-開発。通信網。作成します。"
+
+#: cdsso/templates/account/account_inactive.html:5
+#: cdsso/templates/account/account_inactive.html:8
+msgid "Account Inactive"
+msgstr "アカウントが非アクティブ"
+
+#: cdsso/templates/account/account_inactive.html:10
+msgid "This account is inactive."
+msgstr "このアカウントは非アクティブです。"
+
+#: cdsso/templates/account/email.html:7
+msgid "Account"
+msgstr "アカウント"
+
+#: cdsso/templates/account/email.html:10
+msgid "E-mail Addresses"
+msgstr "メールアドレス"
+
+#: cdsso/templates/account/email.html:13
+msgid "The following e-mail addresses are associated with your account:"
+msgstr "次の電子メールアドレスがアカウントに関連付けられています。"
+
+#: cdsso/templates/account/email.html:27
+msgid "Verified"
+msgstr "確認済み"
+
+#: cdsso/templates/account/email.html:29
+msgid "Unverified"
+msgstr "未確認"
+
+#: cdsso/templates/account/email.html:31
+msgid "Primary"
+msgstr "プライマリ"
+
+#: cdsso/templates/account/email.html:37
+msgid "Make Primary"
+msgstr "プライマリにする"
+
+#: cdsso/templates/account/email.html:38
+msgid "Re-send Verification"
+msgstr "検証を再送信する"
+
+#: cdsso/templates/account/email.html:39
+msgid "Remove"
+msgstr "削除する"
+
+#: cdsso/templates/account/email.html:46
+msgid "Warning:"
+msgstr "警告："
+
+#: cdsso/templates/account/email.html:46
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+"現在、メールアドレスは設定されていません。通知を受け取ったり、パスワードをリ"
+"セットしたりできるように、実際には電子メールアドレスを追加する必要がありま"
+"す。"
+
+#: cdsso/templates/account/email.html:51
+msgid "Add E-mail Address"
+msgstr "電子メールアドレスを追加する"
+
+#: cdsso/templates/account/email.html:56
+msgid "Add E-mail"
+msgstr "Eメールを追加する"
+
+#: cdsso/templates/account/email.html:66
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr "選択した電子メールアドレスを本当に削除しますか？"
+
+#: cdsso/templates/account/email_confirm.html:6
+#: cdsso/templates/account/email_confirm.html:10
+msgid "Confirm E-mail Address"
+msgstr "メールアドレスを確認"
+
+#: cdsso/templates/account/email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+"<a href=\"mailto:%(email)s\">％(email)s </a>がユーザー %(user_display)s の"
+"メールアドレスであることを確認してください。"
+
+#: cdsso/templates/account/email_confirm.html:20
+msgid "Confirm"
+msgstr "確認"
+
+#: cdsso/templates/account/email_confirm.html:27
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+"この電子メール確認リンクの有効期限が切れているか、無効です。<a href="
+"\"%(email_url)s\">新しいメール確認リクエストを発行</a>してください。"
+
+#: cdsso/templates/account/password_change.html:7
+#: cdsso/templates/account/password_change.html:12
+#: cdsso/templates/account/password_reset_from_key.html:7
+#: cdsso/templates/account/password_reset_from_key_done.html:6
+msgid "Change Password"
+msgstr "パスワードを変更する"
+
+#: cdsso/templates/account/password_reset.html:10
+#: cdsso/templates/account/password_reset_done.html:7
+msgid "Password Reset"
+msgstr "パスワードのリセット"
+
+#: cdsso/templates/account/password_reset.html:15
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+"パスワードをお忘れですか？以下にメールアドレスを入力してください。リセットで"
+"きるメールが送信されます。"
+
+#: cdsso/templates/account/password_reset.html:20
+msgid "Reset My Password"
+msgstr "私のパスワードをリセットする"
+
+#: cdsso/templates/account/password_reset.html:23
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "パスワードのリセットで問題が発生した場合は、お問い合わせください。"
+
+#: cdsso/templates/account/password_reset_done.html:13
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr "メールをお送りしました。数分以内に届かない場合はご連絡ください。"
+
+#: cdsso/templates/account/password_reset_from_key.html:7
+msgid "Bad Token"
+msgstr "悪いトークン"
+
+#: cdsso/templates/account/password_reset_from_key.html:11
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+"パスワードリセットリンクが無効でした。おそらく、すでに使用されているためで"
+"す。 <a href=\"%(passwd_reset_url)s\">新しいパスワードのリセット</a>をリクエ"
+"ストしてください。"
+
+#: cdsso/templates/account/password_reset_from_key.html:17
+msgid "change password"
+msgstr "パスワードを変更する"
+
+#: cdsso/templates/account/password_reset_from_key.html:20
+#: cdsso/templates/account/password_reset_from_key_done.html:7
+msgid "Your password is now changed."
+msgstr "パスワードが変更されました。"
+
+#: cdsso/templates/account/password_reset_from_key_done.html:7
+#: cdsso/templates/cas/login.html:19 cdsso/templates/cas/login.html:48
+msgid "Login"
+msgstr "ログインする"
+
+#: cdsso/templates/account/password_set.html:7
+#: cdsso/templates/account/password_set.html:12
+msgid "Set Password"
+msgstr "パスワードを設定してください"
+
+#: cdsso/templates/account/signup.html:3 cdsso/templates/cas/logged.html:5
+msgid "Welcome to CodeDevils!"
+msgstr "CodeDevilsへようこそ！"
+
+#: cdsso/templates/account/signup.html:4
+msgid ""
+"\n"
+"Begin your CodeDevils journey by filling out the below registration form.\n"
+msgstr ""
+"\n"
+"以下の登録フォームに記入して、CodeDevilsの旅を始めましょう。\n"
+
+#: cdsso/templates/account/signup.html:18
+msgid "Have a question?"
+msgstr "質問があります？"
+
+#: cdsso/templates/account/signup.html:18
+msgid "Contact us"
+msgstr "お問い合わせ"
+
+#: cdsso/templates/account/signup.html:23
+msgid "Already have an account?"
+msgstr "すでにアカウントをお持ちですか？"
+
+#: cdsso/templates/account/signup.html:23
+#: cdsso/templates/register/status.html:87
+msgid "Sign in"
+msgstr "サインイン"
+
+#: cdsso/templates/account/signup.html:27
+msgid "Submit"
+msgstr "参加する"
+
+#: cdsso/templates/account/signup.html:37
+#: cdsso/templates/register/status.html:28
+msgid "Join us on Slack"
+msgstr "Slackにご参加ください"
+
+#: cdsso/templates/account/signup.html:38
+msgid "Join us on Slack to start interacting with your fellow engineers"
+msgstr "Slackに参加して、仲間のエンジニアとの交流を始めましょう"
+
+#: cdsso/templates/account/signup.html:49
+#: cdsso/templates/register/status.html:31
+msgid "Register on SunDevilSync"
+msgstr "SunDevilSyncに登録する"
+
+#: cdsso/templates/account/signup.html:50
+msgid ""
+"SunDevilSync is the official online registrar of ASU student organizations"
+msgstr "SunDevilSyncは、ASUの学生組織の公式オンラインレジストラです。"
+
+#: cdsso/templates/account/signup.html:61
+msgid "Get in touch"
+msgstr "連絡する"
+
+#: cdsso/templates/account/signup.html:65
+msgid "Arizona State University,"
+msgstr "Arizona State University,"
+
+#: cdsso/templates/account/signup.html:66
+msgid "Tempe, AZ"
+msgstr "Tempe, AZ"
+
+#: cdsso/templates/account/signup.html:104
+msgid "Registration Support"
+msgstr "登録サポート"
+
+#: cdsso/templates/account/signup.html:108
+msgid ""
+"\n"
+"                    For questions about registration requirements for "
+"students or alumni, including joining\n"
+"                    Slack, registering on SunDevilSync, and registration "
+"status\n"
+"                    "
+msgstr ""
+"\n"
+"Slackへの参加、SunDevilSyncへの登録、登録ステータスなど、学生または卒業生の登"
+"録要件に関する質問"
+
+#: cdsso/templates/account/signup.html:117
+msgid "General Support"
+msgstr "一般的なサポート"
+
+#: cdsso/templates/account/signup.html:121
+msgid ""
+"\n"
+"                    Have questions about the club before you join? Feel free "
+"to get a hold of us! We love\n"
+"                    to brag about all the amazing opportunities CodeDevils "
+"has to offer.\n"
+"                    "
+msgstr ""
+"\n"
+"入会する前にクラブについて質問がありますか？お気軽にどうぞ！ CodeDevilsが提供"
+"するすべての素晴らしい機会を自慢するのが大好きです。"
+
+#: cdsso/templates/account/signup_closed.html:5
+#: cdsso/templates/account/signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr "サインアップクローズ"
+
+#: cdsso/templates/account/signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr "申し訳ありませんが、サインアップは現在締め切られています。"
+
+#: cdsso/templates/account/verification_sent.html:5
+#: cdsso/templates/account/verification_sent.html:8
+#: cdsso/templates/account/verified_email_required.html:5
+#: cdsso/templates/account/verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr "あなたのメールアドレスを確認してください"
+
+#: cdsso/templates/account/verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+"確認のためにメールをお送りしました。提供されたリンクをたどって、サインアップ"
+"プロセスを完了します。数分以内に届かない場合はご連絡ください。"
+
+#: cdsso/templates/account/verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+"サイトのこの部分では、あなたが本人であることを確認する必要があります。この目"
+"的のために、電子メールアドレスの所有権を確認する必要があります。"
+
+#: cdsso/templates/account/verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside this e-mail. Please\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+"私たちはあなたに電子メールを送りました 検証。このメール内のリンクをクリックし"
+"てください。数分以内に届かない場合はご連絡ください。"
+
+#: cdsso/templates/account/verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+"<strong>注：</strong>引き続き<a href=\"%(email_url)s\">メールアドレスを変更</"
+"a>できます。"
+
+#: cdsso/templates/base.html:47
+msgid "Ready to join?"
+msgstr "参加する準備はできましたか？"
+
+#: cdsso/templates/base.html:48
+msgid "Create a CodeDevil account"
+msgstr "CodeDevilアカウントを作成する"
+
+#: cdsso/templates/base.html:50
+msgid "Create account"
+msgstr "アカウントを作成する"
+
+#: cdsso/templates/cas/logged.html:12
+msgid "Log In Successful"
+msgstr "ログイン成功"
+
+#: cdsso/templates/cas/logged.html:12
+msgid ""
+"You now have access to all CodeDevils services that \n"
+"          support logging in! Check out some of the ones below to see what "
+"being a member offers you!"
+msgstr ""
+"これで、ログインをサポートするすべてのCodeDevilsサービスにアクセスできます。"
+"メンバーであることはあなたに何を提供するかを見るために以下のもののいくつかを"
+"チェックしてください！"
+
+#: cdsso/templates/cas/logged.html:21
+msgid "CodeDevils Website"
+msgstr "CodeDevilsウェブサイト"
+
+#: cdsso/templates/cas/logged.html:22
+msgid ""
+"\n"
+"              The CodeDevils website is the home page of the organization! "
+"Check it out to learn about\n"
+"              the history of the organization, its leadership, and other "
+"resources to all things CodeDevils.\n"
+"              "
+msgstr ""
+"\n"
+"CodeDevilsのWebサイトは、組織のホームページです。組織の歴史、そのリーダーシッ"
+"プ、およびCodeDevilsのすべてのものに対するその他のリソースについて学ぶために"
+"それをチェックしてください。"
+
+#: cdsso/templates/cas/logged.html:39
+msgid "IONS"
+msgstr "IONS"
+
+#: cdsso/templates/cas/logged.html:40
+msgid ""
+"\n"
+"              Imagery of Natural Systems (IONS) is a collaborative project "
+"between ASU SESE and CodeDevils. It\n"
+"              partners with Planet to process satellite images and analyze "
+"them for ash coverage and its effect\n"
+"              on the surrounding vegetation.\n"
+"              "
+msgstr ""
+"\n"
+"Imagery of Natural Systems（IONS）は、ASUSESEとCodeDevilsの共同プロジェクトで"
+"す。 Planetと提携して衛星画像を処理し、灰の範囲とその影響を分析します 周囲の"
+"植生に。"
+
+#: cdsso/templates/cas/logged.html:57
+msgid "Log me out from all my sessions"
+msgstr "すべてのセッションからログアウトします"
+
+#: cdsso/templates/cas/logged.html:63
+msgid "Forget the identity provider"
+msgstr "IDプロバイダーを忘れる"
+
+#: cdsso/templates/cas/logged.html:67
+msgid "Logout"
+msgstr "ログアウト"
+
+#: cdsso/templates/cas/login.html:9
+msgid "Welcome to"
+msgstr "ようこそ"
+
+#: cdsso/templates/cas/login.html:12
+msgid "Login to your account"
+msgstr "あなたのアカウントにログイン"
+
+#: cdsso/templates/cas/login.html:21
+msgid "Don't have an account yet?"
+msgstr "まだアカウントをお持ちではありませんか？"
+
+#: cdsso/templates/cas/login.html:22
+msgid "Create it here"
+msgstr "ここで作成"
+
+#: cdsso/templates/cas/login.html:32 cdsso/templates/cas/login.html:34
+msgid "Username"
+msgstr "ユーザー名"
+
+#: cdsso/templates/cas/login.html:37 cdsso/templates/cas/login.html:39
+msgid "Password"
+msgstr "パスワード"
+
+#: cdsso/templates/cas/login.html:44
+msgid "Forgot your password?"
+msgstr "パスワードをお忘れですか？"
+
+#: cdsso/templates/cas/logout.html:6
+msgid "Click here"
+msgstr "ここをクリック"
+
+#: cdsso/templates/cas/logout.html:6
+msgid "to log in again"
+msgstr "再度ログインするには"
+
+#: cdsso/templates/cas/warn.html:9
+msgid "Connect to the service"
+msgstr "サービスに接続する"
+
+#: cdsso/templates/register/registration_detail.html:8
+msgid "Detail "
+msgstr "詳細"
+
+#: cdsso/templates/register/registration_list.html:8
+msgid "Registrations"
+msgstr "登録"
+
+#: cdsso/templates/register/status.html:7
+msgid "Your Registration"
+msgstr "あなたの登録"
+
+#: cdsso/templates/register/status.html:14
+msgid "Registration Complete"
+msgstr "登録完了"
+
+#: cdsso/templates/register/status.html:16
+msgid "In Progress"
+msgstr "進行中"
+
+#: cdsso/templates/register/status.html:19
+msgid ""
+"You have completed your registration! You can now access all CodeDevils "
+"services. You can start by checking out the website at: "
+msgstr ""
+"登録が完了しました。これで、すべてのCodeDevilsサービスにアクセスできます。次"
+"のWebサイトをチェックすることから始めることができます。"
+
+#: cdsso/templates/register/status.html:22
+msgid ""
+"You still need to complete some steps before your registration is complete."
+msgstr "登録が完了する前に、まだいくつかの手順を完了する必要があります。"
+
+#: cdsso/templates/register/status.html:28
+msgid "Step 1"
+msgstr "ステップ1"
+
+#: cdsso/templates/register/status.html:31
+msgid "Step 2"
+msgstr "ステップ2"
+
+#: cdsso/templates/register/status.html:34
+msgid "Step 3"
+msgstr "ステップ3"
+
+#: cdsso/templates/register/status.html:34
+msgid "Additional steps"
+msgstr "追加の手順"
+
+#: cdsso/templates/register/status.html:37
+msgid "Step 4"
+msgstr "ステップ4"
+
+#: cdsso/templates/register/status.html:37
+msgid "Done!"
+msgstr "完了！"
+
+#: cdsso/templates/register/status.html:44
+msgid "Step 1: Join us on Slack"
+msgstr "ステップ1：Slackに参加する"
+
+#: cdsso/templates/register/status.html:44
+msgid "Step 1 of 4"
+msgstr "ステップ1/4"
+
+#: cdsso/templates/register/status.html:48
+msgid ""
+"\n"
+"                                            You have successfully joined us "
+"on Slack! You can start by checking out these channels:\n"
+"                                        "
+msgstr ""
+"\n"
+"Slackへの参加に成功しました。これらのチャネルをチェックすることから始めること"
+"ができます："
+
+#: cdsso/templates/register/status.html:52
+msgid "Introduce yourself so everyone knows who you are!"
+msgstr "自己紹介して、誰もがあなたが誰であるかを知ってください！"
+
+#: cdsso/templates/register/status.html:53
+msgid "Where we hold all our meetings and virtual study halls"
+msgstr "すべての会議と仮想学習ホールを開催する場所"
+
+#: cdsso/templates/register/status.html:54
+msgid "Come here to chat with your fellow CodeDevils!"
+msgstr "仲間のCodeDevilsとチャットするためにここに来てください！"
+
+#: cdsso/templates/register/status.html:57
+msgid ""
+"\n"
+"                                            Slack is our team workspace. "
+"This is where we hold our meetings, collaborate on projects, and just chat "
+"with fellow\n"
+"                                            developers. You can join by "
+"signing into our workspace with your ASU email:\n"
+"                                        "
+msgstr ""
+"\n"
+"Slackは私たちのチームワークスペースです。ここで私たちは会議を開き、プロジェク"
+"トで協力し、仲間の開発者とチャットするだけです。 ASUメールでワークスペースに"
+"サインインして参加できます。"
+
+#: cdsso/templates/register/status.html:74
+msgid "Step 2: Register on SunDevilSync"
+msgstr "ステップ2：SunDevilSyncに登録する"
+
+#: cdsso/templates/register/status.html:74
+msgid "Step 2 of 4"
+msgstr "ステップ2/4"
+
+#: cdsso/templates/register/status.html:78
+msgid ""
+"\n"
+"                                            You are officially part of the "
+"club! ASU now recognizes you as a member of CodeDevils through "
+"SunDevilSync.\n"
+"                                        "
+msgstr ""
+"\n"
+"あなたは正式にクラブの一員です！ ASUは、SunDevilSyncを介してあなたを"
+"CodeDevilsのメンバーとして認識するようになりました。"
+
+#: cdsso/templates/register/status.html:82
+msgid ""
+"\n"
+"                                            SunDevilSync is the official ASU "
+"online registrar, and is how ASU determines if you are an official member of "
+"an organization.\n"
+"                                            You must join CodeDevils on "
+"SunDevilSync before you are considered an official member. To do so:\n"
+"                                        "
+msgstr ""
+"\n"
+"SunDevilSyncは、公式のASUオンラインレジストラであり、ASUが組織の公式メンバー"
+"であるかどうかを判断する方法です。公式メンバーと見なされる前に、SunDevilSync"
+"でCodeDevilsに参加する必要があります。そうするために："
+
+#: cdsso/templates/register/status.html:87
+msgid ""
+"to SunDevilSync. This link will take you straight to the CodeDevils home "
+"page."
+msgstr ""
+"SunDevilSyncに。このリンクをクリックすると、CodeDevilsのホームページに直接ア"
+"クセスできます。"
+
+#: cdsso/templates/register/status.html:88
+msgid "In the top right, select "
+msgstr "右上で、"
+
+#: cdsso/templates/register/status.html:88
+msgid "Join"
+msgstr "参加する"
+
+#: cdsso/templates/register/status.html:90
+msgid ""
+"\n"
+"                                            An officer from our team will "
+"add you to the organization, and you will receive a confirmation at your ASU "
+"email.\n"
+"                                        "
+msgstr ""
+"\n"
+"私たちのチームの役員があなたを組織に追加し、ASUの電子メールで確認を受け取りま"
+"す。"
+
+#: cdsso/templates/register/status.html:100
+msgid "Step 3: Additional Administrative Steps"
+msgstr "ステップ3：追加の管理ステップ"
+
+#: cdsso/templates/register/status.html:100
+msgid "Step 3 of 4"
+msgstr "ステップ3/4"
+
+#: cdsso/templates/register/status.html:104
+msgid ""
+"\n"
+"                                            Your registration needs have "
+"been administered... In other words, this step is complete!\n"
+"                                        "
+msgstr ""
+"\n"
+"登録の必要性が管理されました...つまり、このステップは完了です。"
+
+#: cdsso/templates/register/status.html:108
+msgid ""
+"\n"
+"                                            Someone is working on your "
+"registration and should have this step completed soon. If you have any "
+"questions, or this is taking\n"
+"                                            too long, feel free to contact "
+"us:\n"
+"                                        "
+msgstr ""
+"\n"
+"誰かがあなたの登録に取り組んでおり、このステップをすぐに完了する必要がありま"
+"す。ご不明な点がある場合、またはこれがかかっている場合\n"
+"長すぎる場合は、お気軽にお問い合わせください。"
+
+#: cdsso/templates/register/status.html:126
+msgid "Step 4: Completed Registration"
+msgstr "ステップ4：登録の完了"
+
+#: cdsso/templates/register/status.html:126
+msgid "Step 4 of 4"
+msgstr "ステップ4/4"
+
+#: cdsso/templates/register/status.html:134
+msgid ""
+"Registration is not complete, but you can view your information below. We "
+"will update it for you."
+msgstr "登録は完了していませんが、以下で情報を確認できます。更新します。"
+
+#: cdsso/templates/register/status.html:151
+msgid "Academic status"
+msgstr "アカデミックステータス"
+
+#: cdsso/templates/register/status.html:152
+msgid "Alumni"
+msgstr "同窓生"
+
+#: cdsso/templates/register/status.html:152
+msgid "Student"
+msgstr "学生"
+
+#: cdsso/templates/register/status.html:155
+msgid "Date registered"
+msgstr "登録日"
+
+#: cdsso/users/apps.py:7
+msgid "Users"
+msgstr "ユーザー"
+
+#: cdsso/users/models.py:30
+msgid "Name of User"
+msgstr "ユーザー名"
+
+#: cdsso/users/models.py:59
+msgid "ID assigned to this user on Slack"
+msgstr "Slackでこのユーザーに割り当てられたID"
+
+#: cdsso/users/models.py:66
+msgid "Anonymous"
+msgstr "匿名"
+
+#: cdsso/users/models.py:68
+msgid ""
+"You have the option of keeping your account anonymous with CD. Selecting "
+"this will ensure your account stays private and supported applications don't "
+"have access to your data"
+msgstr ""
+"CodeDevilsを使用してアカウントを匿名に保つオプションがあります。これを選択す"
+"ると、アカウントが非公開になり、サポートされているアプリケーションがデータに"
+"アクセスできなくなります"
+
+#: cdsso/users/models.py:76
+msgid "Receive notifications"
+msgstr "通知を受け取る"
+
+#: cdsso/users/models.py:83
+msgid "Is an alumni"
+msgstr "同窓生です"
+
+#: cdsso/users/models.py:84
+msgid "Is an alumni of ASU. If False, the user is by default a student."
+msgstr "ASUの卒業生です。 Falseの場合、ユーザーはデフォルトで学生です。"
+
+#: cdsso/users/views.py:34
+msgid "Infos successfully updated"
+msgstr "情報が正常に更新されました"
+
+#: config/settings/base.py:31
+msgid "Spanish"
+msgstr "スペイン語"
+
+#: config/settings/base.py:32
+msgid "English"
+msgstr "英語"
+
+#: config/settings/base.py:33
+msgid "French"
+msgstr "フランス語"
+
+#: config/settings/base.py:34
+msgid "Arabic"
+msgstr "アラビア語"
+
+#: config/settings/base.py:35
+msgid "Dutch"
+msgstr "オランダの"
+
+#: config/settings/base.py:36
+msgid "German"
+msgstr "ドイツ人"
+
+#: config/settings/base.py:37
+msgid "Japanese"
+msgstr "日本語"
+
+#: config/settings/base.py:38
+msgid "Hindi"
+msgstr "ヒンディー語"

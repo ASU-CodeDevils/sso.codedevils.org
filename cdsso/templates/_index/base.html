@@ -1,7 +1,7 @@
-{% load static %}
-{% load i18n %}
+{% load i18n static %}
+{% get_current_language as LANGUAGE_CODE %}
 <!doctype html>
-<html lang="en">
+<html lang="{{ get_current_language }}">
 
 <head>
     {% include '_index/header_meta.html' %}

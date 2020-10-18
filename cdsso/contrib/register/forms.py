@@ -14,35 +14,57 @@ class StudentRegistrationForm(forms.UserCreationForm):
             "invalid_email": _("Please enter a valid email address"),
             "duplicate_email": _("This email has already been taken."),
             "student_email_required": _("Please enter your ASU email."),
-            "alumni_email_required": _("You are applying as an alumni and cannot use your student email"),
-            "student_email_asurite": _("Please enter your ASURITE email (<ASURITE>@asu.edu)")
+            "alumni_email_required": _(
+                "You are applying as an alumni and cannot use your student email"
+            ),
+            "student_email_asurite": _(
+                "Please enter your ASURITE email (<ASURITE>@asu.edu)"
+            ),
         }
     )
 
     class Meta(forms.UserCreationForm.Meta):
         model = User
-        fields = ["username", "password1", "password2", "email", "anonymous", "receive_notifications", "is_alumni"]
+        fields = [
+            "username",
+            "password1",
+            "password2",
+            "email",
+            "anonymous",
+            "receive_notifications",
+            "is_alumni",
+        ]
         labels = {"is_alumni": "Alumni"}
         help_texts = {
-            "receive_notifications": "We will send you emails about events, exciting new projects and opportunities, "
-                                     "and different ways to get involved in CodeDevils",
-            "is_alumni": "Check here if you are an alumni. We will get you in contact with an Officer to help set "
-                         "you up",
-            "anonymous": "You can opt to be anonymous, which means we will block your information publicly and "
-                         "limit it between different CodeDevils products."
+            "receive_notifications": _(
+                "We will send you emails about events, exciting new projects and opportunities, and different ways to "
+                "get involved in CodeDevils."
+            ),
+            "is_alumni": _(
+                "Check here if you are an alumni. We will get you in contact with an Officer to help set you up."
+            ),
+            "anonymous": _(
+                "You can opt to be anonymous, which means we will block your information publicly and limit it "
+                "between different CodeDevils products. This will also disable the feature that allows people - "
+                "employers, members or other outside users on our website - from viewing your profile."
+            )
         }
+
+    def __init__(self, *args, **kwargs):
+        """Sets the `anonymous` option to `False`."""
+        super(StudentRegistrationForm, self).__init__(*args, **kwargs)
+        self.fields['anonymous'].initial = False
 
     def clean_email(self):
         """Determines if the email is valid based on if the user is a student or alumni."""
         email = self.cleaned_data["email"]
-        is_alumni = self.data["is_alumni"]
+        is_alumni = getattr(self.data, "is_alumni", False)
 
         # check that the email is valid
         try:
             validate_email(email)
         except ValidationError:
             raise ValidationError(self.error_messages["invalid_email"])
-        print(f"{is_alumni}")
 
         # if a student, their email must end in asu.edu and be their asurite
         split_email = email.split("@")  # split email by username and domain

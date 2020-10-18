@@ -1,0 +1,889 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-18 10:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: cdsso/contrib/countries/apps.py:7 cdsso/contrib/countries/models.py:54
+msgid "Countries"
+msgstr ""
+
+#: cdsso/contrib/countries/models.py:12
+#: cdsso/templates/register/status.html:143
+msgid "Name"
+msgstr ""
+
+#: cdsso/contrib/countries/models.py:19
+msgid "Native Name"
+msgstr ""
+
+#: cdsso/contrib/countries/models.py:26
+msgid "Alpha2 Code"
+msgstr ""
+
+#: cdsso/contrib/countries/models.py:33
+msgid "Alpha3 Code"
+msgstr ""
+
+#: cdsso/contrib/countries/models.py:36
+msgid "Numeric code"
+msgstr ""
+
+#: cdsso/contrib/countries/models.py:39
+msgid "Flag"
+msgstr ""
+
+#: cdsso/contrib/countries/models.py:53
+msgid "Country"
+msgstr ""
+
+#: cdsso/contrib/register/admin.py:21
+msgid "Completed Registration"
+msgstr ""
+
+#: cdsso/contrib/register/apps.py:7
+msgid "Register"
+msgstr ""
+
+#: cdsso/contrib/register/forms.py:13 cdsso/users/forms.py:16
+msgid "This username has already been taken."
+msgstr ""
+
+#: cdsso/contrib/register/forms.py:14
+msgid "Please enter a valid email address"
+msgstr ""
+
+#: cdsso/contrib/register/forms.py:15
+msgid "This email has already been taken."
+msgstr ""
+
+#: cdsso/contrib/register/forms.py:16
+msgid "Please enter your ASU email."
+msgstr ""
+
+#: cdsso/contrib/register/forms.py:18
+msgid "You are applying as an alumni and cannot use your student email"
+msgstr ""
+
+#: cdsso/contrib/register/forms.py:21
+msgid "Please enter your ASURITE email (<ASURITE>@asu.edu)"
+msgstr ""
+
+#: cdsso/contrib/register/forms.py:40
+msgid ""
+"We will send you emails about events, exciting new projects and "
+"opportunities, and different ways to get involved in CodeDevils."
+msgstr ""
+
+#: cdsso/contrib/register/forms.py:44
+msgid ""
+"Check here if you are an alumni. We will get you in contact with an Officer "
+"to help set you up."
+msgstr ""
+
+#: cdsso/contrib/register/forms.py:47
+msgid ""
+"You can opt to be anonymous, which means we will block your information "
+"publicly and limit it between different CodeDevils products. This will also "
+"disable the feature that allows people - employers, members or other outside "
+"users on our website - from viewing your profile."
+msgstr ""
+
+#: cdsso/contrib/register/models.py:34
+msgid "Registered on Slack"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:35
+msgid "The user has been registered on Slack"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:41
+msgid "Registered on SunDevilSync"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:43
+msgid ""
+"The user has been registered on SunDevilSync. This is True by default for "
+"alumni."
+msgstr ""
+
+#: cdsso/contrib/register/models.py:60
+msgid "User"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:61
+msgid "This user's progress in the registration process."
+msgstr ""
+
+#: cdsso/contrib/register/models.py:66
+msgid "Date Registered"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:67
+msgid "The date/time the student submitted their registration form"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:75
+msgid "SunDevilSync Notification"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:77
+msgid ""
+"Flag to track whether a CodeDevils officer has been notified that this "
+"student needs to be added to SunDevilSync"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:85
+msgid "Slack Add Attempt"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:87
+msgid ""
+"Flag to track if the API was used previously to add this user to Slack. This "
+"stops consecutive attempts of adding this user."
+msgstr ""
+
+#: cdsso/contrib/register/models.py:95
+msgid "Completed Registration Notification"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:97
+msgid ""
+"Flag to track if this user has been notified that their registration has "
+"been completed."
+msgstr ""
+
+#: cdsso/contrib/register/models.py:107 cdsso/contrib/register/models.py:108
+msgid "Student Registration"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:144
+#: cdsso/templates/register/status.html:147
+msgid "Email"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:147
+msgid "Name of member"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:150
+msgid "Slack ID"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:157 cdsso/users/models.py:50
+msgid "UTC Offset"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:159 cdsso/users/models.py:52
+msgid "UTC offset in seconds"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:164 cdsso/users/models.py:33
+msgid "Image 24"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:165 cdsso/users/models.py:36
+msgid "User 24px profile image"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:170 cdsso/users/models.py:40
+msgid "Image 512"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:171 cdsso/users/models.py:43
+msgid "User 512px profile image"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:175
+msgid "Known Member"
+msgstr ""
+
+#: cdsso/contrib/register/models.py:176
+msgid "Known Members"
+msgstr ""
+
+#: cdsso/templates/_index/base.html:50 cdsso/templates/base.html:67
+#, python-format
+msgid "%(message)s"
+msgstr ""
+
+#: cdsso/templates/_index/header_meta.html:4
+msgid "CodeDevils - Develop. Network. Create."
+msgstr ""
+
+#: cdsso/templates/account/account_inactive.html:5
+#: cdsso/templates/account/account_inactive.html:8
+msgid "Account Inactive"
+msgstr ""
+
+#: cdsso/templates/account/account_inactive.html:10
+msgid "This account is inactive."
+msgstr ""
+
+#: cdsso/templates/account/email.html:7
+msgid "Account"
+msgstr ""
+
+#: cdsso/templates/account/email.html:10
+msgid "E-mail Addresses"
+msgstr ""
+
+#: cdsso/templates/account/email.html:13
+msgid "The following e-mail addresses are associated with your account:"
+msgstr ""
+
+#: cdsso/templates/account/email.html:27
+msgid "Verified"
+msgstr ""
+
+#: cdsso/templates/account/email.html:29
+msgid "Unverified"
+msgstr ""
+
+#: cdsso/templates/account/email.html:31
+msgid "Primary"
+msgstr ""
+
+#: cdsso/templates/account/email.html:37
+msgid "Make Primary"
+msgstr ""
+
+#: cdsso/templates/account/email.html:38
+msgid "Re-send Verification"
+msgstr ""
+
+#: cdsso/templates/account/email.html:39
+msgid "Remove"
+msgstr ""
+
+#: cdsso/templates/account/email.html:46
+msgid "Warning:"
+msgstr ""
+
+#: cdsso/templates/account/email.html:46
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+
+#: cdsso/templates/account/email.html:51
+msgid "Add E-mail Address"
+msgstr ""
+
+#: cdsso/templates/account/email.html:56
+msgid "Add E-mail"
+msgstr ""
+
+#: cdsso/templates/account/email.html:66
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr ""
+
+#: cdsso/templates/account/email_confirm.html:6
+#: cdsso/templates/account/email_confirm.html:10
+msgid "Confirm E-mail Address"
+msgstr ""
+
+#: cdsso/templates/account/email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+
+#: cdsso/templates/account/email_confirm.html:20
+msgid "Confirm"
+msgstr ""
+
+#: cdsso/templates/account/email_confirm.html:27
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+
+#: cdsso/templates/account/password_change.html:7
+#: cdsso/templates/account/password_change.html:12
+#: cdsso/templates/account/password_reset_from_key.html:7
+#: cdsso/templates/account/password_reset_from_key_done.html:6
+msgid "Change Password"
+msgstr ""
+
+#: cdsso/templates/account/password_reset.html:10
+#: cdsso/templates/account/password_reset_done.html:7
+msgid "Password Reset"
+msgstr ""
+
+#: cdsso/templates/account/password_reset.html:15
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+
+#: cdsso/templates/account/password_reset.html:20
+msgid "Reset My Password"
+msgstr ""
+
+#: cdsso/templates/account/password_reset.html:23
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+
+#: cdsso/templates/account/password_reset_done.html:13
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: cdsso/templates/account/password_reset_from_key.html:7
+msgid "Bad Token"
+msgstr ""
+
+#: cdsso/templates/account/password_reset_from_key.html:11
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+
+#: cdsso/templates/account/password_reset_from_key.html:17
+msgid "change password"
+msgstr ""
+
+#: cdsso/templates/account/password_reset_from_key.html:20
+#: cdsso/templates/account/password_reset_from_key_done.html:7
+msgid "Your password is now changed."
+msgstr ""
+
+#: cdsso/templates/account/password_reset_from_key_done.html:7
+#: cdsso/templates/cas/login.html:19 cdsso/templates/cas/login.html:48
+msgid "Login"
+msgstr ""
+
+#: cdsso/templates/account/password_set.html:7
+#: cdsso/templates/account/password_set.html:12
+msgid "Set Password"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:3 cdsso/templates/cas/logged.html:5
+msgid "Welcome to CodeDevils!"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:4
+msgid ""
+"\n"
+"Begin your CodeDevils journey by filling out the below registration form.\n"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:18
+msgid "Have a question?"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:18
+msgid "Contact us"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:23
+msgid "Already have an account?"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:23
+#: cdsso/templates/register/status.html:87
+msgid "Sign in"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:27
+msgid "Submit"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:37
+#: cdsso/templates/register/status.html:28
+msgid "Join us on Slack"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:38
+msgid "Join us on Slack to start interacting with your fellow engineers"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:49
+#: cdsso/templates/register/status.html:31
+msgid "Register on SunDevilSync"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:50
+msgid ""
+"SunDevilSync is the official online registrar of ASU student organizations"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:61
+msgid "Get in touch"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:65
+msgid "Arizona State University,"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:66
+msgid "Tempe, AZ"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:104
+msgid "Registration Support"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:108
+msgid ""
+"\n"
+"                    For questions about registration requirements for "
+"students or alumni, including joining\n"
+"                    Slack, registering on SunDevilSync, and registration "
+"status\n"
+"                    "
+msgstr ""
+
+#: cdsso/templates/account/signup.html:117
+msgid "General Support"
+msgstr ""
+
+#: cdsso/templates/account/signup.html:121
+msgid ""
+"\n"
+"                    Have questions about the club before you join? Feel free "
+"to get a hold of us! We love\n"
+"                    to brag about all the amazing opportunities CodeDevils "
+"has to offer.\n"
+"                    "
+msgstr ""
+
+#: cdsso/templates/account/signup_closed.html:5
+#: cdsso/templates/account/signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr ""
+
+#: cdsso/templates/account/signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr ""
+
+#: cdsso/templates/account/verification_sent.html:5
+#: cdsso/templates/account/verification_sent.html:8
+#: cdsso/templates/account/verified_email_required.html:5
+#: cdsso/templates/account/verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr ""
+
+#: cdsso/templates/account/verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: cdsso/templates/account/verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+
+#: cdsso/templates/account/verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside this e-mail. Please\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+
+#: cdsso/templates/account/verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+
+#: cdsso/templates/base.html:47
+msgid "Ready to join?"
+msgstr ""
+
+#: cdsso/templates/base.html:48
+msgid "Create a CodeDevil account"
+msgstr ""
+
+#: cdsso/templates/base.html:50
+msgid "Create account"
+msgstr ""
+
+#: cdsso/templates/cas/logged.html:12
+msgid "Log In Successful"
+msgstr ""
+
+#: cdsso/templates/cas/logged.html:12
+msgid ""
+"You now have access to all CodeDevils services that \n"
+"          support logging in! Check out some of the ones below to see what "
+"being a member offers you!"
+msgstr ""
+
+#: cdsso/templates/cas/logged.html:21
+msgid "CodeDevils Website"
+msgstr ""
+
+#: cdsso/templates/cas/logged.html:22
+msgid ""
+"\n"
+"              The CodeDevils website is the home page of the organization! "
+"Check it out to learn about\n"
+"              the history of the organization, its leadership, and other "
+"resources to all things CodeDevils.\n"
+"              "
+msgstr ""
+
+#: cdsso/templates/cas/logged.html:39
+msgid "IONS"
+msgstr ""
+
+#: cdsso/templates/cas/logged.html:40
+msgid ""
+"\n"
+"              Imagery of Natural Systems (IONS) is a collaborative project "
+"between ASU SESE and CodeDevils. It\n"
+"              partners with Planet to process satellite images and analyze "
+"them for ash coverage and its effect\n"
+"              on the surrounding vegetation.\n"
+"              "
+msgstr ""
+
+#: cdsso/templates/cas/logged.html:57
+msgid "Log me out from all my sessions"
+msgstr ""
+
+#: cdsso/templates/cas/logged.html:63
+msgid "Forget the identity provider"
+msgstr ""
+
+#: cdsso/templates/cas/logged.html:67
+msgid "Logout"
+msgstr ""
+
+#: cdsso/templates/cas/login.html:9
+msgid "Welcome to"
+msgstr ""
+
+#: cdsso/templates/cas/login.html:12
+msgid "Login to your account"
+msgstr ""
+
+#: cdsso/templates/cas/login.html:21
+msgid "Don't have an account yet?"
+msgstr ""
+
+#: cdsso/templates/cas/login.html:22
+msgid "Create it here"
+msgstr ""
+
+#: cdsso/templates/cas/login.html:32 cdsso/templates/cas/login.html:34
+msgid "Username"
+msgstr ""
+
+#: cdsso/templates/cas/login.html:37 cdsso/templates/cas/login.html:39
+msgid "Password"
+msgstr ""
+
+#: cdsso/templates/cas/login.html:44
+msgid "Forgot your password?"
+msgstr ""
+
+#: cdsso/templates/cas/logout.html:6
+msgid "Click here"
+msgstr ""
+
+#: cdsso/templates/cas/logout.html:6
+msgid "to log in again"
+msgstr ""
+
+#: cdsso/templates/cas/warn.html:9
+msgid "Connect to the service"
+msgstr ""
+
+#: cdsso/templates/register/registration_detail.html:8
+msgid "Detail "
+msgstr ""
+
+#: cdsso/templates/register/registration_list.html:8
+msgid "Registrations"
+msgstr ""
+
+#: cdsso/templates/register/status.html:7
+msgid "Your Registration"
+msgstr ""
+
+#: cdsso/templates/register/status.html:14
+msgid "Registration Complete"
+msgstr ""
+
+#: cdsso/templates/register/status.html:16
+msgid "In Progress"
+msgstr ""
+
+#: cdsso/templates/register/status.html:19
+msgid ""
+"You have completed your registration! You can now access all CodeDevils "
+"services. You can start by checking out the website at: "
+msgstr ""
+
+#: cdsso/templates/register/status.html:22
+msgid ""
+"You still need to complete some steps before your registration is complete."
+msgstr ""
+
+#: cdsso/templates/register/status.html:28
+msgid "Step 1"
+msgstr ""
+
+#: cdsso/templates/register/status.html:31
+msgid "Step 2"
+msgstr ""
+
+#: cdsso/templates/register/status.html:34
+msgid "Step 3"
+msgstr ""
+
+#: cdsso/templates/register/status.html:34
+msgid "Additional steps"
+msgstr ""
+
+#: cdsso/templates/register/status.html:37
+msgid "Step 4"
+msgstr ""
+
+#: cdsso/templates/register/status.html:37
+msgid "Done!"
+msgstr ""
+
+#: cdsso/templates/register/status.html:44
+msgid "Step 1: Join us on Slack"
+msgstr ""
+
+#: cdsso/templates/register/status.html:44
+msgid "Step 1 of 4"
+msgstr ""
+
+#: cdsso/templates/register/status.html:48
+msgid ""
+"\n"
+"                                            You have successfully joined us "
+"on Slack! You can start by checking out these channels:\n"
+"                                        "
+msgstr ""
+
+#: cdsso/templates/register/status.html:52
+msgid "Introduce yourself so everyone knows who you are!"
+msgstr ""
+
+#: cdsso/templates/register/status.html:53
+msgid "Where we hold all our meetings and virtual study halls"
+msgstr ""
+
+#: cdsso/templates/register/status.html:54
+msgid "Come here to chat with your fellow CodeDevils!"
+msgstr ""
+
+#: cdsso/templates/register/status.html:57
+msgid ""
+"\n"
+"                                            Slack is our team workspace. "
+"This is where we hold our meetings, collaborate on projects, and just chat "
+"with fellow\n"
+"                                            developers. You can join by "
+"signing into our workspace with your ASU email:\n"
+"                                        "
+msgstr ""
+
+#: cdsso/templates/register/status.html:74
+msgid "Step 2: Register on SunDevilSync"
+msgstr ""
+
+#: cdsso/templates/register/status.html:74
+msgid "Step 2 of 4"
+msgstr ""
+
+#: cdsso/templates/register/status.html:78
+msgid ""
+"\n"
+"                                            You are officially part of the "
+"club! ASU now recognizes you as a member of CodeDevils through "
+"SunDevilSync.\n"
+"                                        "
+msgstr ""
+
+#: cdsso/templates/register/status.html:82
+msgid ""
+"\n"
+"                                            SunDevilSync is the official ASU "
+"online registrar, and is how ASU determines if you are an official member of "
+"an organization.\n"
+"                                            You must join CodeDevils on "
+"SunDevilSync before you are considered an official member. To do so:\n"
+"                                        "
+msgstr ""
+
+#: cdsso/templates/register/status.html:87
+msgid ""
+"to SunDevilSync. This link will take you straight to the CodeDevils home "
+"page."
+msgstr ""
+
+#: cdsso/templates/register/status.html:88
+msgid "In the top right, select "
+msgstr ""
+
+#: cdsso/templates/register/status.html:88
+msgid "Join"
+msgstr ""
+
+#: cdsso/templates/register/status.html:90
+msgid ""
+"\n"
+"                                            An officer from our team will "
+"add you to the organization, and you will receive a confirmation at your ASU "
+"email.\n"
+"                                        "
+msgstr ""
+
+#: cdsso/templates/register/status.html:100
+msgid "Step 3: Additional Administrative Steps"
+msgstr ""
+
+#: cdsso/templates/register/status.html:100
+msgid "Step 3 of 4"
+msgstr ""
+
+#: cdsso/templates/register/status.html:104
+msgid ""
+"\n"
+"                                            Your registration needs have "
+"been administered... In other words, this step is complete!\n"
+"                                        "
+msgstr ""
+
+#: cdsso/templates/register/status.html:108
+msgid ""
+"\n"
+"                                            Someone is working on your "
+"registration and should have this step completed soon. If you have any "
+"questions, or this is taking\n"
+"                                            too long, feel free to contact "
+"us:\n"
+"                                        "
+msgstr ""
+
+#: cdsso/templates/register/status.html:126
+msgid "Step 4: Completed Registration"
+msgstr ""
+
+#: cdsso/templates/register/status.html:126
+msgid "Step 4 of 4"
+msgstr ""
+
+#: cdsso/templates/register/status.html:134
+msgid ""
+"Registration is not complete, but you can view your information below. We "
+"will update it for you."
+msgstr ""
+
+#: cdsso/templates/register/status.html:151
+msgid "Academic status"
+msgstr ""
+
+#: cdsso/templates/register/status.html:152
+msgid "Alumni"
+msgstr ""
+
+#: cdsso/templates/register/status.html:152
+msgid "Student"
+msgstr ""
+
+#: cdsso/templates/register/status.html:155
+msgid "Date registered"
+msgstr ""
+
+#: cdsso/users/apps.py:7
+msgid "Users"
+msgstr ""
+
+#: cdsso/users/models.py:30
+msgid "Name of User"
+msgstr ""
+
+#: cdsso/users/models.py:59
+msgid "ID assigned to this user on Slack"
+msgstr ""
+
+#: cdsso/users/models.py:66
+msgid "Anonymous"
+msgstr ""
+
+#: cdsso/users/models.py:68
+msgid ""
+"You have the option of keeping your account anonymous with CD. Selecting "
+"this will ensure your account stays private and supported applications don't "
+"have access to your data"
+msgstr ""
+
+#: cdsso/users/models.py:76
+msgid "Receive notifications"
+msgstr ""
+
+#: cdsso/users/models.py:83
+msgid "Is an alumni"
+msgstr ""
+
+#: cdsso/users/models.py:84
+msgid "Is an alumni of ASU. If False, the user is by default a student."
+msgstr ""
+
+#: cdsso/users/views.py:34
+msgid "Infos successfully updated"
+msgstr ""
+
+#: config/settings/base.py:31
+msgid "Spanish"
+msgstr ""
+
+#: config/settings/base.py:32
+msgid "English"
+msgstr ""
+
+#: config/settings/base.py:33
+msgid "French"
+msgstr ""
+
+#: config/settings/base.py:34
+msgid "Arabic"
+msgstr ""
+
+#: config/settings/base.py:35
+msgid "Dutch"
+msgstr ""
+
+#: config/settings/base.py:36
+msgid "German"
+msgstr ""
+
+#: config/settings/base.py:37
+msgid "Japanese"
+msgstr ""
+
+#: config/settings/base.py:38
+msgid "Hindi"
+msgstr ""

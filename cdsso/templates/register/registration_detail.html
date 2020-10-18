@@ -1,0 +1,99 @@
+<!--TODO include links to various CD resources here-->
+{% extends "account/base.html" %}
+{% load crispy_forms_tags i18n static %}
+{% block 
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}"/>
+{% endblock extrahead %}
+{% block head_title %}{% trans "Detail " %}- {{ user.name }}{% endblock head_title %}
+{% block content %}
+    <div class="wrapper">
+        <table id="registerDetail" class="table table-responsive-lg border-0">
+            <tbody>
+                <tr>
+                    <th scope="row">ID</td>
+                    <td>{{ user.id }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Name</td>
+                    <td>{{ user.name }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Email</td>
+                    <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Student/Alumni</td>
+                    <td>{% if user.is_alumni %}Alumni{% else %}Student{% endif %}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Registered on Slack</td>
+                    <td class="text-center">
+                        <i class="fa {% if registration.slack_registered %}fa-check-circle text-success{% else %}fa-times-circle text-danger{% endif %}" aria-hidden="true"></i>
+                    </td>
+                    <td>
+                    {% if not registration.slack_registered %}
+                        <a href="{% url 'register:registration-detail' pk=user.id %}?slack=true"
+                           class="btn btn-success border-0 mb-2 w-100 text-center">
+                                Confirm
+                        </a>
+                    {% else %}
+                        <a href="{% url 'register:registration-detail' pk=user.id %}?slack=false"
+                           class="btn btn-danger border-0 mb-2 w-100 text-center">
+                                Unconfirm
+                        </a>
+                    {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Register on SunDevilSync</td>
+                    <td class="text-center">
+                        <i class="fa {% if registration.sds_registered %}fa-check-circle text-success{% else %}fa-times-circle text-danger{% endif %}" aria-hidden="true"></i>
+                    </td>
+                    <td>
+                    {% if not registration.sds_registered %}
+                        <a href="{% url 'register:registration-detail' pk=user.id %}?sds=true"
+                           class="btn btn-success border-0 mb-2 w-100 text-center">
+                           Confirm
+                        </a>
+                    {% else %}
+                        <a href="{% url 'register:registration-detail' pk=user.id %}?sds=false"
+                           class="btn btn-danger border-0 mb-2 w-100 text-center">
+                           Unconfirm
+                        </a>
+                    {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Complete Registration</td>
+                    <td class="text-center">
+                        <i class="fa {% if registration.completed_registration %}fa-check-circle text-success{% else %}fa-times-circle text-danger{% endif %}" aria-hidden="true"></i>
+                    </td>
+                    <td>
+                    {% if not registration.completed_registration %}
+                        <a href="{% url 'register:registration-detail' pk=user.id %}?slack=true&sds=true"
+                           class="btn btn-success border-0 mb-2 w-100 text-center">
+                                Complete
+                        </a>
+                    {% else %}
+                        <a href="{% url 'register:registration-detail' pk=user.id %}?slack=false&sds=false"
+                           class="btn btn-danger border-0 mb-2 w-100 text-center">
+                                Restart Registration
+                        </a>
+                    {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Date Registered</td>
+                    <td>{{ registration.date_registered }}</td>
+                </tr>
+            </tbody>
+            <caption>
+                <a href="{% url 'register:registrations' %}"
+                   class="btn btn-primary border-0 bg-3 mb-2 w-30 text-center">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to List
+                </a>
+            </caption>
+        </table>
+    </div>
+{% endblock content %}

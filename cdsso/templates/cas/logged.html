@@ -9,8 +9,8 @@
 		<div class="row align-items-center gap-y">
 			<div class="shadow bg-1 p-4 rounded">
         <div class="alert alert-success" role="alert">
-          {% blocktrans %}<h3>Log In Successful</h3>You now have access to all CodeDevils services that support logging
-          in! Check out some of the ones below to see what being a member offers you!{% endblocktrans %}
+          <h3>{% trans 'Log In Successful' %}</h3>{% blocktrans %}You now have access to all CodeDevils services that 
+          support logging in! Check out some of the ones below to see what being a member offers you!{% endblocktrans %}
         </div>
         <!--CodeDevils website-->
         <hr class="m-2"/>
@@ -51,7 +51,7 @@
 		    </section>
         <!--Log out modal-->
         <hr class="m-2"/>
-        <form class="form-signin mt-4" method="get" action="logout">
+        <form class="form-signin mt-4" method="get" action="{% url 'cas_server:logout' %}">
           <div class="checkbox mb-2 small">
             <label>
               <input type="checkbox" name="all" value="1">{% trans "Log me out from all my sessions" %}

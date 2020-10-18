@@ -27,8 +27,12 @@ class TestUserViewSet:
 
         response = view.me(request)
 
-        last_login = None if not user.last_login else user.last_login.strftime(DATE_FORMAT)
-        date_joined = None if not user.date_joined else user.date_joined.strftime(DATE_FORMAT)
+        last_login = (
+            None if not user.last_login else user.last_login.strftime(DATE_FORMAT)
+        )
+        date_joined = (
+            None if not user.date_joined else user.date_joined.strftime(DATE_FORMAT)
+        )
 
         assert response.data == {
             "id": user.id,
@@ -44,4 +48,8 @@ class TestUserViewSet:
             "is_alumni": user.is_alumni,
             "receive_notifications": user.receive_notifications,
             "last_login": last_login,
+            "image_24": user.image_24,
+            "image_512": user.image_512,
+            "tz_offset": user.tz_offset,
+            "slack_id": user.slack_id
         }

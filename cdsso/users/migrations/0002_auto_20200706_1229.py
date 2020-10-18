@@ -6,23 +6,29 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('users', '0001_initial'),
+        ("users", "0001_initial"),
     ]
 
     operations = [
-        migrations.AlterModelManagers(
-            name='user',
-            managers=[
-            ],
+        migrations.AlterModelManagers(name="user", managers=[],),
+        migrations.AddField(
+            model_name="user",
+            name="is_alumni",
+            field=models.BooleanField(
+                db_column="IsStudent",
+                default=False,
+                help_text="Is an alumni of ASU. If False, the user is by default a student.",
+                verbose_name="Is an alumni",
+            ),
         ),
         migrations.AddField(
-            model_name='user',
-            name='is_alumni',
-            field=models.BooleanField(db_column='IsStudent', default=False, help_text='Is an alumni of ASU. If False, the user is by default a student.', verbose_name='Is an alumni'),
-        ),
-        migrations.AddField(
-            model_name='user',
-            name='receive_notifications',
-            field=models.BooleanField(db_column='ReceiveNotifications', default=True, help_text='Receive emails about the latest and greatest at CodeDevils!', verbose_name='Receive notifications'),
+            model_name="user",
+            name="receive_notifications",
+            field=models.BooleanField(
+                db_column="ReceiveNotifications",
+                default=True,
+                help_text="Receive emails about the latest and greatest at CodeDevils!",
+                verbose_name="Receive notifications",
+            ),
         ),
     ]

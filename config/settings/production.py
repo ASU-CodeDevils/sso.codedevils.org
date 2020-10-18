@@ -25,6 +25,7 @@ CACHES = {
             # Mimicing memcache behavior.
             # http://jazzband.github.io/django-redis/latest/#_memcached_exceptions_behavior
             "IGNORE_EXCEPTIONS": True,
+            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
 }
@@ -82,9 +83,7 @@ DEFAULT_FROM_EMAIL = env(
 # https://docs.djangoproject.com/en/dev/ref/settings/#server-email
 SERVER_EMAIL = env("DJANGO_SERVER_EMAIL", default=DEFAULT_FROM_EMAIL)
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
-EMAIL_SUBJECT_PREFIX = env(
-    "DJANGO_EMAIL_SUBJECT_PREFIX", default="[CodeDevils]"
-)
+EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default="[CodeDevils]")
 
 # ADMIN
 # ------------------------------------------------------------------------------
@@ -129,18 +128,18 @@ LOGGING = {
             "formatter": "verbose",
             "filters": ["require_debug_false"],
         },
-        "test_file": {
-            "level": "DEBUG",
-            "class": "logging.handlers.RotatingFileHandler",
-            "filename": "logs/test.log",
-            "maxBytes": 1024 * 1024 * 5,  # 5 MB
-            "backupCount": 7,
-            "formatter": "verbose",
-        },
         "cas_file": {
             "level": "INFO",
             "class": "logging.handlers.RotatingFileHandler",
             "filename": "logs/cas_server.log",
+            "maxBytes": 1024 * 1024 * 5,  # 5 MB
+            "backupCount": 7,
+            "formatter": "verbose",
+        },
+        "api": {
+            "level": "INFO",
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": "logs/api.log",
             "maxBytes": 1024 * 1024 * 5,  # 5 MB
             "backupCount": 7,
             "formatter": "verbose",
@@ -158,10 +157,8 @@ LOGGING = {
             "handlers": ["console", "mail_admins"],
             "propagate": True,
         },
-        "": {
-            "handlers": ["console", "production_file"],
-            "level": "DEBUG",
-        }
+        "api": {"level": "DEBUG", "handlers": ["console", "api"], "propagate": False},
+        "": {"handlers": ["console", "production_file"], "level": "DEBUG"},
     },
 }
 

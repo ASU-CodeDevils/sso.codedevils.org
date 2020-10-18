@@ -1,7 +1,9 @@
-<!--TODO include links to various CD resources here-->
 {% extends "_index/base.html" %}
 {% load crispy_forms_tags i18n static %}
 {% block head_title %}{% trans 'Welcome to CodeDevils!' %}{% endblock head_title %}
+{% block head_message %}{% blocktrans %}
+Begin your CodeDevils journey by filling out the below registration form.
+{% endblocktrans %}{% endblock head_message %}
 {% block content %}
 <section class="section mt-7n">
     <div class="container bring-to-front pt-0">
@@ -13,23 +15,116 @@
                         {{ form | crispy }}
                         <div class="mt-4 d-flex justify-content-start">
                             <span class="small">
-                                Have a question? <a target="_blank" href="https://codedevils.org/contactus/?subject=Help%20with%20Registration">Contact us</a>
+                                {% trans 'Have a question?' %} <a target="_blank" href="https://codedevils.org/contactus/?subject=Help%20with%20Registration">{% trans 'Contact us' %}</a>
                             </span>
                         </div>
                         <div class="d-flex justify-content-start">
                             <span class="small">
-                                Already have an account? <a target="_blank" href="{{ login_url }}">Sign in</a>
+                                {% trans 'Already have an account?' %} <a target="_blank" href="{{ login_url }}">{% trans 'Sign in' %}</a>
                             </span>
                         </div>
                         <div class="ajax-button d-flex justify-content-end">
-							<button type="submit" class="btn btn-accent btn-rounded mr-0">Submit
+							<button type="submit" class="btn btn-accent btn-rounded mr-0">{% trans 'Submit' %}
 								<i class="fas fa-long-arrow-alt-right ml-2"></i>
 							</button>
 						</div>
                     </form>
                 </div>
             </div>
+            <div class="col-md-5 ml-md-auto">
+                <!-- slack -->
+                <div class="section-heading">
+                    <h3>{% trans 'Join us on Slack' %}</h3>
+                    {% trans 'Join us on Slack to start interacting with your fellow engineers' %}
+                </div>
+                <div class="media">
+                    <i class="fab fa-slack font-l color-3 mr-3"></i>
+                    <div class="media-body">
+                        <a href="https://codedevils.slack.com">codedevils.slack.com</a>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <!-- slack -->
+                <div class="section-heading">
+                    <h3>{% trans 'Register on SunDevilSync' %}</h3>
+                    {% trans 'SunDevilSync is the official online registrar of ASU student organizations' %}
+                </div>
+                <div class="media">
+                    <i class="fas fa-university font-l color-3 mr-3"></i>
+                    <div class="media-body">
+                        <a href="https://codedevils.org/sundevilsync">asu.campuslabs.com</a>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <!-- get in touch -->
+                <div class="section-heading">
+                    <h3>{% trans 'Get in touch' %}</h3>
+                </div>
+                <div class="media">
+                    <i class="fas fa-map-marker font-l color-3 mr-3"></i>
+                    <div class="media-body">{% trans 'Arizona State University,' %}
+                        <span class="d-block">{% trans 'Tempe, AZ' %}</span>
+                    </div>
+                </div>
+                <div class="media">
+                    <i class="fas fa-envelope font-l color-3 mr-3"></i>
+                    <div class="media-body">
+                        <a href="mailto:info@codedevils.org">Info@CodeDevils.org</a>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <nav class="nav justify-content-center justify-content-md-start">
+                    <a href="https://codedevils.org/facebook/" target="_blank"
+                        class="btn btn-circle btn-sm brand-facebook mr-3">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://codedevils.org/twitter/" target="_blank"
+                        class="btn btn-circle btn-sm brand-twitter mr-3">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://codedevils.org/instagram/" target="_blank"
+                        class="btn btn-circle btn-sm brand-instagram mr-3">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://codedevils.org/linkedin/" target="_blank"
+                        class="btn btn-circle btn-sm brand-linkedin mr-3">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </nav>
+            </div>
 		</div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="row gap-y align-items-center text-center text-lg-left">
+            <div class="col-12 col-md-6 py-4 px-5 b-md-r">
+                <i class="pe pe-7s-plugin pe-3x color-5"></i>
+                <a href="mailto:secretary@codedevils.org" class="mt-4 color-5 d-flex align-items-center">
+                    <h4 class="mr-3">{% trans 'Registration Support' %}</h4>
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </a>
+                <p class="mt-4">
+                    {% blocktrans %}
+                    For questions about registration requirements for students or alumni, including joining
+                    Slack, registering on SunDevilSync, and registration status
+                    {% endblocktrans %}
+                </p>
+            </div>
+            <div class="col-12 col-md-6 py-4 px-5">
+                <i class="pe pe-7s-help2 pe-3x color-5"></i>
+                <a href="mailto:info@codedevils.org" class="mt-4 color-5 d-flex align-items-center">
+                    <h4 class="mr-3">{% trans 'General Support' %}</h4>
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </a>
+                <p class="mt-4">
+                    {% blocktrans %}
+                    Have questions about the club before you join? Feel free to get a hold of us! We love
+                    to brag about all the amazing opportunities CodeDevils has to offer.
+                    {% endblocktrans %}
+                </p>
+            </div>
+        </div>
     </div>
 </section>
 {% endblock %}
