@@ -1,20 +1,17 @@
-{% load static %}
-{% load i18n %}
+{% load i18n static %}
+{% get_current_language as LANGUAGE_CODE %}
 <!doctype html>
-<html lang="en">
+<html lang="{{ get_current_language }}">
 
 <head>
-    {% include 'index/_header_meta.html' %}
+    {% include '_index/header_meta.html' %}
     {% block extrahead %}{% endblock extrahead %}
 </head>
 
 <body>
-    {% block navbar %}
-        {% include 'index/_nav.html' %}
-    {% endblock navbar %}
 	<main class="{% block main_class %}{% endblock main_class %}">
-        {% block header %}
 		<!--HEADER-->
+        {% block header %}
             <header class="page header color-1 overlay alpha-8 image-background cover gradient gradient-53"
                     style="background-image: url({% static 'img/bg/code-grid.png' %})">
                 <div class="divider-shape">
@@ -28,37 +25,23 @@
                 <div class="container" style="">
                     <div class="row">
                         <div class="col-md-6">
-                            <h1 class="regular display-4 color-1 mb-4">{% block header_title %}{% endblock %}</h1>
-                            <p class="lead color-1">{% block header_message %}{% endblock %}</p>
+                            <h1 class="regular display-4 color-1 mb-4">{% block head_title %}{% endblock head_title %}</h1>
+                            <p class="lead color-1">{% block head_message %}{% endblock head_message %}</p>
                         </div>
                     </div>
                 </div>
             </header>
         {% endblock header %}
+
         <!--CONTENT-->
-        {% block base_content %}{% endblock base_content %}
-		<!--CREATE ACCOUNT-->
-        {% block create_account_footer %}
-            {% if not user.is_authenticated %}
-		        <section class="section bg-1 edge top-left b-b">
-			        <div class="container pt-5">
-				        <div class="d-flex align-items-center flex-column flex-md-row">
-					        <div class="text-center text-md-left">
-						        <p class="light mb-0 accent lead">{% trans 'Ready to join?' %}</p>
-						        <h2 class="mt-0">{% trans 'Create a CodeDevil account' %}</h2>
-					        </div>
-					        <a href="{% url 'users:register' %}" class="btn btn-accent btn-rounded mt-3 mt-md-0 ml-md-auto">{% trans 'Create account' %}</a>
-				        </div>
-			        </div>
-		        </section>
-            {% endif %}
-        {% endblock create_account_footer %}
+        {% block content %}{% endblock content %}
+
 	</main>
     <!--FOOTER-->
-    {% include 'index/_footer.html' %}
+    {% include '_index/footer.html' %}
 
 	<!--SCRIPTS-->
-    {% include 'index/_scripts.html' %}
+    {% include '_index/scripts.html' %}
 
     <!--SNACKBAR-->
     {% if messages %}
@@ -73,6 +56,8 @@
             })
         </script>
     {% endif %}
+
+    <!--JIRA SERVICE DESK FAB-->
     {% block help_fab %}
         <script data-jsd-embedded data-key="990dc0da-6ab1-474e-a40a-444084903b30"
                 data-base-url="https://jsd-widget.atlassian.com"

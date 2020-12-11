@@ -284,3 +284,4 @@ cdsso/media/
 cdsso/files/dh/
 .pytest_cache/
 tmp/
+public/static
