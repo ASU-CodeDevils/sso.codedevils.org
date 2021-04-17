@@ -29,3 +29,14 @@
 <link rel="stylesheet" href="{% static 'css/snackbar.css' %}">
 <!--Main Style Sheet-->
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ settings.GOOGLE_ANALYTICS_TRACKING_ID|upper }}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', '{{ settings.GOOGLE_ANALYTICS_TRACKING_ID|upper }}');
+</script>
