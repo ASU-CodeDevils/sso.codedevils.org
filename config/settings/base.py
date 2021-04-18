@@ -79,7 +79,6 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
-    "allauth.socialaccount.providers.keycloak",
     "cas_server",
     "django_celery_beat",
     "drf_yasg",
