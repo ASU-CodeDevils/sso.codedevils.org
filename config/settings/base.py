@@ -79,7 +79,6 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
-    "allauth.socialaccount.providers.keycloak",
     "cas_server",
     "django_celery_beat",
     "drf_yasg",
@@ -251,9 +250,7 @@ EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 ADMIN_URL = "admin/"
 # https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = [
-    ("""Kevin Shelley""", "krshelle@asu.edu"),
-    ("""David Welbourne""", "dswelbor@asu.edu"),
-    ("""Jacob Labrec""", "jlabrec@asu.edu")
+    ("""Kevin Shelley""", "krshelle@asu.edu")
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
